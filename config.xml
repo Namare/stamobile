@@ -16,6 +16,5 @@
     <author href="http://namgam.com" email="support@namgam.com">
       Pavlushyn Victor
     </author>
-
-    <plugin name="uk.co.workingedge.phonegap.plugin.launchnavigator" spec="2.1.0" source="pgb" />
+    <feature name="http://api.phonegap.com/1.0/geolocation" />
 </widget>
