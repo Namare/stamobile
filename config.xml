@@ -17,5 +17,5 @@
       Pavlushyn Victor
     </author>
 
-
+    <plugin name="uk.co.workingedge.phonegap.plugin.launchnavigator" spec="2.1.0" source="pgb" />
 </widget>
