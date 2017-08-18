@@ -16,7 +16,7 @@
     <author href="http://namgam.com" email="support@namgam.com">
       Pavlushyn Victor
     </author>
-    <platform name="android" >
+
     <preference name="permissions" value="none"/>
 
     <!-- to enable individual permissions use the following examples -->
