@@ -17,15 +17,6 @@
       Pavlushyn Victor
     </author>
 
-    <platform name="android" >
-        <allow-intent href="geo:*"/>
-        <allow-intent href="http://*"/>
-        <allow-intent href="https://*"/>
-        <allow-navigation href="https://*"/>
-        <access origin="*"/>
-    </platform>
-    <preference name="phonegap-version" value="cli-6.5.0" />
-
     <plugin name="cordova-plugin-geolocation" spec="2.2.0"/>
 
 
