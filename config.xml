@@ -42,7 +42,5 @@
         <preference name="Fullscreen" value="false"/>
         <preference name="AndroidLaunchMode" value="singleTop"/>
     </platform>
-    <config-file platform="android" parent="/manifest/application" mode="merge">
-        <activity android:launchMode="singleTop" />
-    </config-file>
+
 </widget>
