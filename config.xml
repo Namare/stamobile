@@ -17,11 +17,5 @@
       Pavlushyn Victor
     </author>
 
-    <platform name="android" >
-        <allow-intent href="geo:*"/>
-        <allow-intent href="http://*"/>
-        <allow-intent href="https://*"/>
-        <allow-navigation href="https://*"/>
-        <access origin="*"/>
-    </platform>
+
 </widget>
