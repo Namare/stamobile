@@ -17,9 +17,11 @@
       Pavlushyn Victor
     </author>
     <feature name="http://api.phonegap.com/1.0/geolocation" />
-    <allow-intent href="geo:*"/>
-    <allow-intent href="http://*"/>
-    <allow-intent href="https://*"/>
-    <allow-navigation href="https://*"/>
-    <access origin="*"/>
+    <platform name="android" >
+        <allow-intent href="geo:*"/>
+        <allow-intent href="http://*"/>
+        <allow-intent href="https://*"/>
+        <allow-navigation href="https://*"/>
+        <access origin="*"/>
+    </platform>
 </widget>
