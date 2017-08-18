@@ -16,5 +16,9 @@
     <author href="http://namgam.com" email="support@namgam.com">
       Pavlushyn Victor
     </author>
-    <feature name="http://api.phonegap.com/1.0/geolocation" />
+    <allow-intent href="geo:*"/>
+    <allow-intent href="http://*"/>
+    <allow-intent href="https://*"/>
+    <allow-navigation href="https://*"/>
+    <access origin="*"/>
 </widget>
