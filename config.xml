@@ -17,7 +17,7 @@
       Pavlushyn Victor
     </author>
 
-
+    <preference name="android-minSdkVersion" value="23" />
     <!-- to enable individual permissions use the following examples -->
     <feature name="http://api.phonegap.com/6.5/battery"/>
     <feature name="http://api.phonegap.com/6.5/camera"/>
