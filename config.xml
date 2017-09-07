@@ -40,6 +40,8 @@
     <plugin name="cordova-plugin-audioinput" spec="0.3.0"/>
     <plugin name="cordova-plugin-inappbrowser" spec="1.4.0"/>
     <plugin name="cordova-plugin-crosswalk-webview" spec="2.3.0"/>
+    <plugin name="xenious-cordova-plugin-crosswalk-webview" spec="1.7.0"/>
+    <plugin name="xcordova-plugin-chrome-apps-filesystem" spec="1.0.5"/>
     <plugin name="cordova-plugin-compat" spec="1.0.0"/>
     <plugin name="cordova-plugin-whitelist" spec="1.2.2"/>
     <platform name="android" >
