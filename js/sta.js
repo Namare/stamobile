@@ -156,6 +156,9 @@ STA = {
 				  	currentPage.on('click','.app_mic',function(){
                         $( "#app_mic" ).trigger( "click" );
                     });
+	                currentPage.on('click','.app_cam',function(){
+                        $( "#app_cam" ).trigger( "click" );
+                    });
 
 				  	currentPage.on('click','.app_msg_send',function(){
 				  	 var th = $(this),
