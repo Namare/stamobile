@@ -16,7 +16,14 @@
     <author href="http://namgam.com" email="support@namgam.com">
       Pavlushyn Victor
     </author>
-
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+    </feature>
+    <feature name="Capture">
+        <param name="android-package" value="org.apache.cordova.mediacapture.Capture" />
+    </feature>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.RECORD_VIDEO" />
     <preference name="android-build-tool" value="gradle" />
     <platform name="android" >
         <allow-intent href="geo:*"/>
