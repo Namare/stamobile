@@ -38,6 +38,7 @@ STA = {
 	currentPage:'login',
 	forumCounter:0,
 	prevForum:'',
+    forumCurrentthread:'',
 	stamenu:function(){
 		$('div.menu-item, .bottom_menu_item').on('click',function(){
 			$('.return_menu').unbind('click');
@@ -68,7 +69,7 @@ STA = {
 					 $.ajax({
 					 	method:"POST",
 					 	dataType: 'html',
-					 	url:'http://sta.namgam.com/user',
+					 	url:'https://stassociation.com/user',
 					 	data:'k='+STA.key,
 					 	success:function(h){					 		
 					 		
@@ -76,15 +77,15 @@ STA = {
         					currentPage.html(div);
         					$('#app_span5').attr('colspan','5');
         					$('.load_addition, .load_docs').on('click',function(){
-        						window.open('http://sta.namgam.com/user', '_system');
+        						window.open('https://stassociation.com/user', '_system');
         					});
 					 	}
 					 });
 
 				break;
 				case 'menu1':
-				  currentPage.load('http://sta.namgam.com/logistic .list_order_content',function(){
-				  	var BASE_URL = 'http://sta.namgam.com/logistic';
+				  currentPage.load('https://stassociation.com/logistic .list_order_content',function(){
+				  	var BASE_URL = 'http://stassociation.com/logistic';
 
 				  	 $('.getOrder').on('click',function(){
 				  	 	$('.alert-success').remove();
@@ -133,7 +134,7 @@ STA = {
 				break;
 
 				case 'radio':
-				  currentPage.load('http://sta.namgam.com/radio');
+				  currentPage.load('https://stassociation.com/radio');
 				break;
 
 				case 'forum':
@@ -141,7 +142,7 @@ STA = {
 				 	$('.return_menu').on('click',function(){
 				 		if(prevForum!==''){		
 							if(forumCounter==1){
-								currentPage.load('http://sta.namgam.com/forum .app_list_forums',STA.selectForum);		
+								currentPage.load('https://stassociation.com/forum .app_list_forums',STA.selectForum);
 								$('.return_menu').hide();
 							}
 							if(forumCounter==2){
@@ -150,18 +151,19 @@ STA = {
 							}						
 						}					
 					});							 
-				  	currentPage.load('http://sta.namgam.com/forum .app_list_forums',STA.selectForum);
+				  	currentPage.load('https://stassociation.com/forum .app_list_forums',STA.selectForum);
+
 				  	
 
 				  	currentPage.on('click','.app_msg_send',function(){
 				  	 var th = $(this);
 				  		$.ajax({
 				  			method:'POST',
-				  			url:'http://sta.namgam.com/forum/new_comment',
+				  			url:'https://stassociation.com/forum/new_comment',
 				  			data:'k='+STA.key+'&id='+$(this).data('id')+'&cm='+$('.app_msg').val(),
 				  			success:function(){
 				  				$('.app_msg').val('');
-				  				currentPage.load('http://sta.namgam.com/forum/view_thread/'+$('.app_msg_send').data('id') +' .app_list_forums',STA.selectSubForum);
+				  				currentPage.load('https://stassociation.com/forum/view_thread/'+$('.app_msg_send').data('id') +' .app_list_forums',STA.selectSubForum);
 				  				$('html, body').animate({
         							scrollTop: $(document).height()
    								}, 2000);
@@ -181,21 +183,29 @@ STA = {
 	selectSubForum:function(){
 		
 		
-		STA.deleteLinks();	
+		STA.deleteLinks();
 		 	
 		$('.sub_forum_href').on('click',function(){	
-				forumCounter = 2;		  			
+				forumCounter = 2;
+            forumCurrentthread = $(this).data('target');
 			currentPage.load($(this).data('target')+' .app_list_forums',function(){
 	   		STA.deleteLinks();
 		  		$('.return_menu').show();		  						  			 
 			});
-  		});	
+  		});
 	},
 	selectForum:function(){		
 	
-		STA.deleteLinks();	
+		STA.deleteLinks();
+        $('body').on('click','.sub_forum_href',function(){
+            forumCounter = 2;
+            currentPage.load($(this).attr('data_target')+' .app_list_forums',function(){
+                STA.deleteLinks();
+                $('.return_menu').show();
+            });
+        });
 
-		$('.forum_href').on('click',function(){	
+        $('.forum_href').on('click',function(){
 			forumCounter = 1;
 		
 		  	prevForum = $(this).data('target');	
@@ -274,8 +284,8 @@ STA = {
 	},
 	key:window.localStorage.getItem("prem_key"),
 	key_status:false,
-	ajax_url:'http://sta.namgam.com/auth/app_login',
-	base_url:'http://sta.namgam.com/',
+	ajax_url:'https://stassociation.com/auth/app_login',
+	base_url:'https://stassociation.com/',
 	login:function(){
 			
 
