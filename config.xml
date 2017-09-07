@@ -16,14 +16,7 @@
     <author href="http://namgam.com" email="support@namgam.com">
       Pavlushyn Victor
     </author>
-    <feature name="File">
-        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
-    </feature>
-    <feature name="Capture">
-        <param name="android-package" value="org.apache.cordova.mediacapture.Capture" />
-    </feature>
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.RECORD_VIDEO" />
+
     <preference name="android-build-tool" value="gradle" />
     <platform name="android" >
         <allow-intent href="geo:*"/>
@@ -42,6 +35,8 @@
     <preference name="phonegap-version" value="cli-6.5.0" />
     <preference name="xwalkMultipleApk" value="false" />
     <plugin name="cordova-plugin-geolocation" spec="2.2.0"/>
+    <plugin name="cordova-plugin-camera" spec="2.4.1"/>
+    <plugin name="cordova-plugin-microphone-permission" spec="0.0.3"/>
     <plugin name="cordova-plugin-network-information" spec="1.2.1"/>
     <plugin name="cordova-plugin-wkwebview-engine" spec="1.0.3"/>
     <plugin name="cordova-plugin-audioinput" spec="0.3.0"/>
