@@ -440,9 +440,7 @@ padding: 0px 30px 13px 25px;
 	position: fixed;
 	border-top: 1px solid #ccc;
 	padding: 5px 0px;
-
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f47916+0,e02d11+100 */
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f47916+0,e24612+100 */
+    border-top: 2px solid #fe8f49;
     background: #f47916; /* Old browsers */
     background: -moz-linear-gradient(top,  #f47916 0%, #e24612 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(top,  #f47916 0%,#e24612 100%); /* Chrome10-25,Safari5.1-6 */
