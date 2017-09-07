@@ -240,15 +240,16 @@ color: #000;
 }
 
 .forum_info_sm{
-    background-color: #f3f3f3;
+
     padding: 0px;
     font-size: 13px;
-    text-align: center;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+1,cccccc+100&0+70,0.1+100 */
-    background: -moz-linear-gradient(top,  rgba(30,87,153,0) 1%, rgba(151,169,189,0) 70%, rgba(204,204,204,0.1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top,  rgba(30,87,153,0) 1%,rgba(151,169,189,0) 70%,rgba(204,204,204,0.1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom,  rgba(30,87,153,0) 1%,rgba(151,169,189,0) 70%,rgba(204,204,204,0.1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', endColorstr='#1acccccc',GradientType=0 ); /* IE6-9 */
+    text-align: center;/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+1,cccccc+100&0+0,0.48+100 */
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c4c4c4+1,cccccc+100&0.1+0,0.4+100 */
+    background: -moz-linear-gradient(top,  rgba(196,196,196,0.1) 0%, rgba(196,196,196,0.1) 1%, rgba(204,204,204,0.4) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(196,196,196,0.1) 0%,rgba(196,196,196,0.1) 1%,rgba(204,204,204,0.4) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(196,196,196,0.1) 0%,rgba(196,196,196,0.1) 1%,rgba(204,204,204,0.4) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1ac4c4c4', endColorstr='#66cccccc',GradientType=0 ); /* IE6-9 */
+    margin-bottom: -1px;
 
 }
 .forumborder{
@@ -271,6 +272,9 @@ color: #000;
     font-size: 12px;
     margin-bottom: 10px;
 }
+.comment_block{
+    background-color: #fff;
+}
 .forum_info_sm .col-md-12:first-child{
     background-color: #ddd;
     border-radius: 5px;
@@ -291,7 +295,7 @@ color: #000;
     padding: 5px 15px;
 }
 .forumblock a{
-	font-size: 16px;
+	font-size: 17px;
 	padding: 15px 0 0 0;
 	display: block;
 }
@@ -344,11 +348,11 @@ color: #000;
 .current_comment{
     padding: 20px 10px;
     margin-top: 55px;
-    font-size: 14px;
+    font-size: 15px;
 }
 .comment_autor{
     margin-top: 17px;
-    font-size: 12px;
+    font-size: 13px;
     text-align: left;
     padding: 0px;
     font-style: italic;
