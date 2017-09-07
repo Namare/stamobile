@@ -156,14 +156,15 @@ STA = {
 				  	
 
 				  	currentPage.on('click','.app_msg_send',function(){
-				  	 var th = $(this);
+				  	 var th = $(this),
+                     cur_url = $(this).data('url');
 				  		$.ajax({
 				  			method:'POST',
 				  			url:'https://stassociation.com/forum/new_comment',
 				  			data:'k='+STA.key+'&id='+$(this).data('id')+'&cm='+$('.app_msg').val(),
 				  			success:function(){
 				  				$('.app_msg').val('');
-				  				currentPage.load('https://stassociation.com/forum/view_thread/'+$('.app_msg_send').data('id') +' .app_list_forums',STA.selectSubForum);
+				  				currentPage.load(cur_url+' .app_list_forums',STA.selectSubForum);
 				  				$('html, body').animate({
         							scrollTop: $(document).height()
    								}, 2000);

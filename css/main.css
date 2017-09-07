@@ -366,8 +366,6 @@ a.forum_page , .forum_current_page{
     border-radius: 3px;
     font-size: 14px;
     border-bottom: 2px solid #b2b2b2;
-
-
 }
 .forum_msg_footer div{
     padding: 0px;
@@ -507,3 +505,5 @@ overflow-x: scroll;
 padding: 20px 0px;
 }
 .marker_list{width: 850px}
+
+.smiles_table{display: none}
