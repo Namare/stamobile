@@ -440,12 +440,13 @@ padding: 0px 30px 13px 25px;
 	position: fixed;
 	border-top: 1px solid #ccc;
 	padding: 5px 0px;
-	
-background: #edae6f; /* Old browsers */
-background: -moz-linear-gradient(top, #edae6f 0%, #df6018 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, #edae6f 0%,#df6018 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, #edae6f 0%,#df6018 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edae6f', endColorstr='#df6018',GradientType=0 ); /* IE6-9 */
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f47916+0,e02d11+100 */
+    background: #f47916; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f47916 0%, #e02d11 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #f47916 0%,#e02d11 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #f47916 0%,#e02d11 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f47916', endColorstr='#e02d11',GradientType=0 ); /* IE6-9 */
 padding-top: 10px;
 	z-index: 500;
 }
