@@ -153,7 +153,9 @@ STA = {
 					});							 
 				  	currentPage.load('https://stassociation.com/forum .app_list_forums',STA.selectForum);
 
-				  	
+				  	currentPage.on('click','.app_mic',function(){
+                        $( "#app_mic" ).trigger( "click" );
+                    });
 
 				  	currentPage.on('click','.app_msg_send',function(){
 				  	 var th = $(this),
