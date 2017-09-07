@@ -16,7 +16,10 @@
     <author href="http://namgam.com" email="support@namgam.com">
       Pavlushyn Victor
     </author>
-
+    <feature name="http://api.phonegap.com/1.0/camera"/>
+    <feature name="http://api.phonegap.com/1.0/device"/>
+    <feature name="http://api.phonegap.com/1.0/file"/>
+    <feature name="http://api.phonegap.com/1.0/network"/>
     <preference name="android-build-tool" value="gradle" />
     <platform name="android" >
         <allow-intent href="geo:*"/>
