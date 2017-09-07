@@ -139,6 +139,7 @@ STA = {
 
 				case 'forum':
 				currentPage.off('click');
+				currentPage.off('change');
 				 	$('.return_menu').on('click',function(){
 				 		if(prevForum!==''){		
 							if(forumCounter==1){
@@ -153,12 +154,17 @@ STA = {
 					});							 
 				  	currentPage.load('https://stassociation.com/forum .app_list_forums',STA.selectForum);
 
+				  	currentPage.on('change','#app_mic',function(){
+                        $( ".app_audio_send" ).show();
+                    });
+
 				  	currentPage.on('click','.app_mic',function(){
                         $( "#app_mic" ).trigger( "click" );
                     });
 	                currentPage.on('click','.app_cam',function(){
                         $( "#app_cam" ).trigger( "click" );
                     });
+
 
 				  	currentPage.on('click','.app_msg_send',function(){
 				  	 var th = $(this),
