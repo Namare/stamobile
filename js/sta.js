@@ -235,7 +235,9 @@ STA = {
    								}, 2000);
    								th.off('click');
                                 $('.loading').hide();
-                                navigator.notification.beep(2);
+                                window.plugins.alertdialog.show('testTitle', 'Success Message!', 'buttonOk');
+                                alert();
+
                                 alert();
                                 navigator.notification.alert(
                                     'You are the winner!',  // message
