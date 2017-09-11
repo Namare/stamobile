@@ -164,6 +164,8 @@ STA = {
                     });
 
                     currentPage.on('click','.app_audio_send',function(){
+                        $('form.forum_audio').prepend('<input type="hidden" name="key" value="'+STA.key+'">');
+                        $('form.forum_audio').prepend('<input type="hidden" name="post_id" value="'+$(this).data('id')+'">');
                         var microData = new FormData($('form.forum_audio')[0]);
                         $.ajax({
                             url: "https://stassociation.com/"+"forum/audio",
