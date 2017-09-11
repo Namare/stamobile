@@ -235,6 +235,7 @@ STA = {
    								}, 2000);
    								th.off('click');
                                 $('.loading').hide();
+                                alert()();
                                 navigator.notification.alert(
                                     'You are the winner!',  // message
                                     function(){},         // callback
