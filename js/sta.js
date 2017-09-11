@@ -241,7 +241,7 @@ STA = {
                                     cordova.plugins.notification.badge.set(10);
                                     cordova.plugins.notification.local.schedule({
                                         title: "Local Notification Example",
-                                        smallIcon:'res://icon',
+                                        smallIcon:'res://ic_dialog_map',
                                         text: "Single Notification"
                                     });
 
