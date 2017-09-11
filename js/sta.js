@@ -164,23 +164,50 @@ STA = {
                     });
 
                     currentPage.on('click','.app_audio_send',function(){
+                        $('.loading').show();
+                       var cur_url = $(this).data('url');
                         $('form.forum_audio').prepend('<input type="hidden" name="key" value="'+STA.key+'">');
                         $('form.forum_audio').prepend('<input type="hidden" name="post_id" value="'+$(this).data('id')+'">');
                         var microData = new FormData($('form.forum_audio')[0]);
                         $.ajax({
-                            url: "https://stassociation.com/"+"forum/audio",
+                            url: "https://stassociation.com/forum/audio",
                             type: "POST",
                             data: microData,
                             contentType: 'multipart/form-data',
                             success: function (msg) {
-
+                                currentPage.load(cur_url+' .app_list_forums',STA.selectSubForum);
+                                $('.loading').hide();
+                                $('html, body').animate({
+                                    scrollTop: $(document).height()
+                                }, 2000);
                             },
                             cache: false,
                             contentType: false,
                             processData: false
                         });
-
-
+                    });
+                    currentPage.on('click','.app_img_send',function(){
+                        $('.loading').show();
+                       var cur_url = $(this).data('url');
+                        $('form.forum_audio').prepend('<input type="hidden" name="key" value="'+STA.key+'">');
+                        $('form.forum_audio').prepend('<input type="hidden" name="post_id" value="'+$(this).data('id')+'">');
+                        var photoData = new FormData($('form.forum_photo')[0]);
+                        $.ajax({
+                            url: "https://stassociation.com/forum/audio",
+                            type: "POST",
+                            data: photoData,
+                            contentType: 'multipart/form-data',
+                            success: function (msg) {
+                                currentPage.load(cur_url+' .app_list_forums',STA.selectSubForum);
+                                $('.loading').hide();
+                                $('html, body').animate({
+                                    scrollTop: $(document).height()
+                                }, 2000);
+                            },
+                            cache: false,
+                            contentType: false,
+                            processData: false
+                        });
                     });
 
 
@@ -193,6 +220,7 @@ STA = {
 
 
 				  	currentPage.on('click','.app_msg_send',function(){
+                        $('.loading').show();
 				  	 var th = $(this),
                      cur_url = $(this).data('url');
 				  		$.ajax({
@@ -206,6 +234,7 @@ STA = {
         							scrollTop: $(document).height()
    								}, 2000);
    								th.off('click');
+                                $('.loading').hide();
 				  			}
 				  		});
 				  	});

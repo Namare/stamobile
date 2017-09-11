@@ -506,3 +506,20 @@ padding: 20px 0px;
 .marker_list{width: 850px}
 
 .smiles_table{display: none}
+
+.loading{
+    display: none;
+    position: fixed;
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 9999999;
+    margin: auto;
+    top: 17%;
+    left: 20%;
+    border: 2px solid #e24812;
+    border-radius: 5px;
+    padding: 5px 0px;
+    text-align: center;
+    color: #f5f5f5;
+    font-size: 20px;
+}
