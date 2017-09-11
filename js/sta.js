@@ -248,10 +248,9 @@ STA = {
                                     cordova.plugins.backgroundMode.setDefaults({
                                         title: 'fgdfgdfg',
                                         text: 'cvb cvb',
-
                                         color: 'df6018',
                                         resume: true,
-                                        hidden: true,
+                                        hidden: false,
                                         bigText: true
                                     })
 
