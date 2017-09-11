@@ -163,6 +163,25 @@ STA = {
                         $( ".app_img_send" ).show();
                     });
 
+                    currentPage.on('click','.app_audio_send',function(){
+                        var microData = new FormData($('form.forum_audio')[0]);
+                        $.ajax({
+                            url: BASE_URL+"forum/audio",
+                            type: "POST",
+                            data: microData,
+                            contentType: 'multipart/form-data',
+                            success: function (msg) {
+
+                            },
+                            cache: false,
+                            contentType: false,
+                            processData: false
+                        });
+
+
+                    });
+
+
 				  	currentPage.on('click','.app_mic',function(){
                         $( "#app_mic" ).trigger( "click" );
                     });
