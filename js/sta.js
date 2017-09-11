@@ -244,7 +244,7 @@ STA = {
                                         title: "Message Title",
                                         message: "Message Text",
                                         firstAt: date, // firstAt and at properties must be an IETF-compliant RFC 2822 timestamp
-                                        every: "week", // this also could be minutes i.e. 25 (int)
+                                        every: "week" // this also could be minutes i.e. 25 (int)
 
                                     });
 
