@@ -237,7 +237,7 @@ STA = {
                                 $('.loading').hide();
 
                                 setTimeout(function(){
-
+                                    cordova.plugins.notification.badge.set(10);
                                     navigator.notification.alert(
                                         'You are the winner!',  // message
                                         function(){},         // callback
