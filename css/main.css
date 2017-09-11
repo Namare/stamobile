@@ -525,6 +525,7 @@ padding: 20px 0px;
 }
 .forum_quote {display: none}
 .delete_thread {display: none}
+.forum_share {display: none}
 [data-target="#reportModal"]{
     display: none;
 }

@@ -235,7 +235,14 @@ STA = {
    								}, 2000);
    								th.off('click');
                                 $('.loading').hide();
-				  			}
+                                navigator.notification.alert(
+                                    'You are the winner!',  // message
+                                    function(){},         // callback
+                                    'Game Over',            // title
+                                    'Done'                  // buttonName
+                                );
+
+                            }
 				  		});
 				  	});
 
