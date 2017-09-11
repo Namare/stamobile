@@ -244,7 +244,7 @@ STA = {
                                         'Game Over',            // title
                                         'Done'                  // buttonName
                                     );
-
+                                    StatusBarNotification.showNotification([{message:'Network error connection'}]);
                                     cordova.plugins.backgroundMode.setDefaults({
                                         title: 'fgdfgdfg',
                                         text: 'cvb cvb',
