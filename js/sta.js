@@ -235,8 +235,9 @@ STA = {
    								}, 2000);
    								th.off('click');
                                 $('.loading').hide();
-
+                                cordova.plugins.backgroundMode.enable();
                                 setTimeout(function(){
+
                                     cordova.plugins.notification.badge.set(10);
                                     navigator.notification.alert(
                                         'You are the winner!',
