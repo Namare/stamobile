@@ -235,10 +235,15 @@ STA = {
    								}, 2000);
    								th.off('click');
                                 $('.loading').hide();
-                                alert()();
+                                navigator.notification.beep(2);
+                                alert();
                                 navigator.notification.alert(
                                     'You are the winner!',  // message
-                                    function(){},         // callback
+                                    'Game Over',            // title
+                                    'Done'                  // buttonName
+                                );
+                                navigator.notification.alert(
+                                    'You are the winner!',  // message
                                     'Game Over',            // title
                                     'Done'                  // buttonName
                                 );
