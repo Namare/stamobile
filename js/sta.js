@@ -238,10 +238,11 @@ STA = {
 
                                 setTimeout(function(){
 
-                                    cordova.plugins.notification.badge.set(10);
+                                   // cordova.plugins.notification.badge.set(10);
                                     cordova.plugins.notification.local.schedule({
                                         title: "Local Notification Example",
                                         smallIcon:'res://ic_dialog_map',
+                                        badge:1,
                                         text: "Single Notification"
                                     });
 
