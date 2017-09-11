@@ -249,9 +249,9 @@ STA = {
                                         title: 'fgdfgdfg',
                                         text: 'cvb cvb',
 
-                                        color: 'F14F4D',
+                                        color: 'df6018',
                                         resume: true,
-                                        hidden: false,
+                                        hidden: true,
                                         bigText: true
                                     })
 
