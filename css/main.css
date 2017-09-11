@@ -523,3 +523,8 @@ padding: 20px 0px;
     color: #f5f5f5;
     font-size: 20px;
 }
+.forum_quote {display: none}
+.delete_thread {display: none}
+[data-target="#reportModal"]{
+    display: none;
+}
