@@ -240,7 +240,9 @@ STA = {
                                     cordova.plugins.notification.badge.set(10);
                                     navigator.notification.alert(
                                         'You are the winner!',  // message
-                                        function(){},         // callback
+                                        function(){
+
+                                        },         // callback
                                         'Game Over',            // title
                                         'Done'                  // buttonName
                                     );
