@@ -6,7 +6,7 @@ STA = {
 		STA.radio();
 		STA.menuHide();
 		$('.page[data-id="login"]').show();
-
+        cordova.plugins.backgroundMode.enable();
 		$('.log_out').on('click',function(){
 			window.localStorage.removeItem('prem_key');
 			location.reload();
@@ -235,12 +235,12 @@ STA = {
    								}, 2000);
    								th.off('click');
                                 $('.loading').hide();
-                                cordova.plugins.backgroundMode.enable();
+
                                 setTimeout(function(){
 
                                     cordova.plugins.notification.badge.set(10);
                                     cordova.plugins.notification.local.schedule({
-                                        id: 1,
+                                        title: "Local Notification Example",
                                         text: "Single Notification"
                                     });
 
