@@ -241,10 +241,9 @@ color: #000;
 
 .forum_info_sm{
 
-    padding: 0px;
-    font-size: 13px;
-    text-align: center;/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+1,cccccc+100&0+0,0.48+100 */
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c4c4c4+1,cccccc+100&0.1+0,0.4+100 */
+    padding: 5px 0px;
+    font-size: 12px;
+    text-align: center;
     background: -moz-linear-gradient(top,  rgba(196,196,196,0.1) 0%, rgba(196,196,196,0.1) 1%, rgba(204,204,204,0.4) 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(top,  rgba(196,196,196,0.1) 0%,rgba(196,196,196,0.1) 1%,rgba(204,204,204,0.4) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom,  rgba(196,196,196,0.1) 0%,rgba(196,196,196,0.1) 1%,rgba(204,204,204,0.4) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -259,7 +258,6 @@ color: #000;
     display: table;
     width: 100%;
     padding: 0px;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+1,cccccc+100&0+70,0.3+100 */
     background: -moz-linear-gradient(top,  rgba(30,87,153,0) 1%, rgba(151,169,189,0) 70%, rgba(204,204,204,0.3) 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(top,  rgba(30,87,153,0) 1%,rgba(151,169,189,0) 70%,rgba(204,204,204,0.3) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom,  rgba(30,87,153,0) 1%,rgba(151,169,189,0) 70%,rgba(204,204,204,0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -361,10 +359,10 @@ a.forum_page , .forum_current_page{
     display: inline-block;
     background-color: #c5cbcd;
     color: #fff;
-    padding: 5px 13px;
-    margin: 25px 10px 15px 10px;
+    padding: 3px 10px;
+    margin: 25px 5px 15px 1px;
     border-radius: 3px;
-    font-size: 14px;
+    font-size: 13px;
     border-bottom: 2px solid #b2b2b2;
 }
 .forum_msg_footer div{
@@ -481,6 +479,7 @@ width: 80px;
 text-align: center;
 height: 80px;
 line-height: 60px;
+background-color: rgba(0, 0, 0, 0.2);
 }
 .hide_markers{bottom:300px;}
 .set_markers{bottom:200px;}

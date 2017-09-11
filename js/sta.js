@@ -155,7 +155,12 @@ STA = {
 				  	currentPage.load('https://stassociation.com/forum .app_list_forums',STA.selectForum);
 
 				  	currentPage.on('change','#app_mic',function(){
+                        $( ".app_img_send" ).hide();
                         $( ".app_audio_send" ).show();
+                    });
+				  	currentPage.on('change','#app_cam',function(){
+                        $( ".app_audio_send" ).hide();
+                        $( ".app_img_send" ).show();
                     });
 
 				  	currentPage.on('click','.app_mic',function(){
