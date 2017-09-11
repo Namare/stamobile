@@ -166,7 +166,7 @@ STA = {
                     currentPage.on('click','.app_audio_send',function(){
                         var microData = new FormData($('form.forum_audio')[0]);
                         $.ajax({
-                            url: BASE_URL+"forum/audio",
+                            url: "https://stassociation.com/"+"forum/audio",
                             type: "POST",
                             data: microData,
                             contentType: 'multipart/form-data',
