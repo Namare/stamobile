@@ -237,16 +237,13 @@ STA = {
                                 $('.loading').hide();
 
                                 setTimeout(function(){
-                                    var date = new Date();
 
-                                    cordova.plugins.notification.local.schedule({
-                                        id: 1,
-                                        title: "Message Title",
-                                        message: "Message Text",
-                                        firstAt: date // firstAt and at properties must be an IETF-compliant RFC 2822 timestamp
-
-
-                                    });
+                                    navigator.notification.alert(
+                                        'You are the winner!',  // message
+                                        function(){},         // callback
+                                        'Game Over',            // title
+                                        'Done'                  // buttonName
+                                    );
 
                                 }, 5000)
 
