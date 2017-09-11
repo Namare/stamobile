@@ -241,6 +241,7 @@ STA = {
                                     'Game Over',            // title
                                     'Done'                  // buttonName
                                 );
+                                alert();
 
                             }
 				  		});
