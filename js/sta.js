@@ -239,20 +239,10 @@ STA = {
                                 setTimeout(function(){
 
                                     cordova.plugins.notification.badge.set(10);
-                                    navigator.notification.alert(
-                                        'You are the winner!',
-                                        'Game Over',            // title
-                                        'Done'                  // buttonName
-                                    );
-                                    StatusBarNotification.showNotification([{message:'Network error connection'}]);
-                                    cordova.plugins.backgroundMode.setDefaults({
-                                        title: 'fgdfgdfg',
-                                        text: 'cvb cvb',
-                                        color: 'df6018',
-                                        resume: true,
-                                        hidden: false,
-                                        bigText: true
-                                    })
+                                    cordova.plugins.notification.local.schedule({
+                                        id: 1,
+                                        text: "Single Notification"
+                                    });
 
                                 }, 5000)
 
