@@ -236,20 +236,15 @@ STA = {
    								th.off('click');
                                 $('.loading').hide();
                                 window.plugins.alertdialog.show('testTitle', 'Success Message!', 'buttonOk');
-                                alert();
 
-                                alert();
+                                navigator.notification.beep(2);
+
                                 navigator.notification.alert(
                                     'You are the winner!',  // message
                                     'Game Over',            // title
                                     'Done'                  // buttonName
                                 );
-                                navigator.notification.alert(
-                                    'You are the winner!',  // message
-                                    'Game Over',            // title
-                                    'Done'                  // buttonName
-                                );
-                                alert();
+
 
                             }
 				  		});
