@@ -189,11 +189,11 @@ STA = {
                     currentPage.on('click','.app_img_send',function(){
                         $('.loading').show();
                        var cur_url = $(this).data('url');
-                        $('form.forum_audio').prepend('<input type="hidden" name="key" value="'+STA.key+'">');
-                        $('form.forum_audio').prepend('<input type="hidden" name="post_id" value="'+$(this).data('id')+'">');
+                        $('form.forum_photo').prepend('<input type="hidden" name="key" value="'+STA.key+'">');
+                        $('form.forum_photo').prepend('<input type="hidden" name="post_id" value="'+$(this).data('id')+'">');
                         var photoData = new FormData($('form.forum_photo')[0]);
                         $.ajax({
-                            url: "https://stassociation.com/forum/audio",
+                            url: "https://stassociation.com/forum/photo",
                             type: "POST",
                             data: photoData,
                             contentType: 'multipart/form-data',
