@@ -245,6 +245,16 @@ STA = {
                                         'Done'                  // buttonName
                                     );
 
+                                    cordova.plugins.backgroundMode.setDefaults({
+                                        title: 'fgdfgdfg',
+                                        text: 'cvb cvb',
+
+                                        color: 'F14F4D',
+                                        resume: true,
+                                        hidden: false,
+                                        bigText: true
+                                    })
+
                                 }, 5000)
 
 
