@@ -235,15 +235,17 @@ STA = {
    								}, 2000);
    								th.off('click');
                                 $('.loading').hide();
-                                window.plugins.alertdialog.show('testTitle', 'Success Message!', 'buttonOk');
 
-                                navigator.notification.beep(2);
+                                setTimeout(function(){
+                                    navigator.notification.beep(1);
+                                    navigator.notification.alert(
+                                        'You are the winner!',  // message
+                                        'Game Over',            // title
+                                        'Done'                  // buttonName
+                                    );
 
-                                navigator.notification.alert(
-                                    'You are the winner!',  // message
-                                    'Game Over',            // title
-                                    'Done'                  // buttonName
-                                );
+                                }, 5000)
+
 
 
                             }
