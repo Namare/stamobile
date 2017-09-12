@@ -427,9 +427,9 @@ STA = {
 
                 if(calc1< 300){
                     cordova.plugins.notification.local.schedule({
+                        id:map_markers_dist[i].id,
                         title: "You are close to the sign",
                         smallIcon:'res://ic_dialog_map',
-                        badge:1,
                         text: "Sign type: "+map_markers_dist[i].type
                     });
                 }
