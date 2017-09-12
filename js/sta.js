@@ -420,10 +420,11 @@ STA = {
                 if(STA.count_alert.indexOf(map_markers_dist[i].id) != -1){
                     continue;
                 }
-                alert(STA.count_alert.indexOf(map_markers_dist[i].id));
+
                 var myLatLng = new google.maps.LatLng(parseFloat(map_markers_dist[i].position.lat()),parseFloat(map_markers_dist[i].position.lng()));
                 var myLatLng2 = new google.maps.LatLng(parseFloat(curr_position.lat),parseFloat(curr_position.lng));
                 var calc1 = google.maps.geometry.spherical.computeDistanceBetween(myLatLng, myLatLng2);
+                alert(calc1);
                 if(calc1< 300){
                     cordova.plugins.notification.local.schedule({
                         title: "You are close to the sign",
