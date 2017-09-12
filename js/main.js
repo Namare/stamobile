@@ -67,7 +67,7 @@ $(function(){
     }else{
        for (var i = 0; i < map_markers.length; i++) {           
            map_markers[i].setMap(null);
-           alert(computeDistanceBetween(curr_position,map_markers[i].getPosition()));
+           alert( google.maps.geometry.spherical.computeDistanceBetween(curr_position,map_markers[i].getPosition()));
         }
         markers_visible = 0;
 
