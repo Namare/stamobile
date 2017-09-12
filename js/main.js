@@ -10,7 +10,7 @@ $(function(){
                 scaleControl: false,
                 disableDefaultUI: true
             };
-
+    alert( google.maps.geometry.spherical.computeDistanceBetween( {lat: 38.69879411288659, lng:-121.34490743279457}, {lat: 56.598209812572904, lng:-118.125}));
             addMAP = new google.maps.Map(mapCanvas, mapOptions);             
             var image = 'http://sta.namgam.com/img/marker.png';
 
@@ -67,7 +67,7 @@ $(function(){
     }else{
        for (var i = 0; i < map_markers.length; i++) {           
            map_markers[i].setMap(null);
-           alert( google.maps.geometry.spherical.computeDistanceBetween(curr_position,map_markers[i].getPosition()));
+
         }
         markers_visible = 0;
 
