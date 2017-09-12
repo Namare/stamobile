@@ -452,7 +452,7 @@ STA = {
                 var myLatLng = new google.maps.LatLng(parseFloat(map_markers_dist[i].position.lat),parseFloat(map_markers_dist[i].position.lng));
                 var myLatLng2 = new google.maps.LatLng(parseFloat(curr_position.lat),parseFloat(curr_position.lng));
                 var calc1 = google.maps.geometry.spherical.computeDistanceBetween(myLatLng, myLatLng2)/1000;
-                alert(curr_position);
+                alert(curr_position.lat+'||'+curr_position.lng);
 
 
             }
