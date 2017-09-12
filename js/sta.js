@@ -449,7 +449,11 @@ STA = {
         setInterval( function(){
             $('#markers_dist_script').load( "https://stassociation.com/map/app_markers_dist");
             for (var i = 0; i < map_markers_dist.length; i++) {
-               alert(STA.getDistance(map_markers_dist[i].position,map_markers_dist[i].position));
+                var myLatLng = new google.maps.LatLng(parseFloat(map_markers_dist[i].position.lat),parseFloat(map_markers_dist[i].position.lng));
+                var myLatLng2 = new google.maps.LatLng(parseFloat(curr_position.lat),parseFloat(curr_position.lng));
+                var calc1 = google.maps.geometry.spherical.computeDistanceBetween(myLatLng, myLatLng2)/1000;
+                alert(calc1);
+
 
             }
         }, 20000);
