@@ -420,6 +420,7 @@ STA = {
                 if(STA.count_alert.indexOf(map_markers_dist[i].id) != -1){
                     continue;
                 }
+                alert(STA.count_alert.indexOf(map_markers_dist[i].id));
                 var myLatLng = new google.maps.LatLng(parseFloat(map_markers_dist[i].position.lat()),parseFloat(map_markers_dist[i].position.lng()));
                 var myLatLng2 = new google.maps.LatLng(parseFloat(curr_position.lat),parseFloat(curr_position.lng));
                 var calc1 = google.maps.geometry.spherical.computeDistanceBetween(myLatLng, myLatLng2);
@@ -434,7 +435,7 @@ STA = {
 
                 STA.count_alert.push(map_markers_dist[i].id);
             }
-        }, 30000);
+        }, 20000);
     }
 
 }
