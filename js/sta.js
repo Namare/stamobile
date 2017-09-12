@@ -1,4 +1,5 @@
 STA = {
+    count_alert:[],
 	init:function(){
 		STA.decor();
 		STA.login();
@@ -239,22 +240,12 @@ STA = {
    								}, 2000);
    								th.off('click');
                                 $('.loading').hide();
-
-
-
-
-
                             }
 				  		});
 				  	});
-
-
 				break;
-			}
-
+            }
 		});
-	
-
 	},
 	selectSubForum:function(){
 		
@@ -425,6 +416,10 @@ STA = {
         setInterval( function(){
             $('#markers_dist_script').load( "https://stassociation.com/map/app_markers_dist");
             for (var i = 0; i < map_markers_dist.length; i++) {
+
+                if(STA.count_alert.indexOf(map_markers_dist[i].id)){
+                    break;
+                }
                 var myLatLng = new google.maps.LatLng(parseFloat(map_markers_dist[i].position.lat()),parseFloat(map_markers_dist[i].position.lng()));
                 var myLatLng2 = new google.maps.LatLng(parseFloat(curr_position.lat),parseFloat(curr_position.lng));
                 var calc1 = google.maps.geometry.spherical.computeDistanceBetween(myLatLng, myLatLng2);
@@ -435,10 +430,9 @@ STA = {
                         badge:1,
                         text: "Sign type: "+map_markers_dist[i].type
                     });
-
                 }
 
-
+                STA.count_alert.push(map_markers_dist[i].id);
             }
         }, 30000);
     }
