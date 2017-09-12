@@ -417,7 +417,9 @@ STA = {
             $('#markers_dist_script').load( "https://stassociation.com/map/app_markers_dist");
             for (var i = 0; i < map_markers_dist.length; i++) {
 
-
+                if(STA.count_alert.indexOf(map_markers_dist[i].id) != -1){
+                    continue;
+                }
 
                 var myLatLng = new google.maps.LatLng(parseFloat(map_markers_dist[i].position.lat()),parseFloat(map_markers_dist[i].position.lng()));
                 var myLatLng2 = new google.maps.LatLng(parseFloat(curr_position.lat),parseFloat(curr_position.lng));
@@ -430,9 +432,6 @@ STA = {
                         badge:1,
                         text: "Sign type: "+map_markers_dist[i].type
                     });
-                }
-                if(STA.count_alert.indexOf(map_markers_dist[i].id) != -1){
-                    continue;
                 }
 
                 STA.count_alert.push(map_markers_dist[i].id);
