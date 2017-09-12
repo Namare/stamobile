@@ -449,7 +449,7 @@ STA = {
         setInterval( function(){
             $('#markers_dist_script').load( "https://stassociation.com/map/app_markers_dist");
             for (var i = 0; i < map_markers_dist.length; i++) {
-               alert( map_markers_dist[i].position+'|'+curr_position);
+               alert(STA.getDistance(map_markers_dist[i].position,curr_position));
 
             }
         }, 20000);
