@@ -417,7 +417,7 @@ STA = {
             $('#markers_dist_script').load( "https://stassociation.com/map/app_markers_dist");
             for (var i = 0; i < map_markers_dist.length; i++) {
 
-                if(STA.count_alert.indexOf(map_markers_dist[i].id)){
+                if(STA.count_alert.indexOf(map_markers_dist[i].id) != -1){
                     break;
                 }
                 var myLatLng = new google.maps.LatLng(parseFloat(map_markers_dist[i].position.lat()),parseFloat(map_markers_dist[i].position.lng()));
