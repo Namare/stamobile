@@ -5,6 +5,7 @@ STA = {
 		STA.stamenu();
 		STA.radio();
 		STA.menuHide();
+		STA.checkDistance();
 		$('.page[data-id="login"]').show();
       //  cordova.plugins.backgroundMode.enable();
 		$('.log_out').on('click',function(){
@@ -12,8 +13,8 @@ STA = {
 			location.reload();
 		});
 
-alert();
-        alert(getDistance({lat: 38.69879411288659, lng:-121.34490743279457}, {lat: 56.598209812572904, lng:-118.125}));
+
+
 		
 		
 	},
@@ -429,18 +430,30 @@ alert();
 					$('.change_status').val(b);
 				}
 			});
-	}
-    ,getDistance:function(p1, p2) {
+	},
+    rad :function(x) {
+    return x * Math.PI / 180;
+    },
+    getDistance:function(p1, p2) {
             var R = 6378137; // Earth’s mean radius in meter
-            var dLat = rad(p2.lat - p1.lat);
-            var dLong = rad(p2.lng - p1.lng);
+            var dLat = STA.rad(p2.lat - p1.lat);
+            var dLong = STA.rad(p2.lng - p1.lng);
             var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-                Math.cos(rad(p1.lat())) * Math.cos(rad(p2.lat)) *
+                Math.cos(STA.rad(p1.lat)) * Math.cos(STA.rad(p2.lat)) *
                     Math.sin(dLong / 2) * Math.sin(dLong / 2);
             var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
             var d = R * c;
             return d; // returns the distance in meter
-        }
+    },
+    checkDistance:function(){
+        setInterval( function(){
+            $('#markers_dist_script').load( "https://stassociation.com/map/app_markers_dist");
+            for (var i = 0; i < map_markers_dist.length; i++) {
+               alert( map_markers_dist[i].position+'|'+curr_position);
+
+            }
+        }, 20000);
+    }
 
 }
 $(function(){

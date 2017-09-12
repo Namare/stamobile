@@ -57,7 +57,7 @@ $(function(){
                 }
             });
 
-  setInterval( start_geo, 3000); 
+  setInterval( start_geo, 10000);
 
   var markers_visible = 0;
   $('.hide_markers').on('click',function(){
@@ -67,7 +67,7 @@ $(function(){
     }else{
        for (var i = 0; i < map_markers.length; i++) {           
            map_markers[i].setMap(null);
-           alert( google.maps.geometry.spherical.computeDistanceBetween( {lat: 38.69879411288659, lng:-121.34490743279457}, {lat: 56.598209812572904, lng:-118.125}));
+
         }
         markers_visible = 0;
 
@@ -91,9 +91,4 @@ $(function(){
   }
 
 
-
-
-
-
 });
-
