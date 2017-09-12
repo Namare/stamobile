@@ -67,6 +67,15 @@ STA = {
 			switch (pageName){
 				case 'map':
 					google.maps.event.trigger(mapCanvas, "resize");
+                    currentPage.on('click','.del_info_marker',function(){
+                        $.ajax({
+                            url:'https://stassociation.com/map/del_info_marker',
+                            method:'POST',
+                            data:'i='+$(this).data('id')
+
+                        });
+                        $(this).parent().parent().parent().parent().hide()
+                    });
 				break;
 
 				case 'disp':
