@@ -61,7 +61,7 @@ $(function(){
   var markers_visible = 0;
   $('.hide_markers').on('click',function(){
     if(markers_visible == 0){
-      $('#markers_script').load( "http://sta.namgam.com/map/app_markers"); 
+      $('#markers_script').load( "https://stassociation.com/map/app_markers");
       markers_visible =1; 
     }else{
        for (var i = 0; i < map_markers.length; i++) {           
