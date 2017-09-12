@@ -1,6 +1,7 @@
 $(function(){   
 
             mapCanvas = document.getElementById("map");
+            curr_position = null;
             var myCenter=new google.maps.LatLng(48.5,35);
             var mapOptions = {
                 center: myCenter,            
@@ -66,6 +67,7 @@ $(function(){
     }else{
        for (var i = 0; i < map_markers.length; i++) {           
            map_markers[i].setMap(null);
+           alert(computeDistanceBetween(curr_position,map_markers[i].getPosition()));
         }
         markers_visible = 0;
 
@@ -77,6 +79,7 @@ $(function(){
 
   if ( navigator.geolocation ) {
      navigator.geolocation.getCurrentPosition(function(p){
+         curr_position = {lat: p.coords.latitude, lng:p.coords.longitude};
           
           marker.setPosition({lat: p.coords.latitude, lng:p.coords.longitude});            
           addMAP.setCenter(marker.getPosition());
