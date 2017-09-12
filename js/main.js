@@ -46,7 +46,7 @@ $(function(){
                     });
 
                     $.ajax({
-                        url:"http://sta.namgam.com/map/add_marker_app",
+                        url:"https://stassociation.com/map/add_marker_app",
                         method:'POST',
                         data:'k='+STA.key+"&id="+current_marker.id+"" +
                             "&lat="+e.latLng.lat()+
