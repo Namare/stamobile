@@ -240,17 +240,7 @@ STA = {
    								th.off('click');
                                 $('.loading').hide();
 
-                                setTimeout(function(){
 
-                                   // cordova.plugins.notification.badge.set(10);
-                                    cordova.plugins.notification.local.schedule({
-                                        title: "Local Notification Example",
-                                        smallIcon:'res://ic_dialog_map',
-                                        badge:1,
-                                        text: "Single Notification"
-                                    });
-
-                                }, 5000)
 
 
 
@@ -431,32 +421,26 @@ STA = {
 				}
 			});
 	},
-    rad :function(x) {
-    return x * Math.PI / 180;
-    },
-    getDistance:function(p1, p2) {
-            var R = 6378137; // Earth’s mean radius in meter
-            var dLat = STA.rad(p2.lat - p1.lat);
-            var dLong = STA.rad(p2.lng - p1.lng);
-            var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-                Math.cos(STA.rad(p1.lat)) * Math.cos(STA.rad(p2.lat)) *
-                    Math.sin(dLong / 2) * Math.sin(dLong / 2);
-            var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-            var d = R * c;
-            return d; // returns the distance in meter
-    },
     checkDistance:function(){
         setInterval( function(){
             $('#markers_dist_script').load( "https://stassociation.com/map/app_markers_dist");
             for (var i = 0; i < map_markers_dist.length; i++) {
                 var myLatLng = new google.maps.LatLng(parseFloat(map_markers_dist[i].position.lat()),parseFloat(map_markers_dist[i].position.lng()));
                 var myLatLng2 = new google.maps.LatLng(parseFloat(curr_position.lat),parseFloat(curr_position.lng));
-                var calc1 = google.maps.geometry.spherical.computeDistanceBetween(myLatLng, myLatLng2)/1000;
-                alert(typeof map_markers_dist[i].position.lat());
+                var calc1 = google.maps.geometry.spherical.computeDistanceBetween(myLatLng, myLatLng2);
+                if(calc1< 300){
+                    cordova.plugins.notification.local.schedule({
+                        title: "You are close to the sign",
+                        smallIcon:'res://ic_dialog_map',
+                        badge:1,
+                        text: "Sign type: "+map_markers_dist[i].type
+                    });
+
+                }
 
 
             }
-        }, 20000);
+        }, 30000);
     }
 
 }
