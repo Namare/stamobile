@@ -76,7 +76,7 @@ $(function(){
   });
  
   function start_geo () {
-
+      $('#markers_script').load( "https://stassociation.com/map/app_markers");
   if ( navigator.geolocation ) {
      navigator.geolocation.getCurrentPosition(function(p){
          curr_position = {lat: p.coords.latitude, lng:p.coords.longitude};
