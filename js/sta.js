@@ -175,7 +175,7 @@ STA = {
 				  	currentPage.on('change','#app_cam',function(){
                         $( ".app_audio_send" ).hide();
                         $( ".app_img_send" ).show();
-                        $('form.forum_audio').prepend('<input type="hidden" name="msg" value="'+$('.app_msg').val()+'">');
+
                     });
 
                     currentPage.on('click','.app_audio_send',function(){
@@ -207,6 +207,7 @@ STA = {
                        var cur_url = $(this).data('url');
                         $('form.forum_photo').prepend('<input type="hidden" name="key" value="'+STA.key+'">');
                         $('form.forum_photo').prepend('<input type="hidden" name="post_id" value="'+$(this).data('id')+'">');
+                        $('form.forum_audio').prepend('<input type="hidden" name="msg" value="'+$('.app_msg').val()+'">');
 
                         var photoData = new FormData($('form.forum_photo')[0]);
                         $.ajax({
