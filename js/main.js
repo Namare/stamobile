@@ -57,7 +57,7 @@ $(function(){
                 }
             });
 
-  setInterval( start_geo, 10000);
+  setInterval( start_geo, 2000);
 
   var markers_visible = 0;
   $('.hide_markers').on('click',function(){
