@@ -34,6 +34,7 @@
     </platform>
     <preference name="phonegap-version" value="cli-6.5.0" />
     <preference name="xwalkMultipleApk" value="false" />
+    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     <plugin name="cordova-plugin-geolocation" spec="2.2.0"/>
     <plugin name="cordova-plugin-network-information" spec="1.2.1"/>
     <plugin name="cordova-plugin-wkwebview-engine" spec="1.0.3"/>
