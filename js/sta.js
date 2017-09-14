@@ -449,7 +449,7 @@ STA = {
 
                 STA.count_alert.push(map_markers_dist[i].id);
             }
-        }, 2500);
+        }, 5000);
     }
 
 }
