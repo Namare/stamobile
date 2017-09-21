@@ -14,19 +14,19 @@ $(function(){
             addMAP = new google.maps.Map(mapCanvas, mapOptions);
                 var st = '';
                  if($('.change_status').val() == 1){
-                  st = ''
+                  st = '';
                  }
 
                 if($('.change_status').val()== 2){
-                  st = '1'
+                  st = '1';
                  }
 
                  if($('.change_status').val()== 3){
-                   st = '3'
+                   st = '3';
                  }
 
                  if($('.change_status').val()== 4){
-                       st = '2'
+                       st = '2';
                   }
             var image = 'https://stassociation.com/icon/track'+st+'.png';
 
