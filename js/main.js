@@ -84,7 +84,12 @@ $(function(){
      navigator.geolocation.getCurrentPosition(function(p){
          curr_position = {lat: p.coords.latitude, lng:p.coords.longitude};
           
-          marker.setPosition({lat: p.coords.latitude, lng:p.coords.longitude});            
+          marker.setPosition({lat: p.coords.latitude, lng:p.coords.longitude});
+         $.ajax({
+             url: "https://stassociation.com/map/update_coords",
+             type: "POST",
+             data: "lat="+p.coords.latitude+"&lng="+p.coords.longitude+"&k="+STA.key
+         });
 
 
      },function(err){
