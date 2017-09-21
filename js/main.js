@@ -13,6 +13,7 @@ $(function(){
 
             addMAP = new google.maps.Map(mapCanvas, mapOptions);
                 var st = '';
+    alert($('.change_status').val());
                  if($('.change_status').val() == 1){
                   st = '';
                  }
