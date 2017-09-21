@@ -11,7 +11,23 @@ $(function(){
                 disableDefaultUI: true
             };
 
-            addMAP = new google.maps.Map(mapCanvas, mapOptions);             
+            addMAP = new google.maps.Map(mapCanvas, mapOptions);
+                var st = '';
+                 if($('.change_status').val() == 1){
+                 var st = ''
+                 }
+
+                if($('.change_status').val()== 2){
+                 var st = '1'
+                 }
+
+                 if($('.change_status').val()== 3){
+                  var st = '3'
+                 }
+
+                 if($('.change_status').val()== 4){
+                      var st = '2'
+                  }
             var image = 'https://stassociation.com/icon/track.png';
 
             var marker = new google.maps.Marker({
