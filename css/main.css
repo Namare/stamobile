@@ -35,9 +35,7 @@ h1 {font-size: 18px}
 .mgb5{margin-bottom: 5px}
 .mgt0{margin-top: 0px}
 .w100{width: 100%;}
-.return_menu{
-	display: none;
-}
+
 blockquote {
     padding: 10px 12px;
     margin: 0 0 12px;
@@ -131,7 +129,6 @@ margin-top: -4px;
 }
 
 .log_out{width: 15px;}
-.return_menu{width: 20px}
 .app_list_price{
 	font-size: 13px;
 	padding: 15px 0px;
@@ -368,7 +365,8 @@ a.forum_page , .forum_current_page{
 .forum_msg_footer div{
     padding: 0px;
     color: #b3b3b3;
-    font-size: 11px !important;
+    font-size: 19px !important;
+    margin-bottom: 10px;
 }
 .forum_h1{padding: 0px 10px}
 .forum_current_page{
@@ -481,8 +479,8 @@ height: 80px;
 line-height: 60px;
 background-color: rgba(0, 0, 0, 0.2);
 }
-.hide_markers{bottom:300px;}
-.set_markers{bottom:200px;}
+.set_markers{bottom:85px;}
+.set_my_pos{bottom: 85px; left:75%}
 .marker_list div{
 display: block;
 padding: 16px;
@@ -495,7 +493,7 @@ border-radius: 10px;
 }
 
 .markers_menu{
-bottom: 54px;
+top: 35px;
 display: none;
 width: 100%;
 position: fixed;
@@ -526,6 +524,7 @@ padding: 20px 0px;
 .forum_quote {display: none}
 .delete_thread {display: none}
 .forum_share {display: none}
+.no_app{display: none}
 [data-target="#reportModal"]{
     display: none;
 }

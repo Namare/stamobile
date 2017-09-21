@@ -59,22 +59,24 @@ $(function(){
 
   setInterval( start_geo, 2000);
 
-  var markers_visible = 0;
-  $('.hide_markers').on('click',function(){
-    if(markers_visible == 0){
-      $('#markers_script').load( "https://stassociation.com/map/app_markers");
-      markers_visible =1; 
-    }else{
-       for (var i = 0; i < map_markers.length; i++) {           
-           map_markers[i].setMap(null);
-
-        }
-        markers_visible = 0;
-
-    }
-    
-  });
- 
+//  var markers_visible = 0;
+//  $('.hide_markers').on('click',function(){
+//    if(markers_visible == 0){
+//      $('#markers_script').load( "https://stassociation.com/map/app_markers");
+//      markers_visible =1;
+//    }else{
+//       for (var i = 0; i < map_markers.length; i++) {
+//           map_markers[i].setMap(null);
+//
+//        }
+//        markers_visible = 0;
+//
+//    }
+//
+//  });
+ $('.set_my_pos').on('click',function(){
+     addMAP.setCenter(curr_position);
+ });
   function start_geo () {
       $('#markers_script').load( "https://stassociation.com/map/app_markers");
   if ( navigator.geolocation ) {
@@ -82,7 +84,7 @@ $(function(){
          curr_position = {lat: p.coords.latitude, lng:p.coords.longitude};
           
           marker.setPosition({lat: p.coords.latitude, lng:p.coords.longitude});            
-          addMAP.setCenter(marker.getPosition());
+
 
      },function(err){
           //  $('body').text(err.message+err.code);

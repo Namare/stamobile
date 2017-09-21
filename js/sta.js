@@ -45,14 +45,13 @@ STA = {
 	prevForum:'',
     forumCurrentthread:'',
 	stamenu:function(){
-		$('div.menu-item, .bottom_menu_item').on('click',function(){
+		$('body').on('click','div.menu-item, .bottom_menu_item, .app_menu',function(){
 			$('.return_menu').unbind('click');
 			$('.getOrder').unbind('click');
 			 $('.markers_menu').hide();
 
 			prevForum = '';		
 			forumCounter = 0;
-			$('.return_menu').hide();
 			$('.page').hide();
 			
 			var pageName =  $(this).data('id');
@@ -77,7 +76,47 @@ STA = {
                         $(this).parent().parent().parent().parent().hide()
                     });
 				break;
+                case 'add_thread':
+                    $.ajax({
+                        method:"POST",
+                        dataType: 'html',
+                        url:'https://stassociation.com/forum/add_thread',
+                        data:'key='+STA.key,
+                        success:function(h){
 
+                            var div = $(h).find('.app_list_forums').html();
+                            currentPage.html(div);
+
+                            $('.app_new_thread_btn').on('click',function(){
+                                if($('form.app_new_thread input[name="title"]').val() == '' ){
+                                    alert('Enter the title');
+                                }
+                                else{
+                                $('form.app_new_thread').prepend('<input type="hidden" name="k" value="'+STA.key+'">');
+                                var threaddata = new FormData($('form.app_new_thread')[0]);
+                                var cur_url = 'https://stassociation.com/forum/view_forum/'+ $('form.app_new_thread select[name="id"]').val();
+
+
+                                    $.ajax({
+                                    url: "https://stassociation.com/forum/new_thread",
+                                    type: "POST",
+                                    data: threaddata,
+                                    contentType: 'multipart/form-data',
+                                    success: function (msg) {
+                                        currentPage.load(cur_url+' .app_list_forums',STA.selectSubForum);
+                                    },
+                                    cache: false,
+                                    contentType: false,
+                                    processData: false
+                                    });
+                                }
+                            });
+
+                        }
+                    });
+
+
+                break;
 				case 'disp':
 					 
 					 $.ajax({
@@ -151,17 +190,17 @@ STA = {
 				  currentPage.load('https://stassociation.com/radio');
 				break;
 
-				case 'forum':
+                case 'forum':
 				currentPage.off('click');
 				currentPage.off('change');
-				 	$('.return_menu').on('click',function(){
+				 	$('body').on('click','.return_menu',function(){
 				 		if(prevForum!==''){		
-							if(forumCounter==1){
+							if($(this).data('id')==1){
 								currentPage.load('https://stassociation.com/forum .app_list_forums',STA.selectForum);
-								$('.return_menu').hide();
+
 							}
-							if(forumCounter==2){
-								forumCounter = 1;
+							if($(this).data('id')==2){
+
 								currentPage.load(prevForum +' .app_list_forums',STA.selectSubForum);
 							}						
 						}					
@@ -232,12 +271,50 @@ STA = {
 				  	currentPage.on('click','.app_mic',function(){
                         $( "#app_mic" ).trigger( "click" );
                     });
+
 	                currentPage.on('click','.app_cam',function(){
                         $( "#app_cam" ).trigger( "click" );
                     });
 
+                    currentPage.on('click','.thumb_up',function(){
+                        var th =  $(this).children('span');
+                        $.ajax({
+                            'method':'POST',
+                            'url':'https://stassociation.com/forum/add_like',
+                            'data':'i='+$(this).data('id')+'&k='+STA.key,
+                            success:function(data){
 
-				  	currentPage.on('click','.app_msg_send',function(){
+                                if(data == 2){
+                                    th.text(parseInt(th.text()) - parseInt(1));
+                                }
+                                else if(data == 1){
+                                    th.text(parseInt(th.text()) + parseInt(1));
+                                }
+                            }
+                        });
+                    });
+
+                    currentPage.on('click','.thumb_down',function(){
+                        var th =  $(this).children('span');
+                        $.ajax({
+                            'method':'POST',
+                            'url':'https://stassociation.com/forum/add_dislike',
+                            'data':'i='+$(this).data('id')+'&k='+STA.key,
+                            success:function(data){
+
+                                if(data == 2){
+                                    th.text(parseInt(th.text()) - parseInt(1));
+                                }
+                                else if(data == 1){
+                                    th.text(parseInt(th.text()) + parseInt(1));
+                                }
+                            }
+                        });
+                    });
+
+
+
+                    currentPage.on('click','.app_msg_send',function(){
                         $('.loading').show();
 				  	 var th = $(this),
                      cur_url = $(this).data('url');
@@ -270,7 +347,7 @@ STA = {
             forumCurrentthread = $(this).data('target');
 			currentPage.load($(this).data('target')+' .app_list_forums',function(){
 	   		STA.deleteLinks();
-		  		$('.return_menu').show();		  						  			 
+
 			});
   		});
 	},
@@ -281,7 +358,7 @@ STA = {
             forumCounter = 2;
             currentPage.load($(this).attr('data_target')+' .app_list_forums',function(){
                 STA.deleteLinks();
-                $('.return_menu').show();
+
             });
         });
 
@@ -292,8 +369,7 @@ STA = {
 		  
 			currentPage.load($(this).data('target')+' .app_list_forums',function(){
 	   		STA.deleteLinks();
-		  	$('.return_menu').show();
-		  		STA.selectSubForum();				  			 
+		  	STA.selectSubForum();
 			});
   		});	
 	},
