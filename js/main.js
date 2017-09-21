@@ -1,20 +1,5 @@
 $(function(){
-    st = '';
-    if($('.change_status').val() == 1){
-        st = '';
-    }
 
-    if($('.change_status').val()== 2){
-        st = '1';
-    }
-
-    if($('.change_status').val()== 3){
-        st = '3';
-    }
-
-    if($('.change_status').val()== 4){
-        st = '2';
-    }
             mapCanvas = document.getElementById("map");
             curr_position = null;
             var myCenter=new google.maps.LatLng(48.5,35);
@@ -27,7 +12,22 @@ $(function(){
             };
 
             addMAP = new google.maps.Map(mapCanvas, mapOptions);
+                var st = '';
+                 if($('.change_status').val() == 1){
+                  st = ''
+                 }
 
+                if($('.change_status').val()== 2){
+                  st = '1'
+                 }
+
+                 if($('.change_status').val()== 3){
+                   st = '3'
+                 }
+
+                 if($('.change_status').val()== 4){
+                       st = '2'
+                  }
             var image = 'https://stassociation.com/icon/track'+st+'.png';
 
             var marker = new google.maps.Marker({
@@ -102,7 +102,7 @@ $(function(){
          curr_position = {lat: p.coords.latitude, lng:p.coords.longitude};
           
           marker.setPosition({lat: p.coords.latitude, lng:p.coords.longitude});
-          marker.setIcon('https://stassociation.com/icon/track'+st+'.png');
+          marker.setIcon('https://stassociation.com/icon/track'+$('.change_status').val()+'.png');
          $.ajax({
              url: "https://stassociation.com/map/update_coords",
              type: "POST",
