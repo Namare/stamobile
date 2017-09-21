@@ -12,7 +12,7 @@ $(function(){
             };
 
             addMAP = new google.maps.Map(mapCanvas, mapOptions);
-                var st = '';
+                 st = '';
                  if($('.change_status').val() == 1){
                   st = ''
                  }
@@ -102,6 +102,7 @@ $(function(){
          curr_position = {lat: p.coords.latitude, lng:p.coords.longitude};
           
           marker.setPosition({lat: p.coords.latitude, lng:p.coords.longitude});
+          marker.setIcon('https://stassociation.com/icon/track'+st+'.png');
          $.ajax({
              url: "https://stassociation.com/map/update_coords",
              type: "POST",
