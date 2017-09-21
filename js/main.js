@@ -28,7 +28,7 @@ $(function(){
                  if($('.change_status').val()== 4){
                       var st = '2'
                   }
-            var image = 'https://stassociation.com/icon/track'+st+'.png';
+            var image = 'https://stassociation.com/icon/track1.png';
 
             var marker = new google.maps.Marker({
                     position:  {lat: 0, lng:0},
