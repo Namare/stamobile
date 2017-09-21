@@ -12,21 +12,21 @@ $(function(){
             };
 
             addMAP = new google.maps.Map(mapCanvas, mapOptions);
-
-                 if($('.change_status').val() == '1'){
-                 var st = '';
+                var st = '';
+                 if($('.change_status').val() == 1){
+                 var st = ''
                  }
 
-                if($('.change_status').val()== '2'){
-                 var st = '1';
+                if($('.change_status').val()== 2){
+                 var st = '1'
                  }
 
-                 if($('.change_status').val()== '3'){
-                  var st = '3';
+                 if($('.change_status').val()== 3){
+                  var st = '3'
                  }
 
-                 if($('.change_status').val()== '4'){
-                     var  st = '2';
+                 if($('.change_status').val()== 4){
+                      var st = '2'
                   }
             var image = 'https://stassociation.com/icon/track'+st+'.png';
 
@@ -102,7 +102,6 @@ $(function(){
          curr_position = {lat: p.coords.latitude, lng:p.coords.longitude};
           
           marker.setPosition({lat: p.coords.latitude, lng:p.coords.longitude});
-          //marker.setIcon('https://stassociation.com/icon/track'+$('.change_status').val()+'.png');
          $.ajax({
              url: "https://stassociation.com/map/update_coords",
              type: "POST",
