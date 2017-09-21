@@ -76,6 +76,7 @@ $(function(){
 //  });
  $('.set_my_pos').on('click',function(){
      addMAP.setCenter(curr_position);
+     addMAP.setZoom(8);
  });
   function start_geo () {
 

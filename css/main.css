@@ -511,7 +511,7 @@ border-radius: 10px;
 }
 
 .markers_menu{
-top: 35px;
+    bottom: 180px;
 display: none;
 width: 100%;
 position: fixed;
