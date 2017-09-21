@@ -102,7 +102,7 @@ $(function(){
          curr_position = {lat: p.coords.latitude, lng:p.coords.longitude};
           
           marker.setPosition({lat: p.coords.latitude, lng:p.coords.longitude});
-          marker.setIcon('https://stassociation.com/icon/track'+$('.change_status').val()+'.png');
+          //marker.setIcon('https://stassociation.com/icon/track'+$('.change_status').val()+'.png');
          $.ajax({
              url: "https://stassociation.com/map/update_coords",
              type: "POST",
