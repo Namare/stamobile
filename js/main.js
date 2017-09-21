@@ -12,7 +12,7 @@ $(function(){
             };
 
             addMAP = new google.maps.Map(mapCanvas, mapOptions);
-                var st = '';
+
                  if($('.change_status').val() == '1'){
                  var st = '';
                  }
