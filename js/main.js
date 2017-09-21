@@ -14,21 +14,21 @@ $(function(){
             addMAP = new google.maps.Map(mapCanvas, mapOptions);
                 var st = '';
                  if($('.change_status').val() == 1){
-                 var st = ''
+                  st = ''
                  }
 
                 if($('.change_status').val()== 2){
-                 var st = '1'
+                  st = '1'
                  }
 
                  if($('.change_status').val()== 3){
-                  var st = '3'
+                   st = '3'
                  }
 
                  if($('.change_status').val()== 4){
-                      var st = '2'
+                       st = '2'
                   }
-            var image = 'https://stassociation.com/icon/track1.png';
+            var image = 'https://stassociation.com/icon/track'+st+'.png';
 
             var marker = new google.maps.Marker({
                     position:  {lat: 0, lng:0},
