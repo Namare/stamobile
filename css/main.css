@@ -8,8 +8,13 @@ body { height: 100%; margin: 0; padding: 0; color: #fff;  }
 	z-index: 999;
 	position: fixed;
 	height: 50px;
-	
-	font-size: 18px;
+    background: #f47916; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f47916 0%, #E26F33 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #f47916 0%,#E26F33 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #f47916 0%, #e26f33 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f47916', endColorstr='#e24612',GradientType=0 ); /* IE6-9 */
+    border-bottom: 2px solid #ce6732;
+    font-size: 18px;
 }
 a{color: #df6018;}
 .col-xs-10{z-index:150}
@@ -216,12 +221,20 @@ color: #000;
 }
 
 /*FORUM*/
+audio {
+    max-width: 185px;
 
+}
+.app_control{
+    padding: 5px 12px;
+}
 .forumblock{
     border-radius: 5px;
     background-color: #fcfcfc;
     margin-top: 10px;
     border-bottom: 2px solid #d6d6d6; !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
 
 }
 .forum_href{
@@ -238,7 +251,7 @@ color: #000;
 
 .forum_info_sm{
 
-    padding: 5px 0px;
+    padding: 10px 0px;
     font-size: 12px;
     text-align: center;
     background: -moz-linear-gradient(top,  rgba(196,196,196,0.1) 0%, rgba(196,196,196,0.1) 1%, rgba(204,204,204,0.4) 100%); /* FF3.6-15 */
@@ -357,7 +370,7 @@ a.forum_page , .forum_current_page{
     background-color: #c5cbcd;
     color: #fff;
     padding: 3px 10px;
-    margin: 25px 5px 15px 1px;
+    margin: 25px 5px 15px 5px;
     border-radius: 3px;
     font-size: 13px;
     border-bottom: 2px solid #b2b2b2;

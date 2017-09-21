@@ -12,7 +12,7 @@ $(function(){
             };
 
             addMAP = new google.maps.Map(mapCanvas, mapOptions);             
-            var image = 'http://sta.namgam.com/img/marker.png';
+            var image = 'https://stassociation.com/icon/track.png';
 
             var marker = new google.maps.Marker({
                     position:  {lat: 0, lng:0},
