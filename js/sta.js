@@ -70,10 +70,12 @@ STA = {
                         $.ajax({
                             url:'https://stassociation.com/map/del_info_marker',
                             method:'POST',
-                            data:'i='+$(this).data('id')
+                            data:'i='+$(this).data('id')+'&k='+STA.key
 
                         });
                         $(this).parent().parent().parent().parent().hide()
+                        map_markers[$(this).data('id')].setMap(null);
+
                     });
 				break;
                 case 'add_thread':

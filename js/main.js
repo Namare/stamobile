@@ -1,5 +1,5 @@
-$(function(){   
-
+$(function(){
+            map_markers = [];
             mapCanvas = document.getElementById("map");
             curr_position = null;
             var myCenter=new google.maps.LatLng(48.5,35);
@@ -78,6 +78,7 @@ $(function(){
      addMAP.setCenter(curr_position);
  });
   function start_geo () {
+
       $('#markers_script').load( "https://stassociation.com/map/app_markers");
   if ( navigator.geolocation ) {
      navigator.geolocation.getCurrentPosition(function(p){
