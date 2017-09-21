@@ -67,6 +67,7 @@ STA = {
 				case 'map':
 					google.maps.event.trigger(mapCanvas, "resize");
                     currentPage.on('click','.del_info_marker',function(){
+                        map_markers[$(this).data('l')].setMap(null);
                         $.ajax({
                             url:'https://stassociation.com/map/del_info_marker',
                             method:'POST',
@@ -74,7 +75,7 @@ STA = {
 
                         });
                         $(this).parent().parent().parent().parent().hide()
-                        map_markers[$(this).data('id')].setMap(null);
+
 
                     });
 				break;
@@ -218,6 +219,16 @@ STA = {
                         $( ".app_img_send" ).show();
 
                     });
+                    currentPage.on('click','.forum_quote',function(){
+                        $('.app_forum_send').prepend('<input type="hidden" id="new_comment_reply" name="new_comment_reply">');
+
+                        $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+                        var com = $(this).parent().parent().parent().find('.current_comment').html();
+                        var com_autor = $(this).parent().parent().parent().find('.comment_autor').text();
+                        console.log(com+com_autor);
+                        $('#new_comment_reply').val('<blockquote class="blockquote"><p class="mb-0">'+$.trim(com)+'</p><footer class="blockquote-footer">'+$.trim(com_autor)+'</footer></blockquote>');
+
+                    });
 
                     currentPage.on('click','.app_audio_send',function(){
                         $('.loading').show();
@@ -249,6 +260,7 @@ STA = {
                         $('form.forum_photo').prepend('<input type="hidden" name="key" value="'+STA.key+'">');
                         $('form.forum_photo').prepend('<input type="hidden" name="post_id" value="'+$(this).data('id')+'">');
                         $('form.forum_photo').prepend('<input type="hidden" name="msg" value="'+$('.app_msg').val()+'">');
+
 
                         var photoData = new FormData($('form.forum_photo')[0]);
                         $.ajax({
@@ -323,7 +335,7 @@ STA = {
 				  		$.ajax({
 				  			method:'POST',
 				  			url:'https://stassociation.com/forum/new_comment',
-				  			data:'k='+STA.key+'&id='+$(this).data('id')+'&cm='+$('.app_msg').val(),
+				  			data:'k='+STA.key+'&id='+$(this).data('id')+'&cm='+$('.app_msg').val()+'&new_comment_reply='+$('#new_comment_reply').val(),
 				  			success:function(){
 				  				$('.app_msg').val('');
 				  				currentPage.load(cur_url+' .app_list_forums',STA.selectSubForum);
