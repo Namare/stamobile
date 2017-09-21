@@ -16,7 +16,7 @@ body { height: 100%; margin: 0; padding: 0; color: #fff;  }
     border-bottom: 2px solid #c25026;
     font-size: 18px;
 }
-
+#map{display: none}
 a{color: #df6018;}
 .col-xs-10{z-index:150}
 .dp_none_app{display: none !important;}
