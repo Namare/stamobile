@@ -512,6 +512,9 @@ STA = {
 			data:'k='+STA.key,
 				success:function(b){
 					$('.change_status').val(b);
+                    st=b;
+
+
 				}
 			});
 	},
