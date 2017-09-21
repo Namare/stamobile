@@ -539,6 +539,13 @@ padding: 20px 0px;
     color: #f5f5f5;
     font-size: 20px;
 }
+#markers_script{
+    display: none;
+}
+
+#markers_dist_script{
+    display: none;
+}
 
 .delete_thread {display: none}
 .forum_share {display: none}
