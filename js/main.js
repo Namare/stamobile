@@ -1,5 +1,5 @@
 $(function(){
-
+            Keyboard.shrinkView(true);
             mapCanvas = document.getElementById("map");
             curr_position = null;
             var myCenter=new google.maps.LatLng(48.5,35);
