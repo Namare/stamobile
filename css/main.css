@@ -486,7 +486,7 @@ text-transform: uppercase;}
 
 .map_menu{
 	border-radius: 50px;
-border: 6px solid #fff;
+border: 6px solid #fc9232;
 padding: 5px 15px;
 position: fixed;
 left: 10px;
@@ -495,7 +495,10 @@ width: 80px;
 text-align: center;
 height: 80px;
 line-height: 60px;
-background-color: rgba(0, 0, 0, 0.2);
+background-color:rgb(232, 86, 19);
+    -webkit-box-shadow:inset 0px 0px 15px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow:inset 0px 0px 15px 0px rgba(0,0,0,0.2);
+    box-shadow:inset 0px 0px 15px 0px rgba(0,0,0,0.2);
 }
 .set_markers{bottom:85px;}
 .set_my_pos{bottom: 85px; left:75%}
