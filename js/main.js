@@ -1,5 +1,4 @@
 $(function(){
-
             mapCanvas = document.getElementById("map");
             curr_position = null;
             var myCenter=new google.maps.LatLng(48.5,35);
@@ -12,21 +11,22 @@ $(function(){
             };
 
             addMAP = new google.maps.Map(mapCanvas, mapOptions);
-
-
-
-
             var image = 'https://stassociation.com/icon/track.png';
-
             var marker = new google.maps.Marker({
                     position:  {lat: 0, lng:0},
-                    map: addMAP,                    
+                    map: addMAP,
                     icon:image                 
                 });
 
 
             $('.set_markers').on('click',function(){
               $('.markers_menu').toggle();
+                if($('.markers_menu').css('display')=='block'){
+                    $('.map_menu').animate({bottom:"+=120"});
+              }else{
+                    $('.map_menu').animate({bottom:"-=120"});
+                }
+
             });
 
            
@@ -41,28 +41,29 @@ $(function(){
             });
             addMAP.addListener('click',function(e) {
                 $('.markers_menu').hide();
+                $('.map_menu').animate({bottom:"-=120"});
                 if(current_marker!=null){
-                    var new_marker = new google.maps.Marker({
-                        position:  e.latLng,
-                        map: addMAP,
-                        animation: google.maps.Animation.DROP,
-                        icon:'http://sta.namgam.com/icon/'+current_marker.name+'.png'
-                    });
 
                     $.ajax({
                         url:"https://stassociation.com/map/add_marker_app",
                         method:'POST',
                         data:'k='+STA.key+"&id="+current_marker.id+"" +
                             "&lat="+e.latLng.lat()+
-                            "&lng="+e.latLng.lng()
+                            "&lng="+e.latLng.lng(),
+                        success: function(){
+                            for(i=0; i<map_markers.length; i++){
+                                map_markers[i].setMap(null);
+                            }
+                            $('#markers_script').load( "https://stassociation.com/map/app_markers");}
                     });
+
                     current_marker = null;
                     
                 }
             });
 
   setInterval( start_geo, 2000);
-
+    $('#markers_script').load( "https://stassociation.com/map/app_markers");
 //  var markers_visible = 0;
 //  $('.hide_markers').on('click',function(){
 //    if(markers_visible == 0){
@@ -84,7 +85,7 @@ $(function(){
  });
   function start_geo () {
 
-      $('#markers_script').load( "https://stassociation.com/map/app_markers");
+
   if ( navigator.geolocation ) {
      navigator.geolocation.getCurrentPosition(function(p){
          curr_position = {lat: p.coords.latitude, lng:p.coords.longitude};

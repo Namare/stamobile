@@ -16,6 +16,22 @@ body { height: 100%; margin: 0; padding: 0; color: #fff;  }
     border-bottom: 2px solid #c25026;
     font-size: 18px;
 }
+.app_display{
+    display: block !important;
+    width: 100%;
+    padding: 0px;
+    }
+.filter{
+    background-color: #fff;
+    text-align: left;
+    border-radius: 3px;
+    padding: 15px 0px;
+    font-size: 13px;
+    z-index: 10;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
 #map{display: none}
 a{color: #df6018;}
 .col-xs-10{z-index:150}
@@ -484,23 +500,27 @@ display: block;
 color: #fff;
 text-transform: uppercase;}
 
-.map_menu{
-	border-radius: 50px;
-border: 6px solid #fc9232;
-padding: 5px 15px;
-position: fixed;
-left: 10px;
-font-size: 30px;
-width: 80px;
-text-align: center;
-height: 80px;
-line-height: 60px;
-background-color:rgb(232, 86, 19);
-    -webkit-box-shadow:inset 0px 0px 15px 0px rgba(0,0,0,0.2);
-    -moz-box-shadow:inset 0px 0px 15px 0px rgba(0,0,0,0.2);
-    box-shadow:inset 0px 0px 15px 0px rgba(0,0,0,0.2);
+
+.map_menu {
+    border-radius: 49px;
+    padding: 0px 0px;
+    position: fixed;
+    left: 10px;
+    font-size: 24px;
+
+    width: 47px;
+    text-align: center;
+    color: #555;
+    height: 47px;
+    line-height: 49px;
+    background-color: rgb(255, 255, 255);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
 }
-.set_markers{bottom:85px;}
+
+.set_markers{bottom: 155px;
+    left: 75%;}
 .set_my_pos{bottom: 85px; left:75%}
 .marker_list div{
 display: block;
@@ -514,10 +534,10 @@ border-radius: 10px;
 }
 
 .markers_menu{
-    bottom: 170px;
+bottom: 55px;
 display: none;
 width: 100%;
-position: fixed;
+position: absolute;
 z-index: 100;
 overflow-x: scroll;
 padding: 20px 0px;

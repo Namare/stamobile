@@ -1,5 +1,6 @@
 STA = {
     count_alert:[],
+    FILTER:'',
 	init:function(){
 		STA.decor();
 		STA.login();
@@ -13,10 +14,6 @@ STA = {
 			window.localStorage.removeItem('prem_key');
 			location.reload();
 		});
-
-
-
-		
 		
 	},
 	decor:function(){
@@ -71,10 +68,16 @@ STA = {
                         $.ajax({
                             url:'https://stassociation.com/map/del_info_marker',
                             method:'POST',
-                            data:'i='+$(this).data('id')+'&k='+STA.key
+                            data:'i='+$(this).data('id')+'&k='+STA.key,
+                            success: function(){
+                                for(i=0; i<map_markers.length; i++){
+                                    map_markers[i].setMap(null);
+                                }
+                                $('#markers_script').load( "https://stassociation.com/map/app_markers");}
 
                         });
-                        $(this).parent().parent().parent().parent().hide()
+                        $(this).parent().parent().parent().parent().hide();
+
 
 
                     });
@@ -140,8 +143,30 @@ STA = {
 
 				break;
 				case 'menu1':
-				  currentPage.load('https://stassociation.com/logistic .list_order_content',function(){
-				  	var BASE_URL = 'http://stassociation.com/logistic';
+				  currentPage.load('https://stassociation.com/logistic'+STA.FILTER+' .logistic_app',function(){
+				  	var BASE_URL = 'https://stassociation.com/logistic';
+                      $('.app_asap').attr('href','javascript:void(0)');
+                      $('.app_filter').attr('action','javascript:void(0)');
+                      $('.app_asap').on('click',function(){
+
+                          STA.FILTER="?sort=asap&";
+                          $('[data-id="login"]').trigger('click');
+                          $('[data-id="menu1"]').trigger('click');
+                      });
+
+                      $('.app_search').on('click',function(){
+                          STA.FILTER = "?f_f="+$('[name="filter_from"]').val()+"&f_t="+$('[name="filter_to"]').val()+"&f_a="+$('[name="filter_auto"]').val();
+
+                          $('[data-id="login"]').trigger('click');
+                          $('[data-id="menu1"]').trigger('click');
+                      });
+                      $('.app_clear').on('click',function(){
+                          STA.FILTER = '';
+                          $('[data-id="login"]').trigger('click');
+                          $('[data-id="menu1"]').trigger('click');
+                      });
+
+
 
 				  	 $('.getOrder').on('click',function(){
 				  	 	$('.alert-success').remove();
@@ -394,7 +419,10 @@ STA = {
 	},
 	radio:function(){
 		$('.radio_play_btn').on('click',function(){
-
+            $('.radio_player').animate({width:'100%',borderBottomRightRadius:'0',borderTopRightRadius:'0'},250);
+            $('.radio_name').show(200);
+            $('.radio_hide_btn').show(200);
+            $('.radio_tray_btn').show(200);
 
 			if($('#radio_player')[0].paused){
 				document.getElementById('radio_player').play();
@@ -409,6 +437,14 @@ STA = {
 			}
 		});
 		$('.radio_hide_btn').on('click',function(){$('.radio_player').slideUp()});
+        $('.radio_tray_btn').on('click',function(){
+            $('.radio_name').hide(200);
+            $('.radio_hide_btn').hide(200);
+            $('.radio_tray_btn').hide(200);
+            $('.radio_player').animate({width:'17%',borderBottomRightRadius:'10',borderTopRightRadius:'10'},250);
+
+
+        });
 
 		$('body').on('click','.radio-block',function(){
 			$('.radio_player').slideDown();
@@ -535,7 +571,7 @@ STA = {
                         id:map_markers_dist[i].id,
                         title: "You are close to the sign",
                         smallIcon:'res://ic_dialog_map',
-                        text: "Sign type: "+map_markers_dist[i].type
+                        text: "Be aware: "+map_markers_dist[i].type
                     });
                 }
 
