@@ -583,7 +583,7 @@ STA = {
                     if(data == '1'){
                         cordova.plugins.notification.local.schedule({
                             title: "You have a load",
-                            smallIcon:'res://ic_dialog_map',
+                            smallIcon:'res://ic_menu_myplaces',
                             text: "Go to site for documents "
                         });
                     }
