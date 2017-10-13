@@ -548,8 +548,6 @@ STA = {
 			data:'k='+STA.key,
 				success:function(b){
 					$('.change_status').val(b);
-
-
 				}
 			});
 	},
@@ -577,6 +575,23 @@ STA = {
 
                 STA.count_alert.push(map_markers_dist[i].id);
             }
+            $.ajax({
+                url:STA.base_url+"map/app_notification_auto",
+                method:"POST",
+                data:'k='+STA.key,
+                success:function(data){
+                    if(data == '1'){
+                        cordova.plugins.notification.local.schedule({
+                            title: "You have a load",
+                            smallIcon:'res://ic_dialog_map',
+                            text: "Go to site for documents "
+                        });
+                    }
+                }
+
+
+            });
+
         }, 4000);
     }
 
