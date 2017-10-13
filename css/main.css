@@ -520,8 +520,8 @@ text-transform: uppercase;}
 }
 
 .set_markers{bottom: 155px;
-    left: 75%;}
-.set_my_pos{bottom: 85px; left:75%}
+    left: 85%;}
+.set_my_pos{bottom: 85px; left:85%}
 .marker_list div{
 display: block;
 padding: 16px;
