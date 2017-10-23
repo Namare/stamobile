@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/6.5"
         id          = "net.dezaro.sta"
         versionCode = "10"
-        version     = "1.1.0" >
+        version     = "1.1.1" >
 
     <!-- versionCode is optional and Android only -->
 
