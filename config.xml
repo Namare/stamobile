@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/6.5"
-        id          = "net.dezaro.sta"
+        id          = "com.stassociation.app"
         versionCode = "10"
         version     = "1.0.0" >
 
@@ -17,7 +17,7 @@
     </author>
 
     <preference name="android-build-tool" value="gradle" />
-    <platform name="android" >
+   stanet <platform name="android" >
         <allow-intent href="geo:*"/>
         <allow-intent href="http://*"/>
         <allow-intent href="https://*"/>
