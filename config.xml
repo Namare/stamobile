@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/6.5"
-        id          = "com.stassociation.app"
+        id          = "net.dezaro.sta"
         versionCode = "10"
         version     = "1.0.0" >
 
