@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/6.5"
         id          = "net.dezaro.sta"
         versionCode = "10"
-        version     = "1.1.4" >
+        version     = "1.1.5" >
 
     <!-- versionCode is optional and Android only -->
 
@@ -64,7 +64,10 @@
         <preference name="Fullscreen" value="false"/>
         <preference name="AndroidLaunchMode" value="singleTop"/>
     </platform>
-
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#000000" />
+    <preference name="StatusBarStyle" value="lightcontent" />
+    <gap:plugin name="com.phonegap.plugin.statusbar" />
 
 
 </widget>

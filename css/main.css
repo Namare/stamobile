@@ -476,6 +476,7 @@ padding: 0px 30px 13px 25px;
 .app_info{display: none;}
 .table-hover tr{background-color: #fff;}
 .app_hide{display: none}
+.bottom_menu_item{cursor: pointer;}
 .bottom_menu{
 	height: 70px;
 	bottom: 0px;

@@ -42,7 +42,7 @@ STA = {
 	prevForum:'',
     forumCurrentthread:'',
 	stamenu:function(){
-		$('body').on('click','div.menu-item, .bottom_menu_item, .app_menu',function(){
+		$('body').on('click','div.bottom_menu_item, div.menu-item, .app_menu',function(){
 			$('.return_menu').unbind('click');
 			$('.getOrder').unbind('click');
 			 $('.markers_menu').hide();
