@@ -22,9 +22,9 @@ $(function(){
             $('.set_markers').on('click',function(){
               $('.markers_menu').toggle();
                 if($('.markers_menu').css('display')=='block'){
-                    $('.map_menu').animate({bottom:"+=120"});
+                    $('.map_menu').animate({bottom:"275"});
               }else{
-                    $('.map_menu').animate({bottom:"-=120"});
+                    $('.map_menu').animate({bottom:"155"});
                 }
 
             });
