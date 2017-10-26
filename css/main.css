@@ -4,6 +4,12 @@
     -khtml-user-select: none;
     -webkit-user-select: none;
 }
+input,textarea {
+    user-select: auto;
+    -moz-user-select: -moz-auto;
+    -khtml-user-select: auto;
+    -webkit-user-select: auto;
+}
 html { height: 100%; -webkit-user-select: none; }
 body { height: 100%; margin: 0; padding: 0; color: #fff;  }
 *, body {
