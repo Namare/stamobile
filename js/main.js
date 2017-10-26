@@ -22,9 +22,11 @@ $(function(){
             $('.set_markers').on('click',function(){
               $('.markers_menu').toggle();
                 if($('.markers_menu').css('display')=='block'){
-                    $('.map_menu').animate({bottom:"275"});
+                    $('.map_menu:eq(0)').animate({bottom:"275"});
+                    $('.map_menu:eq(1)').animate({bottom:"205"});
               }else{
-                    $('.map_menu').animate({bottom:"155"});
+                    $('.map_menu:eq(0)').animate({bottom:"175"});
+                    $('.map_menu:eq(1)').animate({bottom:"105"});
                 }
 
             });

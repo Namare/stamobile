@@ -1,6 +1,16 @@
-
-html { height: 100% }
+* {
+    user-select: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
+html { height: 100%; -webkit-user-select: none; }
 body { height: 100%; margin: 0; padding: 0; color: #fff;  }
+*, body {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-focus-ring-color: rgba(0,0,0,0);
+    outline: none;
+}
 .head{
 	background-color: #df6018;
 	padding:15px 15px;

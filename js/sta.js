@@ -62,6 +62,8 @@ STA = {
 
 			switch (pageName){
 				case 'map':
+
+
 					google.maps.event.trigger(mapCanvas, "resize");
                     currentPage.on('click','.del_info_marker',function(){
                         map_markers[$(this).data('l')].setMap(null);
@@ -123,6 +125,20 @@ STA = {
 
 
                 break;
+                case 'support':
+                    $('#woni_submit').on('click',function(){
+                        $.ajax({
+                            url:"https://stassociation.com/logistic/send_cons",
+                            method:"POST",
+                            data:'m='+$('#woni').val()+"&e="+$('#woni_id').val(),
+                            success:function(){
+                                alert("Data Send");
+                                $('#woni').val('');
+                                $('#woni_id').val('');
+                            }
+                        });
+                    });
+                break
 				case 'disp':
 					 
 					 $.ajax({
@@ -145,6 +161,10 @@ STA = {
 				case 'menu1':
 				  currentPage.load('https://stassociation.com/logistic'+STA.FILTER+' .logistic_app',function(){
 				  	var BASE_URL = 'https://stassociation.com/logistic';
+                      var pickuploc2 =document.getElementById('filter_from');
+                      var deliveryloc2 =document.getElementById('filter_to');
+                      var autocompletef = new google.maps.places.Autocomplete(pickuploc2);
+                      var autocomplete2f = new google.maps.places.Autocomplete(deliveryloc2);
                       $('.app_asap').attr('href','javascript:void(0)');
                       $('.app_filter').attr('action','javascript:void(0)');
                       $('.app_asap').on('click',function(){
