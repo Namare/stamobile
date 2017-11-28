@@ -15,11 +15,13 @@ $(function(){
             var marker = new google.maps.Marker({
                     position:  {lat: 0, lng:0},
                     map: addMAP,
+                    rotation:90,
                     icon:image                 
                 });
 
 
             $('.set_markers').on('click',function(){
+
               $('.markers_menu').toggle();
                 if($('.markers_menu').css('display')=='block'){
                     $('.map_menu:eq(0)').animate({bottom:"275"});
@@ -43,7 +45,8 @@ $(function(){
             });
             addMAP.addListener('click',function(e) {
                 $('.markers_menu').hide();
-                $('.map_menu').animate({bottom:"-=120"});
+                $('.map_menu:eq(0)').animate({bottom:"175"});
+                $('.map_menu:eq(1)').animate({bottom:"105"});
                 if(current_marker!=null){
 
                     $.ajax({
