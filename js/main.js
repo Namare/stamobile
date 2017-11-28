@@ -93,7 +93,7 @@ $(function(){
   if ( navigator.geolocation ) {
      navigator.geolocation.getCurrentPosition(function(p){
          curr_position = {lat: p.coords.latitude, lng:p.coords.longitude};
-          
+         addMAP.setCenter(curr_position);
           marker.setPosition({lat: p.coords.latitude, lng:p.coords.longitude});
          var  st = ''
          if($('.change_status').val() == 1){
