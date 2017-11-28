@@ -15,8 +15,7 @@ $(function(){
             var marker = new google.maps.Marker({
                     position:  {lat: 0, lng:0},
                     map: addMAP,
-                    rotation:90,
-                    icon:image                 
+                    icon:image
                 });
 
 
