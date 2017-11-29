@@ -264,5 +264,36 @@
                 </rect></svg></div>
     </div>
 
+
+    <script>
+        function recordAudio() {
+            var src = "myrecord.mp3";
+            var mediaRec = new Media(src,
+                // success callback
+                function() {
+                    console.log("recordAudio():Audio Success");
+                },
+
+                // error callback
+                function(err) {
+                    console.log("recordAudio():Audio Error: "+ err.code);
+                }
+            );
+
+            // Record audio
+            mediaRec.startRecord();
+
+            // Stop recording after 10 seconds
+            setTimeout(function() {
+                mediaRec.stopRecord();
+                $('.audio_test').attr('href','myrecord.mp3');
+
+            }, 10000);
+        }
+    </script>
+
+
+    <a href="#" onclick="recordAudio()" style="display: block;position: absolute; z-index: 9999; background-color: #000000; padding: 20px" class="audio_test">Test audio</a>
+
     </body>
 </html>
