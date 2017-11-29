@@ -266,30 +266,34 @@
 
 
     <script>
-        function recordAudio() {
-            var src = "myrecord.mp3";
-            var mediaRec = new Media(src,
-                // success callback
-                function() {
-                   alert("recordAudio():Audio Success");
-                },
+        document.addEventListener("deviceready", onDeviceReady, false);
+        function onDeviceReady() {
+            function recordAudio() {
+                var src = "myrecord.mp3";
+                var mediaRec = new Media(src,
+                    // success callback
+                    function() {
+                        alert("recordAudio():Audio Success");
+                    },
 
-                // error callback
-                function(err) {
-                    alert("recordAudio():Audio Error: "+ err.code);
-                }
-            );
+                    // error callback
+                    function(err) {
+                        alert("recordAudio():Audio Error: "+ err.code);
+                    }
+                );
 
-            // Record audio
-            mediaRec.startRecord();
+                // Record audio
+                mediaRec.startRecord();
 
-            // Stop recording after 10 seconds
-            setTimeout(function() {
-                mediaRec.stopRecord();
-                $('.audio_test').attr('href','myrecord.mp3');
+                // Stop recording after 10 seconds
+                setTimeout(function() {
+                    mediaRec.stopRecord();
+                    $('.audio_test').attr('href','myrecord.mp3');
 
-            }, 10000);
+                }, 10000);
+            }
         }
+
     </script>
 
 
