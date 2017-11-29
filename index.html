@@ -271,12 +271,12 @@
             var mediaRec = new Media(src,
                 // success callback
                 function() {
-                    console.log("recordAudio():Audio Success");
+                   alert("recordAudio():Audio Success");
                 },
 
                 // error callback
                 function(err) {
-                    console.log("recordAudio():Audio Error: "+ err.code);
+                    alert("recordAudio():Audio Error: "+ err.code);
                 }
             );
 
