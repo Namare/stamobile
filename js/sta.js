@@ -15,6 +15,10 @@ STA = {
 			location.reload();
 		});
 
+        if(window.localStorage.getItem("auth_login")!=''){
+            $('.auth_login').val(window.localStorage.getItem("auth_login"));
+        }
+
 
 
     },
@@ -526,6 +530,7 @@ STA = {
 
 		$('.send_auth').on('click',function(){
 			var login = $('.auth_login').val();
+            window.localStorage.setItem("auth_login",login);
 			var pass = $('.auth_pass').val();
 			$.ajax({
 				method:'POST',

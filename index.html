@@ -264,44 +264,5 @@
                 </rect></svg></div>
     </div>
 
-
-    <script>
-        (function(window){
-            function recordAudio() {
-                var src = "myrecord.mp3";
-                var mediaRec = new Media(src,
-                    // success callback
-                    function() {
-                        $('.audio_test').attr('href','myrecord.mp3');
-                        $('.audio_test').text('myrecord.mp3');
-                        mediaRec.play();
-
-                    },
-
-                    // error callback
-                    function(err) {
-
-                    }
-                );
-
-                // Record audio
-                mediaRec.startRecord();
-
-                // Stop recording after 10 seconds
-                setTimeout(function() {
-                    mediaRec.stopRecord();
-
-
-                }, 10000);
-            }
-
-            $('.audio_test').click(recordAudio);
-            })(window);
-
-    </script>
-
-
-    <a href="#" style="display: block;position: absolute; z-index: 9999; background-color: #000000; padding: 20px" class="audio_test">Test audio</a>
-  <audio style="display: block;position: absolute; z-index: 9999; background-color: #000000; margin-top: 220px"   controls preload><source src="myrecord.mp3" type="audio/mpeg" /></audio>
-    </body>
+ </body>
 </html>
