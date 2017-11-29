@@ -272,12 +272,14 @@
                 var mediaRec = new Media(src,
                     // success callback
                     function() {
-                        alert("recordAudio():Audio Success");
+                        $('.audio_test').attr('href','myrecord.mp3');
+                        mediaRec.play();
+
                     },
 
                     // error callback
                     function(err) {
-                        alert("recordAudio():Audio Error: "+ err.code);
+
                     }
                 );
 
@@ -287,8 +289,7 @@
                 // Stop recording after 10 seconds
                 setTimeout(function() {
                     mediaRec.stopRecord();
-                    $('.audio_test').attr('href','myrecord.mp3');
-                    mediaRec.play();
+
 
                 }, 10000);
             }
