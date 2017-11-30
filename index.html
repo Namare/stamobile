@@ -35,8 +35,8 @@
         rec.ondataavailable = e => {
             audioChunks.push(e.data);
             if (rec.state == "inactive"){
-                let blob = new Blob(audioChunks,{type:'audio/x-mpeg-3'});
-                formData.append("recording",blob,'12.mp3');
+                let blob = new Blob(audioChunks,{type:'audio/wav'});
+                formData.append("recording",blob,'12.wav');
                 console.log(formData);
                 console.log(formData.recording);
                 $.ajax({
