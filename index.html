@@ -21,7 +21,40 @@
   <script src="js/main.js"></script>
   <script src="js/sta.js"></script>
 
+<script>
+    $(function(){
+        navigator.mediaDevices.getUserMedia({audio:true})
+            .then(stream => {
+            rec = new MediaRecorder(stream);
+        rec.ondataavailable = e => {
+            audioChunks.push(e.data);
+            if (rec.state == "inactive"){
+                let blob = new Blob(audioChunks,{type:'audio/x-mpeg-3'});
+                recordedAudio.src = URL.createObjectURL(blob);
+                recordedAudio.controls=true;
+                recordedAudio.autoplay=true;
+                audioDownload.href = recordedAudio.src;
+                audioDownload.download = 'mp3';
+                audioDownload.innerHTML = 'download';
+            }
+        }
+    })
+        .catch(e=>console.log(e));
 
+    startRecord.onclick = e => {
+        startRecord.disabled = true;
+        stopRecord.disabled=false;
+        audioChunks = [];
+        rec.start();
+    }
+    stopRecord.onclick = e => {
+        startRecord.disabled = false;
+        stopRecord.disabled=true;
+        rec.stop();
+    }
+
+    });
+</script>
 	</head>
 	<body>
   <div id="markers_script"></div>
@@ -166,7 +199,17 @@
                 </td>
               </tr>
             </table>
-
+                <div>
+                    <h2>Audio record and playback</h2>
+                    <p>
+                        <button id=startRecord>start</button>
+                        <button id=stopRecord disabled>stop</button>
+                    </p>
+                    <p>
+                        <audio id=recordedAudio></audio>
+                        <a id=audioDownload></a>
+                    </p>
+                </div>
 
             </div>
       </div>
@@ -264,44 +307,6 @@
                 </rect></svg></div>
     </div>
 
-
-    <script>
-        (function(window){
-            function recordAudio() {
-                var src = "myrecord.mp3";
-                var mediaRec = new Media(src,
-                    // success callback
-                    function() {
-                        $('.audio_test').attr('href','myrecord.mp3');
-                        $('.audio_test').text('myrecord.mp3');
-                        mediaRec.play();
-
-                    },
-
-                    // error callback
-                    function(err) {
-
-                    }
-                );
-
-                // Record audio
-                mediaRec.startRecord();
-
-                // Stop recording after 10 seconds
-                setTimeout(function() {
-                    mediaRec.stopRecord();
-
-
-                }, 10000);
-            }
-
-            $('.audio_test').click(recordAudio);
-            })(window);
-
-    </script>
-
-
-    <a href="#" style="display: block;position: absolute; z-index: 9999; background-color: #000000; padding: 20px" class="audio_test">Test audio</a>
-  <audio style="display: block;position: absolute; z-index: 9999; background-color: #000000; margin-top: 220px"   controls preload><source src="myrecord.mp3" type="audio/mpeg" /></audio>
+dio/mpeg" /></audio>
     </body>
 </html>
