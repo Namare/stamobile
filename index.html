@@ -21,32 +21,7 @@
   <script src="js/main.js"></script>
   <script src="js/sta.js"></script>
 
-<script>
-    $(function(){
-        document.addEventListener("deviceready", onDeviceReady, true);
-// PhoneGap is now ready
 
-        function onDeviceReady() {
-            var captureSuccess = function(mediaFiles) {
-                var i, path, len;
-                for (i = 0, len = mediaFiles.length; i < len; i += 1) {
-                    path = mediaFiles[i].fullPath;
-                    // do something interesting with the file
-                }
-                alert(path);
-            };
-
-            // capture error callback
-            var captureError = function(error) {
-                navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error');
-            };
-
-            // start audio capture
-            navigator.device.capture.captureAudio(captureSuccess, captureError, {limit:2});
-        }
-
-    });
-</script>
 	</head>
 	<body>
   <div id="markers_script"></div>
@@ -289,5 +264,44 @@
                 </rect></svg></div>
     </div>
 
- </body>
+
+    <script>
+        (function(window){
+            function recordAudio() {
+                var src = "myrecord.mp3";
+                var mediaRec = new Media(src,
+                    // success callback
+                    function() {
+                        $('.audio_test').attr('href','myrecord.mp3');
+                        $('.audio_test').text('myrecord.mp3');
+                        mediaRec.play();
+
+                    },
+
+                    // error callback
+                    function(err) {
+
+                    }
+                );
+
+                // Record audio
+                mediaRec.startRecord();
+
+                // Stop recording after 10 seconds
+                setTimeout(function() {
+                    mediaRec.stopRecord();
+
+
+                }, 10000);
+            }
+
+            $('.audio_test').click(recordAudio);
+            })(window);
+
+    </script>
+
+
+    <a href="#" style="display: block;position: absolute; z-index: 9999; background-color: #000000; padding: 20px" class="audio_test">Test audio</a>
+  <audio style="display: block;position: absolute; z-index: 9999; background-color: #000000; margin-top: 220px"   controls preload><source src="myrecord.mp3" type="audio/mpeg" /></audio>
+    </body>
 </html>
