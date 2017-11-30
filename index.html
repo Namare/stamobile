@@ -126,7 +126,10 @@
                 type: 'POST',
                 data: formData,
                 processData: false,
-                contentType: false
+                contentType: false,
+                success:function(d){
+                    $('#record').text(d);
+                }
 
             });
 
