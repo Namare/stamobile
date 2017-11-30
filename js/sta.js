@@ -11,8 +11,11 @@ STA = {
 		$('.page[data-id="login"]').show();
       //  cordova.plugins.backgroundMode.enable();
 		$('.log_out').on('click',function(){
+           var is_logout = confirm('Are you sure want to log out?');
+            if(is_logout){
 			window.localStorage.removeItem('prem_key');
 			location.reload();
+            }
 		});
 
         if(window.localStorage.getItem("auth_login")!=''){
@@ -181,7 +184,10 @@ STA = {
                       });
 
                       $('.app_search').on('click',function(){
-                          STA.FILTER = "?f_f="+$('[name="filter_from"]').val()+"&f_t="+$('[name="filter_to"]').val()+"&f_a="+$('[name="filter_auto"]').val();
+                          var ff_from=encodeURIComponent($('[name="filter_from"]').val()),
+                              ff_to=encodeURIComponent($('[name="filter_to"]').val());
+
+                          STA.FILTER = "?f_f="+ff_from+"&f_t="+ff_to+"&f_a="+$('[name="filter_auto"]').val();
 
                           $('[data-id="login"]').trigger('click');
                           $('[data-id="menu1"]').trigger('click');
