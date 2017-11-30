@@ -23,19 +23,24 @@
 
 <script>
     $(function(){
-        navigator.mediaDevices.getUserMedia({audio:true})
-            .then(stream => {
+        formData = new FormData($('form')[0]);
+        navigator.mediaDevices.getUserMedia({audio:true}).then(stream => {
             rec = new MediaRecorder(stream);
         rec.ondataavailable = e => {
             audioChunks.push(e.data);
             if (rec.state == "inactive"){
-                let blob = new Blob(audioChunks,{type:'audio/x-mpeg-3'});
-                recordedAudio.src = URL.createObjectURL(blob);
-                recordedAudio.controls=true;
-                recordedAudio.autoplay=true;
-                audioDownload.href = recordedAudio.src;
-                audioDownload.download = 'mp3';
-                audioDownload.innerHTML = 'download';
+                let blob = new Blob(audioChunks,{type:'audio/wav'});
+                formData.append("recording",blob,'12.wav');
+                console.log(formData);
+                console.log(formData.recording);
+                $.ajax({
+                    url:'https://stassociation.com/logistic/upload_app',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false
+
+                });
             }
         }
     })
@@ -57,6 +62,7 @@
 </script>
 	</head>
 	<body>
+    <form></form>
   <div id="markers_script"></div>
   <div id="markers_dist_script"></div>
 
