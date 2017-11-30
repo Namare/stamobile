@@ -22,7 +22,7 @@
   <script src="js/sta.js"></script>
 
 <script>
-    // capture callback
+    $(function(){
     var captureSuccess = function(mediaFiles) {
         var i, path, len;
         for (i = 0, len = mediaFiles.length; i < len; i += 1) {
@@ -39,6 +39,7 @@
 
     // start audio capture
     navigator.device.capture.captureAudio(captureSuccess, captureError, {limit:2});
+    });
 </script>
 	</head>
 	<body>
