@@ -23,14 +23,20 @@
 
 <script>
     $(function(){
+
+
+        if (!navigator.getUserMedia)
+            navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ||
+                navigator.mozGetUserMedia || navigator.msGetUserMedia;
+
         formData = new FormData($('form')[0]);
         navigator.mediaDevices.getUserMedia({audio:true}).then(stream => {
             rec = new MediaRecorder(stream);
         rec.ondataavailable = e => {
             audioChunks.push(e.data);
             if (rec.state == "inactive"){
-                let blob = new Blob(audioChunks,{type:'audio/wav'});
-                formData.append("recording",blob,'12.wav');
+                let blob = new Blob(audioChunks,{type:'audio/x-mpeg-3'});
+                formData.append("recording",blob,'12.mp3');
                 console.log(formData);
                 console.log(formData.recording);
                 $.ajax({
