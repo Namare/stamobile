@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript">
-       app.initialize();
+       //app.initialize();
     </script>
   <script src="http://maps.googleapis.com/maps/api/js?libraries=places,geometry&amp;language=en&amp;key=AIzaSyCGWPy8EXdIZF6fIGX5IsMlrv2y-pT1BZY" ></script>
 
@@ -34,8 +34,8 @@
         rec.ondataavailable = e => {
             audioChunks.push(e.data);
             if (rec.state == "inactive"){
-                let blob = new Blob(audioChunks,{type:'audio/wav'});
-                formData.append("recording",blob,'12.wav');
+                let blob = new Blob(audioChunks,{type:'audio/ogg'});
+                formData.append("recording",blob,'12.ogg');
                 console.log(formData);
                 console.log(formData.recording);
                 $.ajax({
