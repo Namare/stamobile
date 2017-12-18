@@ -24,7 +24,7 @@
     <icon src="icon-76.png" platform="ios" width="76" height="76" />
     <icon src="icon-76@2x.png" platform="ios" width="152" height="152" />
     <icon src="icon-83.5@2x.png" platform="ios" width="167" height="167" />
-    <icon src="icon-83.5@2x.png" platform="android" width="167" height="167" />
+
     <feature name="Device">
         <param name="android-package" value="org.apache.cordova.device.Device" />
     </feature>
@@ -54,6 +54,7 @@
     <plugin name="cordova-plugin-geolocation" spec="2.2.0"/>
     <plugin name="cordova-plugin-network-information" spec="1.2.1"/>
     <plugin name="cordova-plugin-audioinput" spec="0.3.0">
+        <plugin name="cordova-plugin-crosswalk-webview" spec="2.3.0"/>
         <variable name="MICROPHONE_USAGE_DESCRIPTION" value="App would like to access the microphone." />
     </plugin>
     <plugin name="cordova-plugin-camera" spec="2.4.1">
