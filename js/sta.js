@@ -49,6 +49,7 @@ STA = {
 	currentPage:'login',
 	forumCounter:0,
 	prevForum:'',
+    user_id:'',
     forumCurrentthread:'',
 	stamenu:function(){
 		$('body').on('click','div.bottom_menu_item, div.menu-item, .app_menu',function(){
@@ -268,7 +269,19 @@ STA = {
 				  	currentPage.load('https://stassociation.com/forum .app_list_forums',STA.selectForum);
 
 
+                    currentPage.on('click','.mobile_del_com',function(){
+                        var th =  $(this);
+                        var com_id = th.data('id');
+                        $.ajax({
+                            method:'POST',
+                            url: 'https://stassociation.com/forum/del_comment',
+                            data: 'id='+com_id+'&k='+STA.key,
+                            success:function(){
+                                $('.comment_block[data-id="'+com_id+'"]').slideUp(300);
 
+                            }
+                        });
+                    });
 
                     currentPage.on('change','#app_cam',function(){
                         $( ".app_audio_send" ).hide();
@@ -410,40 +423,47 @@ STA = {
 		});
 	},
 	selectSubForum:function(){
-		
-		
+
 		STA.deleteLinks();
-		 	
+
 		$('.sub_forum_href').on('click',function(){	
 				forumCounter = 2;
             forumCurrentthread = $(this).data('target');
 			currentPage.load($(this).data('target')+' .app_list_forums',function(){
 	   		STA.deleteLinks();
+                $('.mobile_del_com').hide();
+                $('.mobile_del_com[data-autor="'+STA.user_id+'"]').show();
 
-			});
+
+            });
   		});
 	},
-	selectForum:function(){		
-	
+	selectForum:function(){
+
 		STA.deleteLinks();
         $('body').on('click','.sub_forum_href',function(){
             forumCounter = 2;
             currentPage.load($(this).attr('data_target')+' .app_list_forums',function(){
                 STA.deleteLinks();
 
+                $('.mobile_del_com').hide();
+                $('.mobile_del_com[data-autor="'+STA.user_id+'"]').show();
+
+
             });
         });
 
         $('.forum_href').on('click',function(){
 			forumCounter = 1;
-		
+
+
 		  	prevForum = $(this).data('target');	
 		  
 			currentPage.load($(this).data('target')+' .app_list_forums',function(){
 	   		STA.deleteLinks();
 		  	STA.selectSubForum();
 			});
-  		});	
+  		});
 	},
 	deleteLinks:function(){		
 		$('a').each(function(){
@@ -514,6 +534,7 @@ STA = {
 						$('.login_block').show();
 						return false;
 					}
+                    STA.user_id = b.user_id;
 					STA.key_status = true;
 					$('.user_data').slideDown();
 					$('.user_name').text(b.user_name);

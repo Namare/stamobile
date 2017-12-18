@@ -17,6 +17,7 @@ body { height: 100%; margin: 0; padding: 0; color: #fff;  }
     -webkit-focus-ring-color: rgba(0,0,0,0);
     outline: none;
 }
+.mobile_del_com{display: inline-block}
 .head{
 	background-color: #df6018;
 	padding:15px 15px;
