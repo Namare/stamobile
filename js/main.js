@@ -123,7 +123,7 @@ $(function(){
     if ( navigator.geolocation ) {
         navigator.geolocation.getCurrentPosition(function(p){
             marker.setPosition({lat: p.coords.latitude, lng:p.coords.longitude});
-            addMAP.setCenter(curr_position);
+            addMAP.setCenter({lat: p.coords.latitude, lng:p.coords.longitude});
         },function(err){
             //  $('body').text(err.message+err.code);
         },{ enableHighAccuracy: true});
