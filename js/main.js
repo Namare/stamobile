@@ -122,8 +122,9 @@ $(function(){
 
     if ( navigator.geolocation ) {
         navigator.geolocation.getCurrentPosition(function(p){
-            marker.setPosition({lat: p.coords.latitude, lng:p.coords.longitude});
-            addMAP.setCenter({lat: p.coords.latitude, lng:p.coords.longitude});
+            curr_position = {lat: p.coords.latitude, lng:p.coords.longitude};
+            marker.setPosition(curr_position);
+            addMAP.setCenter(curr_position);
         },function(err){
             //  $('body').text(err.message+err.code);
         },{ enableHighAccuracy: true});
