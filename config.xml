@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "net.dezaro.sta"
         versionCode = "10"
-        version     = "1.4.2" >
+        version     = "1.4.3" >
 
     <!-- versionCode is optional and Android only -->
     <name>Sta mobile</name>
@@ -54,6 +54,7 @@
     <plugin name="cordova-plugin-geolocation" spec="2.2.0"/>
     <plugin name="cordova-plugin-network-information" spec="1.2.1"/>
     <plugin name="cordova-plugin-audioinput" spec="0.3.0">
+        <plugin name="cordova-plugin-media" spec="4.0.0"/>
         <plugin name="cordova-plugin-crosswalk-webview" spec="2.3.0"/>
         <variable name="MICROPHONE_USAGE_DESCRIPTION" value="App would like to access the microphone." />
     </plugin>
