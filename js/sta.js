@@ -1,6 +1,7 @@
 STA = {
     count_alert:[],
     FILTER:'',
+    watchme:true,
 	init:function(){
 		STA.decor();
 		STA.login();
@@ -22,6 +23,9 @@ STA = {
             $('.auth_login').val(window.localStorage.getItem("auth_login"));
         }
 
+        if(STA.watchme){
+            $('.set_my_pos').addClass('watchme');
+        }
 
 
     },
@@ -435,6 +439,7 @@ STA = {
                 $('.mobile_del_com[data-autor="'+STA.user_id+'"]').show();
 
 
+
             });
   		});
 	},
@@ -467,8 +472,22 @@ STA = {
 	},
 	deleteLinks:function(){		
 		$('a').each(function(){
+            if(!$(this).hasClass('menu-item')){
 				  $(this).attr('href','javascript:void(0)');
+            }
 		});
+
+        if($('.app-clock').data('time')!= undefined){
+
+            $.each($('.app-clock'), function(){
+                var timestamp =  $(this).data('time') * 1000;
+                var date = new Date();
+                date.setTime(parseInt(timestamp));
+                $(this).find('span').text(
+                    date.toLocaleString()
+                );
+            });
+        }
 	},
 	radio:function(){
 		$('.radio_play_btn').on('click',function(){

@@ -610,3 +610,8 @@ padding: 20px 0px;
 .app-left{
     float: left !important;
 }
+
+.watchme{
+    color: #f17015;
+    box-shadow: 0px 0px 5px #f17015;
+}

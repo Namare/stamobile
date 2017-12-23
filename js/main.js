@@ -84,14 +84,25 @@ $(function(){
 //
 //  });
  $('.set_my_pos').on('click',function(){
-     addMAP.setCenter(curr_position);
-     addMAP.setZoom(17);
+
+     if(STA.watchme){
+         $(this).removeClass('watchme');
+         STA.watchme = false;
+     }else{
+         $(this).addClass('watchme');
+         STA.watchme = true;
+     }
+
  });
   function start_geo () {
   if ( navigator.geolocation ) {
      navigator.geolocation.getCurrentPosition(function(p){
          curr_position = {lat: p.coords.latitude, lng:p.coords.longitude};
          marker.setPosition({lat: p.coords.latitude, lng:p.coords.longitude});
+
+         if(STA.watchme){
+            addMAP.setCenter(curr_position);
+         }
 
          var  st = ''
          if($('.change_status').val() == 1){
@@ -113,6 +124,17 @@ $(function(){
              data: "lat="+p.coords.latitude+"&lng="+p.coords.longitude+"&k="+STA.key
          });
 
+         $.each($('.change_time'), function(){
+             var timestamp =  $(this).data('time') * 1000;
+             var date = new Date();
+             date.setTime(parseInt(timestamp));
+             $(this).text(
+                 date.toLocaleString()
+             );
+         });
+
+
+
 
      },function(err){
           //  $('body').text(err.message+err.code);
@@ -120,13 +142,5 @@ $(function(){
     } 
   }
 
-    if ( navigator.geolocation ) {
-        navigator.geolocation.getCurrentPosition(function(p){
-            curr_position = {lat: p.coords.latitude, lng:p.coords.longitude};
-            marker.setPosition(curr_position);
-            addMAP.setCenter(curr_position);
-        },function(err){
-            //  $('body').text(err.message+err.code);
-        },{ enableHighAccuracy: true});
-    }
+
 });
