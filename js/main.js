@@ -114,7 +114,7 @@ $(function(){
          else if($('.change_status').val()== 3){
              st = '3';
          }
-         else if($('.change_status').val()== 4){
+         else if($('.change_status').val()== 5){
              st = '2';
          }
           marker.setIcon('https://stassociation.com/icon/track'+st+'.png');
