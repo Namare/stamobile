@@ -58,6 +58,7 @@ $(function(){
                             for(i=0; i<map_markers.length; i++){
                                 map_markers[i].setMap(null);
                             }
+                            map_markers = [];
                             $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key);}
                     });
 
@@ -133,7 +134,7 @@ $(function(){
              );
          });
 
-         $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key);
+         //$('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key);
 
 
 
