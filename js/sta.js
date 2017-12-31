@@ -90,9 +90,11 @@ STA = {
                                 for(i=0; i<map_markers.length; i++){
                                     map_markers[i].setMap(null);
                                 }
-                                $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key,function(){
-                                    $('.loading').hide();
-                                });}
+                                $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key);
+
+                                $('.loading').hide();
+                            }
+
 
                         });
                         $(this).parent().parent().parent().parent().hide();
