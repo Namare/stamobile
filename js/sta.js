@@ -80,6 +80,7 @@ STA = {
 
 					google.maps.event.trigger(mapCanvas, "resize");
                     currentPage.on('click','.del_info_marker',function(){
+                        $('.loading').show();
                         map_markers[$(this).data('l')].setMap(null);
                         $.ajax({
                             url:'https://stassociation.com/map/del_info_marker',
@@ -89,7 +90,9 @@ STA = {
                                 for(i=0; i<map_markers.length; i++){
                                     map_markers[i].setMap(null);
                                 }
-                                $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key);}
+                                $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key,function(){
+                                    $('.loading').hide();
+                                });}
 
                         });
                         $(this).parent().parent().parent().parent().hide();

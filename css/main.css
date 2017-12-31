@@ -572,7 +572,7 @@ padding: 20px 0px;
     z-index: 9999999;
     margin: auto;
     top: 17%;
-    left: 20%;
+    left:calc(50% - 100px);
     border: 2px solid #e24812;
     border-radius: 5px;
     padding: 5px 0px;
