@@ -76,6 +76,7 @@ STA = {
 
 			switch (pageName){
 				case 'map':
+                    $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key);
 
 
 					google.maps.event.trigger(mapCanvas, "resize");
