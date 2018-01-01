@@ -101,7 +101,8 @@ $(function(){
          curr_position = {lat: p.coords.latitude, lng:p.coords.longitude};
          marker.setPosition({lat: p.coords.latitude, lng:p.coords.longitude});
 
-         if(STA.watchme){
+         if(STA.watchme !=false){
+            addMAP.setCenter(curr_position);
             addMAP.panTo(curr_position);
          }
 
