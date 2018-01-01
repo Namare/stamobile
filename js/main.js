@@ -67,7 +67,7 @@ $(function(){
                 }
             });
 
-  setInterval( start_geo, 3000);
+  setInterval( start_geo, 1000);
    // $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key);
 //  var markers_visible = 0;
 //  $('.hide_markers').on('click',function(){
@@ -102,7 +102,7 @@ $(function(){
          marker.setPosition({lat: p.coords.latitude, lng:p.coords.longitude});
 
          if(STA.watchme){
-            addMAP.setCenter(curr_position);
+            addMAP.panTo(curr_position);
          }
 
          var  st = ''
