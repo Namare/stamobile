@@ -67,7 +67,7 @@ $(function(){
                 }
             });
 
-  setInterval( start_geo, 1000);
+  setInterval( start_geo, 1500);
    // $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key);
 //  var markers_visible = 0;
 //  $('.hide_markers').on('click',function(){
