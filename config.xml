@@ -54,7 +54,7 @@
         <access origin="*"/>
     </platform>
 
-    <preference name="xwalkVersion" value="14" />
+    <preference name="xwalkVersion" value="23" />
 
     <preference name='phonegap-version' value='cli-7.0.1' />
     <preference name='pgb-builder-version' value='1' />
