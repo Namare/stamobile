@@ -142,7 +142,7 @@ $(function(){
 
      },function(err){
           //  $('body').text(err.message+err.code);
-     },{ enableHighAccuracy: true});     
+     },{ enableHighAccuracy: false});
     } 
   }
 
