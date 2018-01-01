@@ -67,7 +67,7 @@ $(function(){
                 }
             });
 
-  setInterval( start_geo, 1500);
+  //setInterval( start_geo, 1500);
    // $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key);
 //  var markers_visible = 0;
 //  $('.hide_markers').on('click',function(){
@@ -145,6 +145,60 @@ $(function(){
      },{ enableHighAccuracy: false});
     } 
   }
+
+    function onSuccess(p) {
+        curr_position = {lat: p.coords.latitude, lng:p.coords.longitude};
+        marker.setPosition({lat: p.coords.latitude, lng:p.coords.longitude});
+
+        if(STA.watchme !=false){
+           // addMAP.setCenter(curr_position);
+            addMAP.panTo(curr_position);
+        }
+
+        var  st = ''
+        if($('.change_status').val() == 1){
+            st = '';
+        }
+        else if($('.change_status').val()== 2){
+            st = '1';
+        }
+        else if($('.change_status').val()== 3){
+            st = '3';
+        }
+        else if($('.change_status').val()== 5){
+            st = '2';
+        }
+        marker.setIcon('https://stassociation.com/icon/track'+st+'.png');
+        $.ajax({
+            url: "https://stassociation.com/map/update_coords",
+            type: "POST",
+            data: "lat="+p.coords.latitude+"&lng="+p.coords.longitude+"&k="+STA.key
+        });
+
+        $.each($('.change_time'), function(){
+            var timestamp =  $(this).data('time') * 1000;
+            var date = new Date();
+            date.setTime(parseInt(timestamp));
+            $(this).text(
+                date.toLocaleString()
+            );
+        });
+
+        //$('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key);
+
+    }
+
+    // onError Callback receives a PositionError object
+    //
+    function onError(error) {
+       // alert('code: '    + error.code    + '\n' +
+        //    'message: ' + error.message + '\n');
+    }
+
+    // Options: throw an error if no update is received every 30 seconds.
+    //
+    var watchID = navigator.geolocation.watchPosition(onSuccess, onError,  { maximumAge: 1000, timeout: 500, enableHighAccuracy: true });
+
 
 
 });
