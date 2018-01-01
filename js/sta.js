@@ -80,6 +80,7 @@ STA = {
 
 
 					google.maps.event.trigger(mapCanvas, "resize");
+                    addMAP.panTo(curr_position);
                     currentPage.on('click','.del_info_marker',function(){
                         $('.loading').show();
                         map_markers[$(this).data('l')].setMap(null);
