@@ -119,7 +119,12 @@ $(function(){
          else if($('.change_status').val()== 5){
              st = '2';
          }
-          marker.setIcon('https://stassociation.com/icon/track'+st+'.png');
+         if(   addMAP.getZoom() < 15){
+             marker.setIcon('https://stassociation.com/icon/track'+st+'z.png');
+         }else{
+             marker.setIcon('https://stassociation.com/icon/track'+st+'.png');
+         }
+
          $.ajax({
              url: "https://stassociation.com/map/update_coords",
              type: "POST",
