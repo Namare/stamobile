@@ -95,61 +95,61 @@ $(function(){
      }
 
  });
-  function start_geo () {
-  if ( navigator.geolocation ) {
-     navigator.geolocation.getCurrentPosition(function(p){
-         curr_position = {lat: p.coords.latitude, lng:p.coords.longitude};
-         marker.setPosition({lat: p.coords.latitude, lng:p.coords.longitude});
-
-         if(STA.watchme !=false){
-            addMAP.setCenter(curr_position);
-            addMAP.panTo(curr_position);
-         }
-
-         var  st = ''
-         if($('.change_status').val() == 1){
-             st = '';
-         }
-         else if($('.change_status').val()== 2){
-             st = '1';
-         }
-         else if($('.change_status').val()== 3){
-             st = '3';
-         }
-         else if($('.change_status').val()== 5){
-             st = '2';
-         }
-         if(   addMAP.getZoom() < 15){
-             marker.setIcon('https://stassociation.com/icon/track'+st+'z.png');
-         }else{
-             marker.setIcon('https://stassociation.com/icon/track'+st+'.png');
-         }
-
-         $.ajax({
-             url: "https://stassociation.com/map/update_coords",
-             type: "POST",
-             data: "lat="+p.coords.latitude+"&lng="+p.coords.longitude+"&k="+STA.key
-         });
-
-//         $.each($('.change_time'), function(){
-//             var timestamp =  $(this).data('time') * 1000;
-//             var date = new Date();
-//             date.setTime(parseInt(timestamp));
-//             $(this).text(
-//                 date.toLocaleString()
-//             );
+//  function start_geo () {
+//  if ( navigator.geolocation ) {
+//     navigator.geolocation.getCurrentPosition(function(p){
+//         curr_position = {lat: p.coords.latitude, lng:p.coords.longitude};
+//         marker.setPosition({lat: p.coords.latitude, lng:p.coords.longitude});
+//
+//         if(STA.watchme !=false){
+//            addMAP.setCenter(curr_position);
+//            addMAP.panTo(curr_position);
+//         }
+//
+//         var  st = ''
+//         if($('.change_status').val() == 1){
+//             st = '';
+//         }
+//         else if($('.change_status').val()== 2){
+//             st = '1';
+//         }
+//         else if($('.change_status').val()== 3){
+//             st = '3';
+//         }
+//         else if($('.change_status').val()== 5){
+//             st = '2';
+//         }
+//         if(   addMAP.getZoom() < 15){
+//             marker.setIcon('https://stassociation.com/icon/track'+st+'z.png');
+//         }else{
+//             marker.setIcon('https://stassociation.com/icon/track'+st+'.png');
+//         }
+//
+//         $.ajax({
+//             url: "https://stassociation.com/map/update_coords",
+//             type: "POST",
+//             data: "lat="+p.coords.latitude+"&lng="+p.coords.longitude+"&k="+STA.key
 //         });
-
-         //$('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key);
-
-
-
-
-     },function(err){
-          //  $('body').text(err.message+err.code);
-     },{ enableHighAccuracy: false});
-    } 
-  }
+//
+////         $.each($('.change_time'), function(){
+////             var timestamp =  $(this).data('time') * 1000;
+////             var date = new Date();
+////             date.setTime(parseInt(timestamp));
+////             $(this).text(
+////                 date.toLocaleString()
+////             );
+////         });
+//
+//         //$('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key);
+//
+//
+//
+//
+//     },function(err){
+//          //  $('body').text(err.message+err.code);
+//     },{ enableHighAccuracy: false});
+//    }
+//  }
 
     function onSuccess(p) {
         curr_position = {lat: p.coords.latitude, lng:p.coords.longitude};
@@ -173,7 +173,11 @@ $(function(){
         else if($('.change_status').val()== 5){
             st = '2';
         }
-        marker.setIcon('https://stassociation.com/icon/track'+st+'.png');
+        if(   addMAP.getZoom() < 15){
+            marker.setIcon('https://stassociation.com/icon/track'+st+'z.png');
+        }else{
+            marker.setIcon('https://stassociation.com/icon/track'+st+'.png');
+        }
         $.ajax({
             url: "https://stassociation.com/map/update_coords",
             type: "POST",
