@@ -126,14 +126,14 @@ $(function(){
              data: "lat="+p.coords.latitude+"&lng="+p.coords.longitude+"&k="+STA.key
          });
 
-         $.each($('.change_time'), function(){
-             var timestamp =  $(this).data('time') * 1000;
-             var date = new Date();
-             date.setTime(parseInt(timestamp));
-             $(this).text(
-                 date.toLocaleString()
-             );
-         });
+//         $.each($('.change_time'), function(){
+//             var timestamp =  $(this).data('time') * 1000;
+//             var date = new Date();
+//             date.setTime(parseInt(timestamp));
+//             $(this).text(
+//                 date.toLocaleString()
+//             );
+//         });
 
          //$('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key);
 
@@ -175,14 +175,7 @@ $(function(){
             data: "lat="+p.coords.latitude+"&lng="+p.coords.longitude+"&k="+STA.key
         });
 
-        $.each($('.change_time'), function(){
-            var timestamp =  $(this).data('time') * 1000;
-            var date = new Date();
-            date.setTime(parseInt(timestamp));
-            $(this).text(
-                date.toLocaleString()
-            );
-        });
+
 
         //$('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key);
 
@@ -197,7 +190,7 @@ $(function(){
 
     // Options: throw an error if no update is received every 30 seconds.
     //
-    var watchID = navigator.geolocation.watchPosition(onSuccess, onError,  { maximumAge: 1000, timeout: 500, enableHighAccuracy: true });
+    var watchID = navigator.geolocation.watchPosition(onSuccess, onError,  { maximumAge: 1000, timeout: 300, enableHighAccuracy: true });
 
 
 
