@@ -15,7 +15,7 @@ $(function(){
                 url: 'https://stassociation.com/icon/track.png',
                 origin: new google.maps.Point(0, 0),
                 anchor: new google.maps.Point(0, 0),
-                scaledSize: new google.maps.Size(50, 50)
+                scaledSize: new google.maps.Size(40, 40)
             };
             var marker = new google.maps.Marker({
                     position:  {lat: 0, lng:0},
@@ -128,7 +128,7 @@ $(function(){
              url: 'https://stassociation.com/icon/track'+st+'.png',
                  origin: new google.maps.Point(0, 0),
                  anchor: new google.maps.Point(0, 0),
-                 scaledSize: new google.maps.Size(50, 50)
+                 scaledSize: new google.maps.Size(40, 40)
          });
          $.ajax({
              url: "https://stassociation.com/map/update_coords",
