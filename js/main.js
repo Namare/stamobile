@@ -11,7 +11,12 @@ $(function(){
             };
 
             addMAP = new google.maps.Map(mapCanvas, mapOptions);
-            var image = 'https://stassociation.com/icon/track.png';
+            var image = {
+                url: 'https://stassociation.com/icon/track.png',
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(0, 0),
+                scaledSize: new google.maps.Size(50, 50)
+            };
             var marker = new google.maps.Marker({
                     position:  {lat: 0, lng:0},
                     map: addMAP,
