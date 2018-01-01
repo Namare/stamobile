@@ -33,11 +33,7 @@
     <feature name="Device">
         <param name="ios-package" value="CDVDevice" />
     </feature>
-    <feature name="CDVWKWebViewEngine">
-        <param name="ios-package" value="CDVWKWebViewEngine" />
-    </feature>
 
-    <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
     <preference name="android-build-tool" value="gradle" />
    stanet <platform name="android" >
         <allow-intent href="geo:*"/>
@@ -54,7 +50,6 @@
         <access origin="*"/>
     </platform>
 
-    <preference name="xwalkVersion" value="23" />
 
     <preference name='phonegap-version' value='cli-7.0.1' />
     <preference name='pgb-builder-version' value='1' />
@@ -63,7 +58,6 @@
     <plugin name="cordova-plugin-geolocation" spec="2.2.0"/>
     <plugin name="cordova-plugin-network-information" spec="1.2.1"/>
     <plugin name="cordova-plugin-wkwebview-engine" spec="1.1.4"/>
-    <plugin name="cordova-plugin-crosswalk-webview" spec="2.3.0"/>
     <plugin name="cordova-plugin-audioinput" spec="0.3.0">
         <variable name="MICROPHONE_USAGE_DESCRIPTION" value="App would like to access the microphone." />
     </plugin>
