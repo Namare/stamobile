@@ -121,10 +121,9 @@ $(function(){
          }
           marker.setIcon({
              url: 'https://stassociation.com/icon/track'+st+'.png',
-                 size: new google.maps.Size(71, 71),
                  origin: new google.maps.Point(0, 0),
                  anchor: new google.maps.Point(0, 0),
-                 scaledSize: new google.maps.Size(25, 75)
+                 scaledSize: new google.maps.Size(50, 50)
          });
          $.ajax({
              url: "https://stassociation.com/map/update_coords",
