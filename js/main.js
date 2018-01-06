@@ -237,10 +237,10 @@ $(function(){
 
             marker.setIcon({
                 url: 'https://stassociation.com/icon/track'+st+'.png',
-                size: new google.maps.Size(icon_size_w, icon_size_h),
+                size: new google.maps.Size(icon_size_w, icon_size_w),
                 origin: new google.maps.Point(0, 0),
                 anchor: new google.maps.Point(0, 0),
-                scaledSize: new google.maps.Size(icon_size_w, icon_size_h)
+                scaledSize: new google.maps.Size(icon_size_w, icon_size_w)
             });
 
         $.ajax({
