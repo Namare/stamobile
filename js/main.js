@@ -16,10 +16,10 @@ $(function(){
             addMAP = new google.maps.Map(mapCanvas, mapOptions);
             var image = {
                 url: 'https://stassociation.com/icon/track'+st+'.png',
-                size: new google.maps.Size(icon_size_w, icon_size_h),
+                size: new google.maps.Size(icon_size_w, icon_size_w),
                 origin: new google.maps.Point(0, 0),
                 anchor: new google.maps.Point(0, 0),
-                scaledSize: new google.maps.Size(icon_size_w, icon_size_h)
+                scaledSize: new google.maps.Size(icon_size_w, icon_size_w)
             };
             var marker = new google.maps.Marker({
                     position:  {lat: 0, lng:0},
@@ -163,51 +163,49 @@ $(function(){
     addMAP.addListener( 'zoom_changed', function() {
 
         if(  addMAP.getZoom() == 17 ){
-            var icon_size_w =60
-            var icon_size_h =60
+             icon_size_w =45;
+
         }else if(  addMAP.getZoom() == 16 ){
-            var icon_size_w =55;
-            var icon_size_h =55;
+             icon_size_w =40;
+
         }else if(  addMAP.getZoom() == 15 ){
-            var icon_size_w =50;
-            var icon_size_h =50;
+             icon_size_w =35;
+
         }else if(  addMAP.getZoom() == 14 ){
-            var icon_size_w = 45;
-            var icon_size_h = 45;
+             icon_size_w = 30;
+
         }else if(  addMAP.getZoom() == 13 ){
-            var icon_size_w = 40;
-            var icon_size_h = 40;
+             icon_size_w = 25;
+
         }else if(  addMAP.getZoom() == 12 ){
-            var icon_size_w = 35;
-            var icon_size_h = 35;
+             icon_size_w = 20;
+
         }else if(  addMAP.getZoom() == 11 ){
-            var icon_size_w = 30;
-            var icon_size_h = 30;
+             icon_size_w = 15;
+
         }else if(  addMAP.getZoom() == 10 ){
-            var icon_size_w = 25;
-            var icon_size_h = 25;
+             icon_size_w = 10;
+
         }else if(  addMAP.getZoom() == 9 ){
-            var icon_size_w = 20;
-            var icon_size_h = 20;
+             icon_size_w = 8;
+
         }else if(  addMAP.getZoom() == 8 ){
-            var icon_size_w = 15;
-            var icon_size_h = 15;
+             icon_size_w = 5;
+
         }else if(  addMAP.getZoom() < 8 ){
-            var icon_size_w = 10;
-            var icon_size_h = 10;
+             icon_size_w = 5;
+
         }else if(  addMAP.getZoom() > 17 ){
-            var icon_size_w = 50;
-            var icon_size_h = 50;
+             icon_size_w = 50;
+
         }
-
-
 
         marker.setIcon({
             url: 'https://stassociation.com/icon/track'+st+'.png',
-            size: new google.maps.Size(icon_size_w, icon_size_h),
+            size: new google.maps.Size(icon_size_w, icon_size_w),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(0, 0),
-            scaledSize: new google.maps.Size(icon_size_w, icon_size_h)
+            scaledSize: new google.maps.Size(icon_size_w, icon_size_w)
         });
 
     });

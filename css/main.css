@@ -17,7 +17,9 @@ body { height: 100%; margin: 0; padding: 0; color: #fff;  }
     -webkit-focus-ring-color: rgba(0,0,0,0);
     outline: none;
 }
-.mobile_del_com{display: inline-block}
+.mobile_del_com{display: inline-block;
+visibility: hidden;
+}
 .head{
 	background-color: #df6018;
 	padding:15px 15px;
@@ -587,6 +589,11 @@ padding: 20px 0px;
 #markers_dist_script{
     display: none;
 }
+.no_loads{
+    display: block !important;
+    text-align: center;
+    font-size: 16px;
+}
 
 .delete_thread {display: none}
 .forum_share {display: none}
@@ -595,12 +602,13 @@ padding: 20px 0px;
     display: none;
 }
 .forum_msg_footer div{
-    font-size: 14px;
+    font-size: 13px;
     padding: 1px 1px;
     color: #626262;
 }
 .app-clock {
     margin: -2px 5px 0px 10px;
+    width: 127px;
 }
 .forum_quote {
     font-size: 12px !important;

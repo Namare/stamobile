@@ -230,6 +230,7 @@ STA = {
              			     url:BASE_URL+"/get_order",
                				 data:'k='+STA.key+'&order_id='+$(this).data('order_id') + '&owner_id='+$(this).data('owner_id'),
                				 success:function(b){
+
                				 	$('#getorderModal').find('.container-fluid').prepend('<div class="alert alert-success"><strong>'+b+'</strong></div>');                     			
                				 }
               			});
@@ -418,11 +419,16 @@ STA = {
 				  			success:function(){
 				  				$('.app_msg').val('');
 				  				currentPage.load(cur_url+' .app_list_forums',STA.selectSubForum);
+
+
 				  				$('html, body').animate({
         							scrollTop: $(document).height()
-   								}, 2000);
+   								}, 2000,function(){
+                                    $('.mobile_del_com[data-autor="'+STA.user_id+'"]').css('visibility', 'visible');
+                                });
    								th.off('click');
                                 $('.loading').hide();
+
                             }
 				  		});
 				  	});
@@ -443,8 +449,8 @@ STA = {
             forumCurrentthread = $(this).data('target');
 			currentPage.load($(this).data('target')+' .app_list_forums',function(){
 	   		STA.deleteLinks();
-                $('.mobile_del_com').hide();
-                $('.mobile_del_com[data-autor="'+STA.user_id+'"]').show();
+
+                $('.mobile_del_com[data-autor="'+STA.user_id+'"]').css('visibility', 'visible');
 
 
 
@@ -458,9 +464,7 @@ STA = {
             forumCounter = 2;
             currentPage.load($(this).attr('data_target')+' .app_list_forums',function(){
                 STA.deleteLinks();
-
-                $('.mobile_del_com').hide();
-                $('.mobile_del_com[data-autor="'+STA.user_id+'"]').show();
+                $('.mobile_del_com[data-autor="'+STA.user_id+'"]').css('visibility', 'visible');
 
 
             });
@@ -475,6 +479,7 @@ STA = {
 			currentPage.load($(this).data('target')+' .app_list_forums',function(){
 	   		STA.deleteLinks();
 		  	STA.selectSubForum();
+
 			});
   		});
 	},
