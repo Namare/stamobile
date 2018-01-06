@@ -173,11 +173,31 @@ $(function(){
         else if($('.change_status').val()== 5){
             st = '2';
         }
-        if(   addMAP.getZoom() < 15){
-            marker.setIcon('https://stassociation.com/icon/track'+st+'z.png');
-        }else{
-            marker.setIcon('https://stassociation.com/icon/track'+st+'.png');
+
+        var icon_size_w =10;
+        var icon_size_h =10;
+        if(  addMAP.getZoom() < 17 ){
+            var icon_size_w =40 - ( addMAP.getZoom() *5);
+            var icon_size_h =40 - ( addMAP.getZoom() *5);
+//        }else if(  addMAP.getZoom() == 6 ){
+//            var icon_size_w =55;
+//            var icon_size_h =55;
+//        }else if(  addMAP.getZoom() == 7 ){
+//            var icon_size_w =50;
+//            var icon_size_h =50;
+//        }else if(  addMAP.getZoom() == 8 ){
+//            var icon_size_w = 45;
+//            var icon_size_h = 45;
         }
+
+            marker.setIcon({
+                url: BASE_URL+'icon/track'+st+'.png',
+                size: new google.maps.Size(icon_size_w, icon_size_h),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(0, 0),
+                scaledSize: new google.maps.Size(icon_size_w, icon_size_h)
+            });
+
         $.ajax({
             url: "https://stassociation.com/map/update_coords",
             type: "POST",
