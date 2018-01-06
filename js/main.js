@@ -1,4 +1,7 @@
 $(function(){
+    icon_size_w =60;
+    icon_size_h =60;
+    st = '';
             mapCanvas = document.getElementById("map");
             curr_position = null;
             var myCenter=new google.maps.LatLng(48.5,35);
@@ -11,7 +14,13 @@ $(function(){
             };
 
             addMAP = new google.maps.Map(mapCanvas, mapOptions);
-            var image = 'https://stassociation.com/icon/track.png';
+            var image = {
+                url: 'https://stassociation.com/icon/track'+st+'.png',
+                size: new google.maps.Size(icon_size_w, icon_size_h),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(0, 0),
+                scaledSize: new google.maps.Size(icon_size_w, icon_size_h)
+            };
             var marker = new google.maps.Marker({
                     position:  {lat: 0, lng:0},
                     map: addMAP,
@@ -151,6 +160,58 @@ $(function(){
 //    }
 //  }
 
+    addMAP.addListener( 'zoom_changed', function() {
+
+        if(  addMAP.getZoom() == 17 ){
+            var icon_size_w =60
+            var icon_size_h =60
+        }else if(  addMAP.getZoom() == 16 ){
+            var icon_size_w =55;
+            var icon_size_h =55;
+        }else if(  addMAP.getZoom() == 15 ){
+            var icon_size_w =50;
+            var icon_size_h =50;
+        }else if(  addMAP.getZoom() == 14 ){
+            var icon_size_w = 45;
+            var icon_size_h = 45;
+        }else if(  addMAP.getZoom() == 13 ){
+            var icon_size_w = 40;
+            var icon_size_h = 40;
+        }else if(  addMAP.getZoom() == 12 ){
+            var icon_size_w = 35;
+            var icon_size_h = 35;
+        }else if(  addMAP.getZoom() == 11 ){
+            var icon_size_w = 30;
+            var icon_size_h = 30;
+        }else if(  addMAP.getZoom() == 10 ){
+            var icon_size_w = 25;
+            var icon_size_h = 25;
+        }else if(  addMAP.getZoom() == 9 ){
+            var icon_size_w = 20;
+            var icon_size_h = 20;
+        }else if(  addMAP.getZoom() == 8 ){
+            var icon_size_w = 15;
+            var icon_size_h = 15;
+        }else if(  addMAP.getZoom() < 8 ){
+            var icon_size_w = 10;
+            var icon_size_h = 10;
+        }else if(  addMAP.getZoom() > 17 ){
+            var icon_size_w = 50;
+            var icon_size_h = 50;
+        }
+
+
+
+        marker.setIcon({
+            url: 'https://stassociation.com/icon/track'+st+'.png',
+            size: new google.maps.Size(icon_size_w, icon_size_h),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(0, 0),
+            scaledSize: new google.maps.Size(icon_size_w, icon_size_h)
+        });
+
+    });
+
     function onSuccess(p) {
         curr_position = {lat: p.coords.latitude, lng:p.coords.longitude};
         marker.setPosition({lat: p.coords.latitude, lng:p.coords.longitude});
@@ -160,7 +221,7 @@ $(function(){
             addMAP.panTo(curr_position);
         }
 
-        var  st = ''
+
         if($('.change_status').val() == 1){
             st = '';
         }
@@ -174,33 +235,10 @@ $(function(){
             st = '2';
         }
 
-        var icon_size_w =60;
-        var icon_size_h =60;
-        if(  addMAP.getZoom() == 5 ){
-            var icon_size_w =60
-            var icon_size_h =60
-        }else if(  addMAP.getZoom() == 6 ){
-            var icon_size_w =55;
-            var icon_size_h =55;
-        }else if(  addMAP.getZoom() == 7 ){
-            var icon_size_w =50;
-            var icon_size_h =50;
-        }else if(  addMAP.getZoom() == 8 ){
-            var icon_size_w = 45;
-            var icon_size_h = 45;
-        }else if(  addMAP.getZoom() == 8 ){
-            var icon_size_w = 40;
-            var icon_size_h = 40;
-        }else if(  addMAP.getZoom() == 9 ){
-            var icon_size_w = 35;
-            var icon_size_h = 35;
-        }else if(  addMAP.getZoom() == 10 ){
-            var icon_size_w = 30;
-            var icon_size_h = 30;
-        }
+
 
             marker.setIcon({
-                url: BASE_URL+'icon/track'+st+'.png',
+                url: 'https://stassociation.com/icon/track'+st+'.png',
                 size: new google.maps.Size(icon_size_w, icon_size_h),
                 origin: new google.maps.Point(0, 0),
                 anchor: new google.maps.Point(0, 0),
