@@ -174,20 +174,29 @@ $(function(){
             st = '2';
         }
 
-        var icon_size_w =10;
-        var icon_size_h =10;
-        if(  addMAP.getZoom() < 17 ){
-            var icon_size_w =40 - ( addMAP.getZoom() *5);
-            var icon_size_h =40 - ( addMAP.getZoom() *5);
-//        }else if(  addMAP.getZoom() == 6 ){
-//            var icon_size_w =55;
-//            var icon_size_h =55;
-//        }else if(  addMAP.getZoom() == 7 ){
-//            var icon_size_w =50;
-//            var icon_size_h =50;
-//        }else if(  addMAP.getZoom() == 8 ){
-//            var icon_size_w = 45;
-//            var icon_size_h = 45;
+        var icon_size_w =60;
+        var icon_size_h =60;
+        if(  addMAP.getZoom() == 5 ){
+            var icon_size_w =60
+            var icon_size_h =60
+        }else if(  addMAP.getZoom() == 6 ){
+            var icon_size_w =55;
+            var icon_size_h =55;
+        }else if(  addMAP.getZoom() == 7 ){
+            var icon_size_w =50;
+            var icon_size_h =50;
+        }else if(  addMAP.getZoom() == 8 ){
+            var icon_size_w = 45;
+            var icon_size_h = 45;
+        }else if(  addMAP.getZoom() == 8 ){
+            var icon_size_w = 40;
+            var icon_size_h = 40;
+        }else if(  addMAP.getZoom() == 9 ){
+            var icon_size_w = 35;
+            var icon_size_h = 35;
+        }else if(  addMAP.getZoom() == 10 ){
+            var icon_size_w = 30;
+            var icon_size_h = 30;
         }
 
             marker.setIcon({
