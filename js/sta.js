@@ -44,7 +44,7 @@ STA = {
 		});
 
 
-        $.fn.swipe.pageScroll.HORIZONTAL;
+
         $('body').swipe( {
             //Generic swipe handler for all directions
             swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
@@ -61,10 +61,12 @@ STA = {
             //Default is 75px, set to 0 for demo so any distance triggers swipe
             threshold:200
         });
+        $.fn.swipe.pageScroll.HORIZONTAL;
 
 
 
-		$('body').on('click','.item_order',function(){
+
+        $('body').on('click','.item_order',function(){
 			$(this).next('.item_order_info').slideToggle('fast');
 
 		});
