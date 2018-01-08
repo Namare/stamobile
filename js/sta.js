@@ -44,7 +44,8 @@ STA = {
 		});
 
 
-        $("body").swipe( {
+
+        $('body').swipe( {
             //Generic swipe handler for all directions
             swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
                 if(direction=='right'){
@@ -58,7 +59,7 @@ STA = {
                 }
             },
             //Default is 75px, set to 0 for demo so any distance triggers swipe
-            threshold:0
+            threshold:200
         });
 
 
