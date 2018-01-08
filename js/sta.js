@@ -497,7 +497,7 @@ STA = {
                 var date = new Date();
                 date.setTime(parseInt(timestamp));
                 $(this).find('span').text(
-                    date.toLocaleString()
+                    date.toLocaleDateString() +' ' + date.getHours()+':'+ date.getMinutes()
                 );
             });
         }
