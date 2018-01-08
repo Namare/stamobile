@@ -187,13 +187,13 @@ $(function(){
              icon_size_w = 10;
 
         }else if(  addMAP.getZoom() == 9 ){
-             icon_size_w = 8;
+             icon_size_w = 10;
 
         }else if(  addMAP.getZoom() == 8 ){
-             icon_size_w = 5;
+             icon_size_w = 10;
 
         }else if(  addMAP.getZoom() < 8 ){
-             icon_size_w = 5;
+             icon_size_w = 10;
 
         }else if(  addMAP.getZoom() > 17 ){
              icon_size_w = 50;
