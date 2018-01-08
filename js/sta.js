@@ -49,7 +49,7 @@ STA = {
             //Generic swipe handler for all directions
 
 
-        $("body").swipe( { swipeRight:swipe1,swipeLeft:swipe1, allowPageScroll:"horizontal"} );
+        $("body").swipe( { swipeRight:swipe1,swipeLeft:swipe1, allowPageScroll:"none"} );
 
         function swipe1(event, direction, distance, duration, fingerCount) {
             if(direction=='right'){
