@@ -45,23 +45,23 @@ STA = {
 
 
 
-        $('body').swipe( {
+
             //Generic swipe handler for all directions
-            swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-                if(direction=='right'){
-                    if($('.left_menu').is(':visible')==false){
-                        $('.left_menu').show();
-                        $('.left_menu').animate({left:0},400);
-                    }
+
+
+        $("body").swipe( { swipeRight:swipe1,swipeLeft:swipe1, allowPageScroll:"horizontal"} );
+
+        function swipe1(event, direction, distance, duration, fingerCount) {
+            if(direction=='right'){
+                if($('.left_menu').is(':visible')==false){
+                    $('.left_menu').show();
+                    $('.left_menu').animate({left:0},400);
                 }
-                if(direction=='left'){
-                    STA.menuHide();
-                }
-            },
-            //Default is 75px, set to 0 for demo so any distance triggers swipe
-            threshold:200
-        });
-        $.fn.swipe.pageScroll.HORIZONTAL;
+            }
+            if(direction=='left'){
+                STA.menuHide();
+            }
+        }
 
 
 
