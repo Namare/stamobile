@@ -44,7 +44,7 @@ STA = {
 		});
 
 
-
+        $.fn.swipe.pageScroll.HORIZONTAL;
         $('body').swipe( {
             //Generic swipe handler for all directions
             swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
