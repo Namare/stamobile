@@ -594,7 +594,7 @@ padding: 20px 0px;
     text-align: center;
     font-size: 16px;
 }
-
+.forum_del_com{display: none}
 .delete_thread {display: none}
 .forum_share {display: none}
 .no_app{display: none}
@@ -608,7 +608,7 @@ padding: 20px 0px;
 }
 .app-clock {
     margin: -2px 5px 0px 10px;
-    width: 127px;
+    /*width: 110px;*/
 }
 .forum_quote {
     font-size: 12px !important;
