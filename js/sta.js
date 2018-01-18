@@ -678,9 +678,12 @@ STA = {
                     cordova.plugins.notification.local.schedule({
                         id:map_markers_dist[i].id,
                         title: "You are close to the sign",
-                        smallIcon:'res://ic_dialog_map',
+//                        smallIcon:'res://ic_dialog_map',
                         text: "Be aware: "+map_markers_dist[i].type
                     });
+
+
+
                 }
 
                 STA.count_alert.push(map_markers_dist[i].id);

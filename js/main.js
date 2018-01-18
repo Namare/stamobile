@@ -183,17 +183,8 @@ $(function(){
         }else if(  addMAP.getZoom() == 11 ){
              icon_size_w = 15;
 
-        }else if(  addMAP.getZoom() == 10 ){
-             icon_size_w = 10;
-
-        }else if(  addMAP.getZoom() == 9 ){
-             icon_size_w = 10;
-
-        }else if(  addMAP.getZoom() == 8 ){
-             icon_size_w = 10;
-
-        }else if(  addMAP.getZoom() < 8 ){
-             icon_size_w = 10;
+        }else if(  addMAP.getZoom() < 10 ){
+             icon_size_w = 15;
 
         }else if(  addMAP.getZoom() > 17 ){
              icon_size_w = 50;
