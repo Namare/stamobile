@@ -683,6 +683,8 @@ STA = {
                         text: "Be aware: "+map_markers_dist[i].type
                     });
 
+                    cordova.plugins.ios10.notification.schedule(map_markers_dist[i].id,  "You are close to the sign", "Be aware: "+map_markers_dist[i].type, "New Notification!", 10.0, "Payload");
+
 
 
                 }
