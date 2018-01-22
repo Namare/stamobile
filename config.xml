@@ -83,7 +83,7 @@
     <plugin name="cordova-plugin-chrome-apps-audiocapture" spec="1.0.5"/>
     <plugin name="cordova-plugin-vibration" spec="2.1.5"/>
     <plugin name="cordova-plugin-dialogs" spec="1.3.3"/>
-    <plugin name="cordova-plugin-local-notifications-gd" spec="0.8.4"/>
+    <plugin name="cordova-plugin-local-notification" spec="^0.8.4"/>
     <plugin name="cordova-plugin-statusbar" spec="2.2.3"/>
     <plugin name="cordova-plugin-status-bar-notification" spec="1.0.6"/>
     <plugin name="cordova-plugin-background-mode" spec="0.7.2"/>
