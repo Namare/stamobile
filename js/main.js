@@ -159,7 +159,7 @@ $(function(){
 //     },{ enableHighAccuracy: false});
 //    }
 //  }
-    $('.change_status').on('change',function(){
+    $('.bottom_menu_item[data-id="map"]').on('click',function(){
         if($('.change_status').val() == 1){
             st = '';
         }
@@ -172,6 +172,13 @@ $(function(){
         else if($('.change_status').val()== 5){
             st = '2';
         }
+        marker.setIcon({
+            url: 'https://stassociation.com/icon/track'+st+'.png',
+            size: new google.maps.Size(icon_size_w, icon_size_w),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(0, 0),
+            scaledSize: new google.maps.Size(icon_size_w, icon_size_w)
+        });
     });
 
     addMAP.addListener( 'zoom_changed', function() {
