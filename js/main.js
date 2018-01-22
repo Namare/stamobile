@@ -159,6 +159,20 @@ $(function(){
 //     },{ enableHighAccuracy: false});
 //    }
 //  }
+    $('.change_status').on('change',function(){
+        if($('.change_status').val() == 1){
+            st = '';
+        }
+        else if($('.change_status').val()== 2){
+            st = '1';
+        }
+        else if($('.change_status').val()== 3){
+            st = '3';
+        }
+        else if($('.change_status').val()== 5){
+            st = '2';
+        }
+    });
 
     addMAP.addListener( 'zoom_changed', function() {
 

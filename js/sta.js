@@ -663,7 +663,7 @@ STA = {
 	},
     checkDistance:function(){
         setInterval( function(){
-            $('#markers_dist_script').load( "https://stassociation.com/map/app_markers_dist");
+            $('#markers_dist_script').load( "https://stassociation.com/map/app_markers_dist",function(){
             for (var i = 0; i < map_markers_dist.length; i++) {
 
                 if(STA.count_alert.indexOf(map_markers_dist[i].id) != -1){
@@ -673,24 +673,21 @@ STA = {
                 var myLatLng = new google.maps.LatLng(parseFloat(map_markers_dist[i].position.lat()),parseFloat(map_markers_dist[i].position.lng()));
                 var myLatLng2 = new google.maps.LatLng(parseFloat(curr_position.lat),parseFloat(curr_position.lng));
                 var calc1 = google.maps.geometry.spherical.computeDistanceBetween(myLatLng, myLatLng2);
-
-                if(calc1< 300){
+                console.log('sadsdasd');
+               // if(calc1< 300){
+                    console.log(map_markers_dist[i].id+'asdasdasd');
                     cordova.plugins.notification.local.schedule({
                         id:map_markers_dist[i].id,
                         title: "You are close to the sign",
-                        foreground: true,
 //                        smallIcon:'res://ic_dialog_map',
                         text: "Be aware: "+map_markers_dist[i].type
                     });
 
-                    cordova.plugins.ios10.notification.schedule(map_markers_dist[i].id,  "You are close to the sign", "Be aware: "+map_markers_dist[i].type, "New Notification!", 10.0, "Payload");
-
-
-
-                }
+                //}
 
                 STA.count_alert.push(map_markers_dist[i].id);
             }
+            });
             $.ajax({
                 url:STA.base_url+"map/app_notification_auto",
                 method:"POST",
