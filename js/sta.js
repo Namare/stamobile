@@ -7,7 +7,7 @@ STA = {
 		STA.login();
 		STA.stamenu();
 		STA.radio();
-		STA.menuHide();
+		//STA.menuHide();
 		STA.checkDistance();
 		$('.page[data-id="login"]').show();
       //  cordova.plugins.backgroundMode.enable();
@@ -55,7 +55,7 @@ STA = {
             if(direction=='right'){
                 if($('.left_menu').is(':visible')==false){
                     $('.left_menu').show();
-                    $('.left_menu').animate({left:0},400);
+                    $('.left_menu').animate({left:0},300);
                 }
             }
             if(direction=='left'){
@@ -97,7 +97,7 @@ STA = {
 			STA.menuHide();
 
 
-			switch (pageName){
+            switch (pageName){
 				case 'map':
                     $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key);
 
@@ -673,9 +673,9 @@ STA = {
                 var myLatLng = new google.maps.LatLng(parseFloat(map_markers_dist[i].position.lat()),parseFloat(map_markers_dist[i].position.lng()));
                 var myLatLng2 = new google.maps.LatLng(parseFloat(curr_position.lat),parseFloat(curr_position.lng));
                 var calc1 = google.maps.geometry.spherical.computeDistanceBetween(myLatLng, myLatLng2);
-                console.log('sadsdasd');
+
                // if(calc1< 300){
-                    console.log(map_markers_dist[i].id+'asdasdasd');
+
                     cordova.plugins.notification.local.schedule({
                         id:map_markers_dist[i].id,
                         title: "You are close to the sign",

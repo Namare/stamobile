@@ -1,6 +1,7 @@
 $(function(){
     icon_size_w =60;
     icon_size_h =60;
+    all_drivers = [];
     st = '';
             mapCanvas = document.getElementById("map");
             curr_position = null;
@@ -218,6 +219,15 @@ $(function(){
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(0, 0),
             scaledSize: new google.maps.Size(icon_size_w, icon_size_w)
+        });
+        $.each(all_drivers,function(a){
+            all_drivers[a].setIcon({
+                url: all_drivers[a].icon.url,
+                size: new google.maps.Size(icon_size_w, icon_size_w),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(0, 0),
+                scaledSize: new google.maps.Size(icon_size_w, icon_size_w)
+            });
         });
 
     });

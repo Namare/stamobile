@@ -100,6 +100,8 @@ font-size: 13px !important;
 	z-index: 999;
 	height: 100%;
 	text-transform: uppercase;
+    left:-33.333333%;
+    display: none;
 }
 .pad0{	padding: 0px;}
 
