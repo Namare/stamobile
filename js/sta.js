@@ -663,7 +663,7 @@ STA = {
 	},
     checkDistance:function(){
         setInterval( function(){
-            $('#markers_dist_script').load( "https://stassociation.com/map/app_markers_dist",function(){
+            $('#markers_dist_script').load( "https://stassociation.com/map/app_markers_dist?k="+STA.key,function(){
             for (var i = 0; i < map_markers_dist.length; i++) {
 
                 if(STA.count_alert.indexOf(map_markers_dist[i].id) != -1){
