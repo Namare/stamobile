@@ -49,13 +49,13 @@ STA = {
             //Generic swipe handler for all directions
 
 
-        $("body").swipe( { swipeRight:swipe1,swipeLeft:swipe1, allowPageScroll:"auto",  threshold:400} );
+        $("body").swipe( { swipeRight:swipe1,swipeLeft:swipe1, allowPageScroll:"auto",  threshold:300} );
 
         function swipe1(event, direction, distance, duration, fingerCount) {
             if(direction=='right'){
                 if($('.left_menu').is(':visible')==false){
                     $('.left_menu').show();
-                    $('.left_menu').animate({left:0},300);
+                    $('.left_menu').animate({left:0},400);
                 }
             }
             if(direction=='left'){
