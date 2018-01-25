@@ -261,7 +261,7 @@ STA = {
 
 						$('.app_trim').each(function(){
 							var name_road = $(this).text().split(', ');
-							$(this).text(name_road[0]+', '+name_road[1]);
+							$(this).text(name_road[1]+', '+name_road[2]);
 						});	
 						$('.add_arr_app').append(' <i class="fa fa-long-arrow-right" aria-hidden="true"></i>');
         			  $('#sendOrder').on('click',function(){
