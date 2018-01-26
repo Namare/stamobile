@@ -209,7 +209,12 @@ STA = {
                       var pickuploc2 =document.getElementById('filter_from');
                       var deliveryloc2 =document.getElementById('filter_to');
                       var autocompletef = new google.maps.places.Autocomplete(pickuploc2);
+                      autocompletef.setComponentRestrictions(
+                          {'country': ['us', 'ca']});
+
                       var autocomplete2f = new google.maps.places.Autocomplete(deliveryloc2);
+                      autocomplete2f.setComponentRestrictions(
+                          {'country': ['us', 'ca']});
                       $('.app_asap').attr('href','javascript:void(0)');
                       $('.app_filter').attr('action','javascript:void(0)');
                       $('.app_asap').on('click',function(){
