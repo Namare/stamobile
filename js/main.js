@@ -233,6 +233,7 @@ $(function(){
     });
 
     function onSuccess(p) {
+
         curr_position = {lat: p.coords.latitude, lng:p.coords.longitude};
         marker.setPosition({lat: p.coords.latitude, lng:p.coords.longitude});
 
@@ -241,6 +242,7 @@ $(function(){
             addMAP.panTo(curr_position);
         }
 
+        $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key);
 
         if($('.change_status').val() == 1){
             st = '';
