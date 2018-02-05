@@ -87,11 +87,13 @@ blockquote {
 	max-height:70%;
 	overflow-y: auto;
 }
+
 td{
 padding: 20px 10px !important;
 vertical-align: middle !important;
 font-size: 13px !important;
 }
+.small_table td{padding: 5px !important;}
 .panel-heading{display: none}
 #map { height: calc(100% - 50px); width: 100% }
 .left_menu{
