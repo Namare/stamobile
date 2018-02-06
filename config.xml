@@ -15,6 +15,7 @@
     <allow-intent href="whatsapp:*" />
     <allow-intent href="viber:*" />
     <allow-intent href="tg:*" />
+    <allow-intent href="*" />
 
     <author href="http://namgam.com" email="support@namgam.com">
       Pavlushyn Victor
