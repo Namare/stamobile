@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "net.dezaro.sta"
         versionCode = "10"
-        version     = "1.8.6" >
+        version     = "1.8.7" >
 
     <!-- versionCode is optional and Android only -->
     <name>Sta mobile</name>
@@ -15,7 +15,9 @@
     <allow-intent href="whatsapp:*" />
     <allow-intent href="viber:*" />
     <allow-intent href="tg:*" />
-    <allow-intent href="*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="skype:*" />
 
     <author href="http://namgam.com" email="support@namgam.com">
       Pavlushyn Victor
