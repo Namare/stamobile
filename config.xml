@@ -12,6 +12,10 @@
     </description>
     <access origin="http://phonegap.com" subdomains="true" />
     <access origin="*" />
+    <access origin="whatsapp:*" launch-external="yes" />
+    <access origin="viber:*" launch-external="yes" />
+    <access origin="tg:*" launch-external="yes" />
+
     <author href="http://namgam.com" email="support@namgam.com">
       Pavlushyn Victor
     </author>
