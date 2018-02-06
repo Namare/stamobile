@@ -18,6 +18,7 @@
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
     <allow-intent href="skype:*" />
+    <allow-intent href="mailto:*" />
 
     <author href="http://namgam.com" email="support@namgam.com">
       Pavlushyn Victor
