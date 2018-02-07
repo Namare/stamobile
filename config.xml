@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "net.dezaro.sta"
         versionCode = "10"
-        version     = "1.8.7" >
+        version     = "1.8.8" >
 
     <!-- versionCode is optional and Android only -->
     <name>Sta mobile</name>
@@ -19,6 +19,8 @@
     <allow-intent href="sms:*" />
     <allow-intent href="skype:*" />
     <allow-intent href="mailto:*" />
+    <allow-intent href="http:*" />
+    <allow-intent href="https:*" />
 
     <author href="http://namgam.com" email="support@namgam.com">
       Pavlushyn Victor
@@ -86,7 +88,7 @@
         <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="App would like to access the library." />
     </plugin>
     <plugin name="phonegap-plugin-media-stream" spec="1.2.1"/>
-
+    <plugin name="cordova-plugin-inappbrowser" spec="2.0.2"/>
 
     <plugin name="cordova-plugin-chrome-apps-audiocapture" spec="1.0.5"/>
     <plugin name="cordova-plugin-vibration" spec="2.1.5"/>
