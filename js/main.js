@@ -5,9 +5,9 @@ $(function(){
     st = '';
             mapCanvas = document.getElementById("map");
             curr_position = null;
-           // var myCenter= new google.maps.LatLng(48.5,35);
+            var myCenter= new google.maps.LatLng(48.5,35);
             var mapOptions = {
-             //   center: myCenter,
+                center: myCenter,            
                 zoom: 17,
                 zoomControl: false,
                 scaleControl: false,
