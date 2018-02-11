@@ -288,7 +288,7 @@ $(function(){
 
     // Options: throw an error if no update is received every 30 seconds.
     //
-    var watchID = navigator.geolocation.watchPosition(onSuccess, onError,  { maximumAge: 0, timeout: 500, enableHighAccuracy: false });
+    var watchID = navigator.geolocation.watchPosition(onSuccess, onError,  { maximumAge: 1000, timeout: 300, enableHighAccuracy: true });
 
 
 
