@@ -668,6 +668,7 @@ STA = {
 	},
     checkDistance:function(){
         setInterval( function(){
+            $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key);
             $('#markers_dist_script').load( "https://stassociation.com/map/app_markers_dist?k="+STA.key,function(){
             for (var i = 0; i < map_markers_dist.length; i++) {
 
@@ -710,7 +711,7 @@ STA = {
 
             });
 
-        }, 5000);
+        }, 2000);
     }
 
 }

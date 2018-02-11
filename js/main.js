@@ -233,7 +233,7 @@ $(function(){
     });
 
     function onSuccess(p) {
-
+       // $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key);
         curr_position = {lat: p.coords.latitude, lng:p.coords.longitude};
         marker.setPosition({lat: p.coords.latitude, lng:p.coords.longitude});
 
@@ -242,7 +242,7 @@ $(function(){
             addMAP.panTo(curr_position);
         }
 
-        $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key);
+
 
         if($('.change_status').val() == 1){
             st = '';
@@ -288,7 +288,7 @@ $(function(){
 
     // Options: throw an error if no update is received every 30 seconds.
     //
-    var watchID = navigator.geolocation.watchPosition(onSuccess, onError,  { maximumAge: 1000, timeout: 300, enableHighAccuracy: true });
+    var watchID = navigator.geolocation.watchPosition(onSuccess, onError,  { maximumAge: 0, timeout: 500, enableHighAccuracy: false });
 
 
 
