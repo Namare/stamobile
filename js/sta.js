@@ -722,6 +722,17 @@ STA = {
             });
 
         }, 2000);
+        setInterval( function(){
+            for(var i=0; i<map_markers.length; i++){
+                map_markers[i].setMap(null);
+                map_markers[i]= null;
+            }
+            map_markers.length = 0;
+            map_markers = [];
+            $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key);
+
+
+        },60000);
     }
 
 }

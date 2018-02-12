@@ -27,6 +27,15 @@ window.onload =function(){
                     map: addMAP,
                     icon:image
                 });
+    var user_info = new google.maps.InfoWindow({
+        content:'<table class="small_table" >' +
+            '<tr><td><b>Me</b></td></tr></table>'
+        ,
+        maxWidth: 320
+    });
+    google.maps.event.addListener(marker,'click',function() {
+        user_info.open(addMAP, marker);
+    });
 
 
             $('.set_markers').on('click',function(){
@@ -267,6 +276,7 @@ window.onload =function(){
                 size: new google.maps.Size(icon_size_w, icon_size_w),
                 origin: new google.maps.Point(0, 0),
                 anchor: new google.maps.Point(0, 0),
+                title:'mww',
                 scaledSize: new google.maps.Size(icon_size_w, icon_size_w)
             });
 
