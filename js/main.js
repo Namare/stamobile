@@ -1,4 +1,4 @@
-$(function(){
+window.onload =function(){
     icon_size_w =60;
     icon_size_h =60;
     all_drivers = [];
@@ -7,7 +7,7 @@ $(function(){
             curr_position = null;
             var myCenter= new google.maps.LatLng(48.5,35);
             var mapOptions = {
-                center: myCenter,            
+                center: myCenter,
                 zoom: 17,
                 zoomControl: false,
                 scaleControl: false,
@@ -65,10 +65,13 @@ $(function(){
                             "&lat="+e.latLng.lat()+
                             "&lng="+e.latLng.lng(),
                         success: function(){
-                            for(i=0; i<map_markers.length; i++){
+                            for(var i=0; i<map_markers.length; i++){
                                 map_markers[i].setMap(null);
+                                map_markers[i]= null;
                             }
+                            map_markers.length = 0;
                             map_markers = [];
+
                             $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key);}
                     });
 
@@ -292,4 +295,4 @@ $(function(){
 
 
 
-});
+};

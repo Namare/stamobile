@@ -99,6 +99,12 @@ STA = {
 
             switch (pageName){
 				case 'map':
+                    for(var i=0; i<map_markers.length; i++){
+                        map_markers[i].setMap(null);
+                        map_markers[i]= null;
+                    }
+                    map_markers.length = 0;
+                    map_markers = [];
                     $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key);
 
 
@@ -106,16 +112,20 @@ STA = {
                     addMAP.panTo(curr_position);
                     currentPage.on('click','.del_info_marker',function(){
                         $('.loading').show();
-                        map_markers[$(this).data('l')].setMap(null);
+                       // map_markers[$(this).data('l')].setMap(null);
+                       // map_markers[$(this).data('l')]=null;
                         $.ajax({
                             url:'https://stassociation.com/map/del_info_marker',
                             method:'POST',
                             data:'i='+$(this).data('id')+'&k='+STA.key,
                             success: function(){
-                                for(i=0; i<map_markers.length; i++){
+                                for(var i=0; i<map_markers.length; i++){
                                     map_markers[i].setMap(null);
+                                    map_markers[i]= null;
                                 }
+                                map_markers.length = 0;
                                 map_markers = [];
+
                                 $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key);
 
                                 $('.loading').hide();
