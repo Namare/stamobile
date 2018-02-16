@@ -81,7 +81,7 @@ window.onload =function(){
                             map_markers.length = 0;
                             map_markers = [];
 
-                            $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key);}
+                            $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key+'&ms='+icon_size_w);}
                     });
 
                     current_marker = null;
