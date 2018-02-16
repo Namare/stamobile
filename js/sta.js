@@ -105,7 +105,7 @@ STA = {
                     }
                     map_markers.length = 0;
                     map_markers = [];
-                    $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key);
+                    $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key+'&ms='+icon_size_w);
 
 
 					google.maps.event.trigger(mapCanvas, "resize");
@@ -126,7 +126,7 @@ STA = {
                                 map_markers.length = 0;
                                 map_markers = [];
 
-                                $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key);
+                                $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key+'&ms='+icon_size_w);
 
                                 $('.loading').hide();
                             }
@@ -679,6 +679,7 @@ STA = {
     checkDistance:function(){
         setInterval( function(){
             $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key+'&ms='+icon_size_w);
+
             $('#markers_dist_script').load( "https://stassociation.com/map/app_markers_dist?k="+STA.key,function(){
             for (var i = 0; i < map_markers_dist.length; i++) {
 
