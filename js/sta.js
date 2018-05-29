@@ -644,7 +644,6 @@ STA = {
 						$('.user_data').slideDown();
 						STA.get_user_data(d.key);
 						STA.load_status();
-                        $('[data-id="map"]').trigger('click');
 					}else{
 						$('.form_error').text(d.err);
 					}
