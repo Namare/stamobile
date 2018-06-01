@@ -108,7 +108,7 @@ STA = {
                     $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key+'&ms='+icon_size_w);
 
 
-					google.maps.event.trigger(mapCanvas, "resize");
+					google.maps.event.trigger(addMAP, "resize");
                     addMAP.panTo(curr_position);
                     currentPage.on('click','.del_info_marker',function(){
                         $('.loading').show();
