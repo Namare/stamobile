@@ -7,7 +7,7 @@ window.onload =function(){
             curr_position = null;
             var myCenter= new google.maps.LatLng(48.5,35);
             var mapOptions = {
-                center: myCenter,
+                center: {lat: 48.5, lng: 35.1},
                 zoom: 17,
                 zoomControl: false,
                 scaleControl: false,
