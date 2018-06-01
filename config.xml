@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
+        xmlns:cdv="http://cordova.apache.org/ns/1.0"
         id          = "net.dezaro.sta"
         versionCode = "10"
         version     = "2.0.1" >
@@ -62,7 +63,7 @@
         <access origin="*"/>
     </platform>
 
-    <preference name="xwalkVersion" value="20" />
+    <preference name="xwalkVersion" value="23" />
 
     <preference name='phonegap-version' value='cli-7.0.1' />
     <preference name='pgb-builder-version' value='1' />
