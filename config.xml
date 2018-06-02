@@ -68,10 +68,10 @@
     <preference name='pgb-builder-version' value='1' />
     <preference name="xwalkMultipleApk" value="false" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
-    <plugin name="cordova-plugin-geolocation" spec="2.2.0"/>
+    <plugin name="cordova-plugin-geolocation" spec="4.0.4"/>
     <plugin name="cordova-plugin-network-information" spec="1.2.1"/>
     <plugin name="cordova-plugin-crosswalk-webview" spec="2.4.0"/>
-    <plugin name="cordova-plugin-audioinput" spec="0.3.0">
+    <plugin name="cordova-plugin-audioinput" spec="1.0.1">
         <variable name="MICROPHONE_USAGE_DESCRIPTION" value="App would like to access the microphone." />
     </plugin>
     <plugin name="cordova-plugin-camera" spec="2.4.1">
