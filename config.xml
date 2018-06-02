@@ -26,6 +26,16 @@
         Pavlushyn Victor
     </author>
     <icon src="icon.png" />
+    <icon src="icon-40.png" platform="ios" width="40" height="40" />
+    <icon src="icon-60.png" platform="ios" width="60" height="60" />
+    <icon src="icon-60@2x.png" platform="ios" width="120" height="120" />
+    <icon src="4x_1024.png" platform="ios" width="1024" height="1024" />
+
+    <!-- iPad -->
+    <icon src="icon-76.png" platform="ios" width="76" height="76" />
+    <icon src="icon-76@2x.png" platform="ios" width="152" height="152" />
+    <icon src="icon-83.5@2x.png" platform="ios" width="167" height="167" />
+    <icon src="icon-83.5@2x.png" platform="android" width="167" height="167" />
 
     <feature name="Device">
         <param name="android-package" value="org.apache.cordova.device.Device" />
@@ -61,7 +71,7 @@
     <plugin name="cordova-plugin-geolocation" spec="2.2.0"/>
     <plugin name="cordova-plugin-network-information" spec="1.2.1"/>
     <plugin name="cordova-plugin-wkwebview-engine" spec="1.0.3"/>
-    <plugin name="cordova-plugin-crosswalk-webview" spec="2.3.0"/>
+    <plugin name="cordova-plugin-crosswalk-webview" spec="2.4.0"/>
     <plugin name="cordova-plugin-audioinput" spec="0.3.0">
         <variable name="MICROPHONE_USAGE_DESCRIPTION" value="App would like to access the microphone." />
     </plugin>
@@ -90,8 +100,8 @@
     <plugin name="cordova-plugin-background-mode" spec="0.7.2"/>
     <plugin name="cordova-plugin-badge" spec="0.8.2"/>
     <platform name="android" >
-        <preference name="android-minSdkVersion" value="16"/>
-        <preference name="android-targetSdkVersion" value="22"/>
+        <preference name="android-minSdkVersion" value="21"/>
+        <preference name="android-targetSdkVersion" value="28"/>
         <preference name="android-installLocation" value="auto"/>
         <preference name="android-signed" value="true"/>
         <preference name="Fullscreen" value="false"/>
