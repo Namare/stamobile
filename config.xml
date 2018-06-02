@@ -79,7 +79,7 @@
         <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="App would like to access the library." />
     </plugin>
     <plugin name="cordova-plugin-media" spec="^4.0.0"/>
-    <plugin name="cordova-plugin-ios-microphone-permissions" spec="1.0.0"/>
+    <plugin name="cordova-plugin-ios-microphone-permissions" spec="^1.0.0"/>
     <plugin name="cordova-plugin-streaming-media" spec="^1.0.2"/>
     <plugin name="phonegap-plugin-image-capture" spec="^1.1.2">
         <variable name="CAMERA_USAGE_DESCRIPTION" value="App would like to access the camera." />
