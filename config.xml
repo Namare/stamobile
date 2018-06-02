@@ -79,8 +79,6 @@
         <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="App would like to access the library." />
     </plugin>
 
-    <plugin name="phonegap-plugin-media-stream" spec="^1.2.1"/>
-    <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0"/>
 
 
     <plugin name="cordova-plugin-badge" spec="^0.8.2"/>
