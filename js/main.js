@@ -1,4 +1,8 @@
-window.onload =function(){
+function onLoad() {
+    document.addEventListener("deviceready", onDeviceReady, false);
+}
+
+function onDeviceReady (){
     window.alert = function (txt) {
         navigator.notification.alert(txt, null, "Alert", "Close");
     }
