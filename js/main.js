@@ -1,4 +1,7 @@
 window.onload =function(){
+    window.alert = function (txt) {
+        navigator.notification.alert(txt, null, "Alert", "Close");
+    }
     icon_size_w =60;
     icon_size_h =60;
     all_drivers = [];
