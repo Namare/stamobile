@@ -110,6 +110,15 @@ window.onload =function(){
 //    }
 //
 //  });
+
+$('.bottom_menu_item[data-id="map"]').on('click',function () {
+    addMAP.setZoom(15);
+    addMAP.setCenter(curr_position);
+    addMAP.panTo(curr_position);
+
+    google.maps.event.trigger(addMAP, "resize");
+});
+
  $('.set_my_pos').on('click',function(){
 
      if(STA.watchme){
