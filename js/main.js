@@ -119,7 +119,12 @@ $('.bottom_menu_item[data-id="map"]').on('click',function () {
     google.maps.event.trigger(addMAP, "resize");
 });
 
- $('.set_my_pos').on('click',function(){
+    $('.bottom_menu_item[data-id="map"]').bind("pageshow", function (e, data) {
+        google.maps.event.trigger(addMAP, "resize");
+
+    });
+
+    $('.set_my_pos').on('click',function(){
 
      if(STA.watchme){
          $(this).removeClass('watchme');
