@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "net.dezaro.sta"
         versionCode = "10"
-        version     = "2.0.2" >
+        version     = "2.0.3" >
 
     <!-- versionCode is optional and Android only -->
     <name>Sta mobile</name>
@@ -64,7 +64,7 @@
 
     <preference name="xwalkVersion" value="23" />
 
-    <preference name='phonegap-version' value='cli-6.5.0' />
+    <preference name='phonegap-version' value='cli-7.1.0' />
     <preference name='pgb-builder-version' value='1' />
     <preference name="xwalkMultipleApk" value="false" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
