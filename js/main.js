@@ -1,8 +1,4 @@
-function onLoad() {
-    document.addEventListener("deviceready", onDeviceReady, false);
-}
-
-function onDeviceReady (){
+window.onload =function(){
     window.alert = function (txt) {
         navigator.notification.alert(txt, null, "Alert", "Close");
     }
@@ -18,6 +14,7 @@ function onDeviceReady (){
                 zoom: 17,
                 zoomControl: false,
                 scaleControl: false,
+                mapTypeId: 'roadmap',
                 disableDefaultUI: true
             };
 
