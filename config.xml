@@ -102,12 +102,15 @@
 
     <plugin name="cordova-plugin-badge" spec="^0.8.2"/>
     <platform name="android" >
+        <preference name="android-build-tool" value="ant|gradle" />
         <preference name="android-minSdkVersion" value="16"/>
-        <preference name="android-targetSdkVersion" value="25"/>
+        <preference name="android-targetSdkVersion" value="20"/>
+        <preference name="android-maxSdkVersion" value="25" />
         <preference name="android-installLocation" value="auto"/>
         <preference name="android-signed" value="true"/>
         <preference name="Fullscreen" value="false"/>
         <preference name="AndroidLaunchMode" value="singleTop"/>
+        <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
     </platform>
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#000000" />
