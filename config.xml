@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "net.dezaro.sta"
         versionCode = "10"
-        version     = "2.5.5" >
+        version     = "2.5.6" >
 
     <!-- versionCode is optional and Android only -->
     <name>Sta mobile</name>

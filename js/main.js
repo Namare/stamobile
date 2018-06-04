@@ -117,6 +117,7 @@ $('.bottom_menu_item[data-id="map"]').on('click',function () {
     addMAP.panTo(curr_position);
 
     google.maps.event.trigger(addMAP, "resize");
+    $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key+'&ms='+icon_size_w);
 });
 
     $('.bottom_menu_item[data-id="map"]').bind("pageshow", function (e, data) {
