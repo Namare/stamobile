@@ -111,25 +111,7 @@ function initMap (){
 //
 //  });
 
-$('.bottom_menu_item[data-id="map"]').on('click',function () {
-    addMAP.setZoom(15);
-    addMAP.setCenter(curr_position);
-    addMAP.panTo(curr_position);
 
-    google.maps.event.trigger(addMAP, "resize");
-    for(var i=0; i<map_markers.length; i++){
-        map_markers[i].setMap(null);
-        map_markers[i]= null;
-    }
-    map_markers.length = 0;
-    map_markers = [];
-    $('#markers_script').load( "https://stassociation.com/map/app_markers?k="+STA.key+'&ms='+icon_size_w);
-});
-
-    $('.bottom_menu_item[data-id="map"]').bind("pageshow", function (e, data) {
-        google.maps.event.trigger(addMAP, "resize");
-
-    });
 
     $('.set_my_pos').on('click',function(){
 
