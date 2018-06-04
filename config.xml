@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "net.dezaro.sta"
         versionCode = "10"
-        version     = "2.5.1" >
+        version     = "2.5.2" >
 
     <!-- versionCode is optional and Android only -->
     <name>Sta mobile</name>
@@ -30,6 +30,10 @@
     <icon src="icon-60.png" platform="ios" width="60" height="60" />
     <icon src="icon-60@2x.png" platform="ios" width="120" height="120" />
     <icon src="4x_1024.png" platform="ios" width="1024" height="1024" />
+    <plugin name="cordova-plugin-googlemaps" spec="2.3.6">
+        <variable name="API_KEY_FOR_ANDROID" value="AIzaSyBo0shO9NRXBhMBKt5VZorCjUSgIGh3joc" />
+        <variable name="API_KEY_FOR_IOS" value="AIzaSyBo0shO9NRXBhMBKt5VZorCjUSgIGh3joc" />
+    </plugin>
 
     <!-- iPad -->
     <icon src="icon-76.png" platform="ios" width="76" height="76" />

@@ -18,7 +18,7 @@ window.onload =function(){
                 disableDefaultUI: true
             };
 
-            addMAP = new google.maps.Map(mapCanvas, mapOptions);
+            addMAP = plugin.google.maps.Map.getMap(mapCanvas, mapOptions);
             var image = {
                 url: 'https://stassociation.com/icon/track'+st+'.png',
                 size: new google.maps.Size(icon_size_w, icon_size_w),
