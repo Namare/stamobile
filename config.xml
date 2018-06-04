@@ -70,14 +70,13 @@
 
 
 
-    <preference name='phonegap-version' value='cli-6.5.0' />
+    <preference name='phonegap-version' value='cli-7.1.0' />
     <preference name='pgb-builder-version' value='1' />
     <preference name="xwalkMultipleApk" value="false" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     <plugin name="cordova-plugin-geolocation" spec="^4.0.0"/>
     <plugin name="cordova-plugin-network-information" spec="^1.2.1"/>
     <plugin name="cordova-plugin-wkwebview-engine" spec="1.0.3"/>
-    <plugin name="cordova-plugin-crosswalk-webview" spec="2.3.0"/>
 
 
     <plugin name="cordova-plugin-camera" spec="^2.4.1">
