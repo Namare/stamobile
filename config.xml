@@ -54,6 +54,8 @@
     <allow-intent href="https://*"/>
     <allow-navigation href="https://*"/>
     <access origin="*"/>
+
+         <hook src="hooks/copy-build-extras-gradle.js" type="before_build" />
 </platform>
     <platform name="ios" >
         <allow-intent href="geo:*"/>
@@ -65,8 +67,9 @@
 
     <preference name="xwalkVersion" value="23" />
 
+
     <preference name='phonegap-version' value='cli-7.1.0' />
-    <preference name='pgb-builder-version' value='2' />
+    <preference name='pgb-builder-version' value='1' />
     <preference name="xwalkMultipleApk" value="true" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     <plugin name="cordova-plugin-geolocation" spec="^4.0.0"/>
