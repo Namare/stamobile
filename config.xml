@@ -89,8 +89,7 @@
         <variable name="MICROPHONE_USAGE_DESCRIPTION" value="App would like to access the microphone." />
         <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="App would like to access the library." />
     </plugin>
-    <plugin name="phonegap-plugin-media-stream" spec="^1.2.1"/>
-    <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0"/>
+
 
     <plugin name="cordova-plugin-chrome-apps-audiocapture" spec="^1.0.5"/>
     <plugin name="cordova-plugin-vibration" spec="^2.1.5"/>
