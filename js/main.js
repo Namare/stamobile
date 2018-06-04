@@ -1,4 +1,4 @@
-window.onload =function(){
+function initMap (){
     window.alert = function (txt) {
         navigator.notification.alert(txt, null, "Alert", "Close");
     }
@@ -18,7 +18,7 @@ window.onload =function(){
                 disableDefaultUI: true
             };
 
-            addMAP = plugin.google.maps.Map.getMap(mapCanvas, mapOptions);
+            addMAP = new google.maps.Map(mapCanvas, mapOptions);
             var image = {
                 url: 'https://stassociation.com/icon/track'+st+'.png',
                 size: new google.maps.Size(icon_size_w, icon_size_w),
