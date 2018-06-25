@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "net.dezaro.sta"
         versionCode = "10"
-        version     = "2.6.6" >
+        version     = "2.6.7" >
 
     <!-- versionCode is optional and Android only -->
     <name>Sta mobile</name>
@@ -74,11 +74,6 @@
     </edit-config>
 
 
-    <platform name="ios">
-        <config-file target="*-Info.plist" platform="ios" parent="NSLocationWhenInUseUsageDescription">
-            <string>Your current location will be displayed on the map and used for directions</string>
-        </config-file>
-    </platform>
 
 
 
@@ -86,7 +81,7 @@
     <preference name='pgb-builder-version' value='1' />
     <preference name="xwalkMultipleApk" value="false" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
-    <plugin name="cordova-plugin-geolocation" spec="^4.0.0"/>
+    <plugin name="cordova-plugin-geolocation" spec="4.0.1"/>
     <plugin name="cordova-plugin-network-information" spec="^1.2.1"/>
     <plugin name="cordova-plugin-wkwebview-engine" spec="1.0.3"/>
 
