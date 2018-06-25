@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "net.dezaro.sta"
         versionCode = "10"
-        version     = "2.6.3" >
+        version     = "2.6.4" >
 
     <!-- versionCode is optional and Android only -->
     <name>Sta mobile</name>
@@ -44,6 +44,7 @@
     <feature name="Device">
         <param name="ios-package" value="CDVDevice" />
     </feature>
+
     <feature name="CDVWKWebViewEngine">
         <param name="ios-package" value="CDVWKWebViewEngine" />
     </feature>
@@ -69,8 +70,17 @@
 
 
     <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
-        <string>our current location will be displayed on the map and used for directions.</string>
+        <string>Your current location will be displayed on the map and used for directions.</string>
     </edit-config>
+    <config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
+        <string>Your current location will be displayed on the map and used for directions.</string>
+    </config-file>
+    <config-file target="*-Info.plist" parent="NSLocationUsageDescription">
+        <string>Your current location will be displayed on the map and used for directions.</string>
+    </config-file>
+    <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
+        <string>Your current location will be displayed on the map and used for directions.t</string>
+    </config-file>
 
     <preference name='phonegap-version' value='cli-7.1.0' />
     <preference name='pgb-builder-version' value='1' />
