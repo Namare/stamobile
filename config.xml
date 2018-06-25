@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "net.dezaro.sta"
         versionCode = "10"
-        version     = "2.6.8" >
+        version     = "2.7.0" >
 
     <!-- versionCode is optional and Android only -->
     <name>Sta mobile</name>
@@ -67,6 +67,12 @@
         <allow-navigation href="https://*"/>
         <access origin="*"/>
     </platform>
+
+
+    <edit-config target="NSLocationWhenInUseUsageDescription" platform="ios" file="*-Info.plist" mode="merge">
+        <string>Your current location will be displayed on the map and used for directions.</string>
+    </edit-config>
+
 
     <platform name="ios">
         <config-file target="*-Info.plist" platform="ios" parent="NSLocationWhenInUseUsageDescription">
