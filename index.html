@@ -20,7 +20,7 @@
        map_markers =[];
     </script>
     <script async defer
-            src="https://maps.googleapis.com/maps/api/js?v=3.33&use_slippy=true&libraries=places,geometry&amp;language=en&amp;key=AIzaSyBo0shO9NRXBhMBKt5VZorCjUSgIGh3joc&callback=initMap"
+            src="https://maps.googleapis.com/maps/api/js?v=3.33&use_slippy=true&libraries=places,geometry&amp;language=en&amp;key=AIzaSyBo0shO9NRXBhMBKt5VZorCjUSgIGh3joc"
             async defer ></script>
 
     <script src="js/main.js"></script>
@@ -29,7 +29,7 @@
 
 
 	</head>
-	<body>
+	<body onload="initMap()">
     <form></form>
   <div id="markers_script"></div>
   <div id="markers_dist_script"></div>
