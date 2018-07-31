@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "net.dezaro.sta"
         versionCode = "10"
-        version     = "2.7.3" >
+        version     = "2.7.4" >
 
     <!-- versionCode is optional and Android only -->
     <name>Sta mobile</name>
@@ -109,7 +109,7 @@
     <plugin name="cordova-plugin-vibration" spec="^2.1.5"/>
     <plugin name="cordova-plugin-local-notifications-mm" spec="1.0.10"  />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3"/>
-    <plugin name="cordova-plugin-background-app" spec="2.0.2"/>
+    <plugin name="cordova-plugin-background-mode" spec="0.7.2"/>
     <plugin name="cordova-plugin-statusbar" spec="^2.2.3"/>
     <plugin name="cordova-plugin-status-bar-notification" spec="^1.0.6"/>
 
