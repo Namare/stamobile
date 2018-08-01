@@ -312,36 +312,32 @@ function initMap (){
     var watchID = navigator.geolocation.watchPosition(onSuccess, onError,  { maximumAge: 1000, timeout: 300, enableHighAccuracy: true });
 
 
-    document.addEventListener('deviceready', onDeviceReady, false);
 
-    function onDeviceReady () {
-
-        /**
-         * This callback will be executed every time a geolocation is recorded in the background.
-         */
-        var callbackFn = function(location) {
-            onSuccess(location);
-            backgroundGeolocation.finish();
-        };
-
-        var failureFn = function(error) {
-            console.log('BackgroundGeolocation error');
-        };
-
-        // BackgroundGeolocation is highly configurable. See platform specific configuration options
-        backgroundGeolocation.configure(callbackFn, failureFn, {
-            desiredAccuracy: 10,
-            stationaryRadius: 20,
-            distanceFilter: 30,
-            interval: 1000
-        });
-
-        // Turn ON the background-geolocation system.  The user will be tracked whenever they suspend the app.
-        backgroundGeolocation.start();
-
-        // If you wish to turn OFF background-tracking, call the #stop method.
-        // backgroundGeolocation.stop();
-    }
 
 
 };
+
+document.addEventListener('deviceready', function () {
+
+    // Android customization
+    // To indicate that the app is executing tasks in background and being paused would disrupt the user.
+    // The plug-in has to create a notification while in background - like a download progress bar.
+    cordova.plugins.backgroundMode.setDefaults({
+        title:  'TheTitleOfYourProcess',
+        text:   'Executing background tasks.'
+    });
+
+    // Enable background mode
+    cordova.plugins.backgroundMode.enable();
+
+    // Called when background mode has been activated
+    cordova.plugins.backgroundMode.onactivate = function () {
+
+        // Set an interval of 3 seconds (3000 milliseconds)
+        setInterval(function () {
+
+            var watchID2 = navigator.geolocation.watchPosition(onSuccess, onError,  { maximumAge: 1000, timeout: 300, enableHighAccuracy: true });
+
+        }, 3000);
+    }
+}, false);
