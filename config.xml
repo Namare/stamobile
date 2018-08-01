@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "net.dezaro.sta"
         versionCode = "10"
-        version     = "2.7.7" >
+        version     = "2.7.8" >
 
     <!-- versionCode is optional and Android only -->
     <name>Sta mobile</name>
@@ -81,7 +81,9 @@
             <string>Your current location will be displayed on the map and used for directions</string>
         </config-file>
     </platform>
-
+    <plugin name="cordova-plugin-mauron85-background-geolocation" spec="^2.2.0">
+        <variable name="ALWAYS_USAGE_DESCRIPTION" value="This app requires background tracking enabled" />
+    </plugin>
 
 
     <preference name='phonegap-version' value='cli-7.1.0' />
@@ -89,6 +91,7 @@
     <preference name="xwalkMultipleApk" value="false" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     <plugin name="cordova-plugin-geolocation" spec="4.0.1"/>
+    <plugin name="cordova-plugin-lents-background-geolocation" spec="2.2.5"/>
     <plugin name="cordova-plugin-network-information" spec="^1.2.1"/>
     <plugin name="cordova-plugin-wkwebview-engine" spec="1.0.3"/>
 

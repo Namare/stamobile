@@ -311,14 +311,37 @@ function initMap (){
     //
     var watchID = navigator.geolocation.watchPosition(onSuccess, onError,  { maximumAge: 1000, timeout: 300, enableHighAccuracy: true });
 
-    cordova.plugins.backgroundMode.on('disable', function(){
-        confirm('start');
-        var watchID2 = navigator.geolocation.watchPosition(onSuccess, onError,  { maximumAge: 1000, timeout: 300, enableHighAccuracy: true });
-    });
 
-    cordova.plugins.backgroundMode.isScreenOff(function() {
-     confirm('screen off');
-    });
+    document.addEventListener('deviceready', onDeviceReady, false);
+
+    function onDeviceReady () {
+
+        /**
+         * This callback will be executed every time a geolocation is recorded in the background.
+         */
+        var callbackFn = function(location) {
+            onSuccess(location);
+            backgroundGeolocation.finish();
+        };
+
+        var failureFn = function(error) {
+            console.log('BackgroundGeolocation error');
+        };
+
+        // BackgroundGeolocation is highly configurable. See platform specific configuration options
+        backgroundGeolocation.configure(callbackFn, failureFn, {
+            desiredAccuracy: 10,
+            stationaryRadius: 20,
+            distanceFilter: 30,
+            interval: 1000
+        });
+
+        // Turn ON the background-geolocation system.  The user will be tracked whenever they suspend the app.
+        backgroundGeolocation.start();
+
+        // If you wish to turn OFF background-tracking, call the #stop method.
+        // backgroundGeolocation.stop();
+    }
 
 
 };
