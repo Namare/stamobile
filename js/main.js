@@ -311,7 +311,8 @@ function initMap (){
     //
     var watchID = navigator.geolocation.watchPosition(onSuccess, onError,  { maximumAge: 1000, timeout: 300, enableHighAccuracy: true });
 
-    cordova.plugins.backgroundMode.on('enable', function(){
+    cordova.plugins.backgroundMode.on('disable', function(){
+        alert('start');
         var watchID2 = navigator.geolocation.watchPosition(onSuccess, onError,  { maximumAge: 1000, timeout: 300, enableHighAccuracy: true });
     });
 
