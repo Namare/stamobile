@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "net.dezaro.sta"
         versionCode = "10"
-        version     = "2.7.8" >
+        version     = "2.7.9" >
 
     <!-- versionCode is optional and Android only -->
     <name>Sta mobile</name>
@@ -88,7 +88,14 @@
     <preference name='pgb-builder-version' value='1' />
     <preference name="xwalkMultipleApk" value="false" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
-    <plugin name="cordova-plugin-geolocation" spec="4.0.1"/>
+
+
+    <plugin name="cordova-plugin-mauron85-background-geolocation" spec="^3.0.0-alpha.37">
+        <variable name="GOOGLE_PLAY_SERVICES_VERSION" value="11+" />
+        <variable name="ANDROID_SUPPORT_LIBRARY_VERSION" value="23+" />
+        <variable name="ALWAYS_USAGE_DESCRIPTION" value="App requires background tracking enabled" />
+        <variable name="MOTION_USAGE_DESCRIPTION" value="App requires motion detection" />
+    </plugin>
     <plugin name="cordova-plugin-network-information" spec="^1.2.1"/>
     <plugin name="cordova-plugin-wkwebview-engine" spec="1.0.3"/>
 
