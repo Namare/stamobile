@@ -1,7 +1,7 @@
 function initMap (){
-    window.alert = function (txt) {
-        navigator.notification.alert(txt, null, "Alert", "Close");
-    }
+    // window.alert = function (txt) {
+    //     navigator.notification.alert(txt, null, "Alert", "Close");
+    // }
    // cordova.plugins.backgroundMode.setEnabled(true);
     icon_size_w =60;
     icon_size_h =60;
@@ -315,12 +315,12 @@ function initMap (){
     var bgLocationServices =  window.plugins.backgroundLocationServices;
 
 //Congfigure Plugin
-    bgLocationServices.configure({
+    bgLocationServices.configure(onSuccess, onError, {
         //Both
         desiredAccuracy: 20, // Desired Accuracy of the location updates (lower means more accurate but more battery consumption)
         distanceFilter: 5, // (Meters) How far you must move from the last point to trigger a location update
         debug: true, // <-- Enable to show visual indications when you receive a background location update
-        interval: 9000, // (Milliseconds) Requested Interval in between location updates.
+        interval: 1000, // (Milliseconds) Requested Interval in between location updates.
         useActivityDetection: true, // Uses Activitiy detection to shut off gps when you are still (Greatly enhances Battery Life)
 
         //Android Only
@@ -336,7 +336,7 @@ function initMap (){
         $.ajax({
             url: "https://stassociation.com/map/update_coords",
             type: "POST",
-            data: "lat="+location.coords.latitude+"&lng="+location.coords.longitude+"&k="+STA.key
+            data: "lat="+location.latitude+"&lng="+location.longitude+"&k="+STA.key
         });
     }, function(err) {
         console.log("Error: Didnt get an update", err);
