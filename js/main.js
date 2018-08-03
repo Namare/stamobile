@@ -2,7 +2,7 @@ function initMap (){
     window.alert = function (txt) {
         navigator.notification.alert(txt, null, "Alert", "Close");
     }
-    cordova.plugins.backgroundMode.setEnabled(true);
+   // cordova.plugins.backgroundMode.setEnabled(true);
     icon_size_w =60;
     icon_size_h =60;
     all_drivers = [];
@@ -309,17 +309,8 @@ function initMap (){
 
     // Options: throw an error if no update is received every 30 seconds.
     //
-    // var watchID = navigator.geolocation.watchPosition(onSuccess, onError,  { maximumAge: 1000, timeout: 300, enableHighAccuracy: true });
+    var watchID = navigator.geolocation.watchPosition(onSuccess, onError,  { maximumAge: 1000, timeout: 300, enableHighAccuracy: true });
     // BackgroundGeolocation is highly configurable. See platform specific configuration options
-    backgroundGeolocation.configure(onSuccess, onError, {
-        desiredAccuracy: 10,
-        stationaryRadius: 20,
-        distanceFilter: 30,
-        interval: 1000
-    });
-
-    // Turn ON the background-geolocation system.  The user will be tracked whenever they suspend the app.
-    backgroundGeolocation.start();
 
 
 
