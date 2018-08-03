@@ -334,6 +334,11 @@ function initMap (){
     }
 
     bgGeo.configure(callbackFn, failureFn, {
+        url: "https://stassociation.com/map/update_coords", // <-- Android ONLY:  your server url to send locations to
+        params: {
+            lat: location.latitude,    //  <-- Android ONLY:  HTTP POST params sent to your server when persisting locations.
+            lng: location.longitude                              //  <-- Android ONLY:  HTTP POST params sent to your server when persisting locations.
+        },
         desiredAccuracy: 10,
         stationaryRadius: 20,
         distanceFilter: 30,
