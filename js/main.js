@@ -310,39 +310,39 @@ function initMap (){
     // Options: throw an error if no update is received every 30 seconds.
     //
     var watchID = navigator.geolocation.watchPosition(onSuccess, onError,  { maximumAge: 1000, timeout: 300, enableHighAccuracy: true });
-    // BackgroundGeolocation is highly configurable. See platform specific configuration options
+    var bgGeo = window.plugins.backgroundGeoLocation;
 
-    var bgLocationServices =  window.plugins.backgroundLocationServices;
+    var callbackFn = function(location) {
+        console.log('[js] BackgroundGeoLocation callback:  ' + location.latitude + ',' + location.longitude);
+        // Do your HTTP request here to POST location to your server.
+        //
+        //
 
-//Congfigure Plugin
-    bgLocationServices.configure(onSuccess, onError, {
-        //Both
-        desiredAccuracy: 20, // Desired Accuracy of the location updates (lower means more accurate but more battery consumption)
-        distanceFilter: 5, // (Meters) How far you must move from the last point to trigger a location update
-        debug: true, // <-- Enable to show visual indications when you receive a background location update
-        interval: 1000, // (Milliseconds) Requested Interval in between location updates.
-        useActivityDetection: true, // Uses Activitiy detection to shut off gps when you are still (Greatly enhances Battery Life)
-
-        //Android Only
-        notificationTitle: 'BG Plugin', // customize the title of the notification
-        notificationText: 'Tracking', //customize the text of the notification
-        fastestInterval: 5000 // <-- (Milliseconds) Fastest interval your app / server can handle updates
-
-    });
-
-//Register a callback for location updates, this is where location objects will be sent in the background
-    bgLocationServices.registerForLocationUpdates(function(location) {
-        console.log("We got an BG Update" + JSON.stringify(location));
         $.ajax({
             url: "https://stassociation.com/map/update_coords",
             type: "POST",
             data: "lat="+location.latitude+"&lng="+location.longitude+"&k="+STA.key
         });
-    }, function(err) {
-        console.log("Error: Didnt get an update", err);
+
+    };
+
+    var failureFn = function(error) {
+        console.log('BackgroundGeoLocation error');
+    }
+
+    bgGeo.configure(callbackFn, failureFn, {
+        desiredAccuracy: 10,
+        stationaryRadius: 20,
+        distanceFilter: 30,
+        notificationTitle: 'Background tracking', // <-- android only, customize the title of the notification
+        notificationText: 'ENABLED', // <-- android only, customize the text of the notification
+        activityType: 'AutomotiveNavigation',
+        debug: true, // <-- enable this hear sounds for background-geolocation life-cycle.
+        stopOnTerminate: false // <-- enable this to clear background location settings when the app terminates
     });
 
-    bgLocationServices.start();
+    // Turn ON the background-geolocation system.  The user will be tracked whenever they suspend the app.
+    bgGeo.start();
 
 };
 
