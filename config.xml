@@ -89,7 +89,7 @@
     <preference name="xwalkMultipleApk" value="false" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     <plugin name="cordova-plugin-geolocation" spec="4.0.1"/>
-    <plugin name="cordova-plugin-background-geolocation" spec="1.0.6"/>
+    <plugin name="cordova-plugin-background-geolocation_sayeh" spec="2.17.4"/>
     <plugin name="cordova-plugin-wkwebview-engine" spec="1.0.3"/>
 
 
