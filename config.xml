@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "net.dezaro.sta"
         versionCode = "10"
-        version     = "3.0.0" >
+        version     = "3.0.1" >
 
     <!-- versionCode is optional and Android only -->
     <name>Sta mobile</name>
@@ -89,7 +89,7 @@
     <preference name="xwalkMultipleApk" value="false" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     <plugin name="cordova-plugin-geolocation" spec="4.0.1"/>
-    <plugin name="cordova-plugin-network-information" spec="^1.2.1"/>
+    <plugin name="cordova-background-location-services" spec="1.1.1"/>
     <plugin name="cordova-plugin-wkwebview-engine" spec="1.0.3"/>
 
 
