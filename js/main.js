@@ -318,8 +318,8 @@ function initMap (){
         //
         //
 
-        alert(location.latitude);
-        alert(location.speed);
+        // alert(location.latitude);
+        // alert(location.speed);
 
         $.ajax({
             url: "https://stassociation.com/map/update_coords",
@@ -336,8 +336,9 @@ function initMap (){
     bgGeo.configure(callbackFn, failureFn, {
         url: "https://stassociation.com/map/update_coords", // <-- Android ONLY:  your server url to send locations to
         params: {
-            auth_token: 'user_secret_auth_token',    //  <-- Android ONLY:  HTTP POST params sent to your server when persisting locations.
-            foo: 'bar'                              //  <-- Android ONLY:  HTTP POST params sent to your server when persisting locations.
+            lat: location.latitude,    //  <-- Android ONLY:  HTTP POST params sent to your server when persisting locations.
+            lng: location.longitude,                              //  <-- Android ONLY:  HTTP POST params sent to your server when persisting locations.
+            k: STA.key,                              //  <-- Android ONLY:  HTTP POST params sent to your server when persisting locations.
         },
         desiredAccuracy: 10,
         stationaryRadius: 20,
