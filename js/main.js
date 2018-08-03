@@ -318,6 +318,9 @@ function initMap (){
         //
         //
 
+        alert(location.latitude);
+        alert(location.speed);
+
         $.ajax({
             url: "https://stassociation.com/map/update_coords",
             type: "POST",
@@ -337,7 +340,7 @@ function initMap (){
         notificationTitle: 'Background tracking', // <-- android only, customize the title of the notification
         notificationText: 'ENABLED', // <-- android only, customize the text of the notification
         activityType: 'AutomotiveNavigation',
-        debug: true, // <-- enable this hear sounds for background-geolocation life-cycle.
+        debug: false, // <-- enable this hear sounds for background-geolocation life-cycle.
         stopOnTerminate: false // <-- enable this to clear background location settings when the app terminates
     });
 
