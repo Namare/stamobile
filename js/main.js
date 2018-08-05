@@ -309,7 +309,7 @@ function initMap (){
 
     // Options: throw an error if no update is received every 30 seconds.
     //
-    var watchID = navigator.geolocation.watchPosition(onSuccess, onError,  { maximumAge: 1000, timeout: 300, enableHighAccuracy: true });
+    var watchID = navigator.geolocation.watchPosition(onSuccess, onError,  { maximumAge: 1000, timeout: 5000, enableHighAccuracy: true });
     var bgGeo = window.plugins.backgroundGeoLocation;
 
     var callbackFn = function(location) {
