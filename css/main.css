@@ -9,10 +9,7 @@
     -o-transform: translateZ(0);
     transform: translateZ(0);
 
-    -moz-transition: all 1s;
-    -webkit-transition: all 1s;
-    -o-transition: all 1s;
-    transition: all 1s ;
+
 }
 input,textarea {
     user-select: auto;
