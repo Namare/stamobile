@@ -2,7 +2,7 @@ function initMap (){
     // window.alert = function (txt) {
     //     navigator.notification.alert(txt, null, "Alert", "Close");
     // }
-   // cordova.plugins.backgroundMode.setEnabled(true);
+   cordova.plugins.backgroundMode.setEnabled(true);
     icon_size_w =60;
     icon_size_h =60;
     all_drivers = [];
@@ -309,7 +309,7 @@ function initMap (){
 
     // Options: throw an error if no update is received every 30 seconds.
     //
-    var watchID = navigator.geolocation.watchPosition(onSuccess, onError,  { maximumAge: 1000, timeout: 300, enableHighAccuracy: true });
+    navigator.geolocation.watchPosition(onSuccess, onError,  { maximumAge: 1000, timeout: 300, enableHighAccuracy: true });
     var bgGeo = window.plugins.backgroundGeoLocation;
 
     var callbackFn = function(location) {
