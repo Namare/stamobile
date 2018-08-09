@@ -9,9 +9,9 @@ function initMap (){
     st = '';
             mapCanvas = document.getElementById("map");
             curr_position = null;
-            var myCenter= new google.maps.LatLng(48.5,35);
+            var myCenter= new google.maps.LatLng(40.5,-104.1);
             var mapOptions = {
-                center: {lat: 48.5, lng: 35.1},
+                center: {lat: 40.5, lng: -104.1},
                 zoom: 17,
                 zoomControl: false,
                 scaleControl: false,
