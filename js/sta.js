@@ -589,13 +589,13 @@ STA = {
 	get_user_data:function(key){
 			if (key == undefined)
 				key=STA.key;
-		
-	
+
+        var time = parseInt(new Date().getTime()/1000);
 			$.ajax({
 				url:STA.ajax_url,
 				method:'POST',
 				dataType : "json",
-				data:'k='+key,
+				data:'k='+key+'&t='+time,
 				success:function(b){
 					if(b.user_name == false){
 						$('.login_block').show();
@@ -626,11 +626,12 @@ STA = {
 			var login = $('.auth_login').val();
             window.localStorage.setItem("auth_login",login);
 			var pass = $('.auth_pass').val();
+			var time = parseInt(new Date().getTime()/1000);
 			$.ajax({
 				method:'POST',
 				dataType : "json",  
 				url:STA.ajax_url,
-				data:'i='+login+'&p='+pass,
+				data:'i='+login+'&p='+pass+'&t='+time,
 				success:function(d){
 					if(d.err){						
 						window.localStorage.setItem("prem_key", d.key);
