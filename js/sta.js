@@ -10,7 +10,6 @@ STA = {
 		//STA.menuHide();
 		STA.checkDistance();
 		$('.page[data-id="login"]').show();
-        cordova.plugins.backgroundMode.enable();
 		$('.log_out').on('click',function(){
            var is_logout = confirm('Are you sure want to log out?');
             if(is_logout){
